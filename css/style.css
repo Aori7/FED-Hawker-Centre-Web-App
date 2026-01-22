@@ -10,8 +10,9 @@ body {
         "wdth" 100;
 
     margin: 0;
-    background-color: black;
+    background-color: white;
 
+    color: white;
 }
 
 
@@ -24,7 +25,9 @@ body {
 #navigationbar{
     position: fixed; 
     /* fixed position so that it will stay as u scroll */
-    /* z-index: 20; */
+    z-index: 1;
+    /* z index to make layer stay on top of everything else */
+    top: 0;
 
     display: flex;
     flex-direction: row;
@@ -57,6 +60,7 @@ body {
 }
 
 /* logo of the page */
+
 .logo a{
     display: flex;
     align-items: center;
@@ -87,6 +91,9 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    /* nav menu default colors */
+    color: #33363F;
     
     background-color: aqua;
 }
@@ -100,6 +107,12 @@ body {
 /* ===================================================================================== */
 
 
+/* content of the index page - done by ada*/
+
+/* #content{
+
+} */
+
 #main{
     margin: 0;
     width: 100%;
@@ -109,4 +122,10 @@ body {
     width: 100%;
     height: auto;
     background-size: cover;
+    filter: brightness(45%);
 }
+
+.desc-container{
+    background-color: #33363F;
+}
+
