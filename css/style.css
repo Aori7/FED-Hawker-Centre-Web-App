@@ -1,3 +1,5 @@
+
+
 body {
     /* font: archivo, added by ada, source: google fonts*/
     font-family: "Archivo", sans-serif;
@@ -8,22 +10,35 @@ body {
         "wdth" 100;
 
     margin: 0;
+    background-color: black;
+
 }
 
 
 
 
 /* ===================================================================================== */
+
+
+
 #navigationbar{
+    position: fixed; 
+    /* fixed position so that it will stay as u scroll */
+    /* z-index: 20; */
+
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 
-    background-color: rgb(121, 121, 121);
+    /* making the navigation bar background translucent/glass look colour */
+    background-color: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(6px);
+
     padding: 12px 0;
     height: 50px;
-
-
+    /* 100% width so that it will take up the whole width */
+    width: 100%;
 
 }
 
@@ -37,6 +52,7 @@ body {
     max-width: 1200px;
     padding: 0 50px;
 
+    /* note:temporary colors to help with flexbox layout */
     background-color: aliceblue;
 }
 
@@ -75,8 +91,22 @@ body {
     background-color: aqua;
 }
 
+.navitems li{
+    font-size: 20px;
+}
 
 
 /* header/navigation section done by ada  */
 /* ===================================================================================== */
 
+
+#main{
+    margin: 0;
+    width: 100%;
+}
+
+#main img{
+    width: 100%;
+    height: auto;
+    background-size: cover;
+}
