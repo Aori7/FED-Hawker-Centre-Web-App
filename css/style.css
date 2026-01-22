@@ -1,3 +1,5 @@
+
+
 body {
     /* font: archivo, added by ada, source: google fonts*/
     font-family: "Archivo", sans-serif;
@@ -8,40 +10,75 @@ body {
         "wdth" 100;
 
     margin: 0;
+    background-color: white;
+
+    color: white;
 }
 
 
 
 
 /* ===================================================================================== */
+
+
+
 #navigationbar{
+    position: fixed; 
+    /* fixed position so that it will stay as u scroll */
+    z-index: 1;
+    /* z index to make layer stay on top of everything else */
+    top: 0;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 
-    background-color: rgb(121, 121, 121);
+    /* making the navigation bar background translucent/glass look colour */
+    background-color: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(6px);
+
     padding: 12px 0;
+    height: 50px;
+    /* 100% width so that it will take up the whole width */
+    width: 100%;
 
 }
 
 #navcontainer{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     width: 100%;
     max-width: 1200px;
-    padding: 0 24px;
+    padding: 0 50px;
 
+    /* note:temporary colors to help with flexbox layout */
     background-color: aliceblue;
 }
+
+/* logo of the page */
 
 .logo a{
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
+#logoimg{
+    height: 32px;
+    width: 32px;
+}
+
+#logotitle{
+    font-size: 24px;
+    font-weight: 700;
+    color: #33363F;
+    text-decoration: none;
+}
+
 
 .navitems{
     display: flex;
@@ -55,9 +92,40 @@ body {
     margin: 0;
     padding: 0;
 
+    /* nav menu default colors */
+    color: #33363F;
+    
     background-color: aqua;
 }
 
+.navitems li{
+    font-size: 20px;
+}
+
+
 /* header/navigation section done by ada  */
 /* ===================================================================================== */
+
+
+/* content of the index page - done by ada*/
+
+/* #content{
+
+} */
+
+#main{
+    margin: 0;
+    width: 100%;
+}
+
+#main img{
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    filter: brightness(45%);
+}
+
+.desc-container{
+    background-color: #33363F;
+}
 
