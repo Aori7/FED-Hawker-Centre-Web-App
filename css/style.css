@@ -9,8 +9,10 @@ body {
     font-variation-settings:
         "wdth" 100;
 
+    
     margin: 0;
-    background-color: white;
+    background-color: black;
+    /* max-width: 100%; */
 
     color: white;
 }
@@ -23,41 +25,43 @@ body {
 
 
 #navigationbar{
+    
+    /*font noto serif  */
+    font-family: 'Noto Serif', serif;
     position: fixed; 
     /* fixed position so that it will stay as u scroll */
-    z-index: 1;
+    z-index: 1000;
     /* z index to make layer stay on top of everything else */
     top: 0;
+    /* left: 0; */
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    
 
     /* making the navigation bar background translucent/glass look colour */
-    background-color: rgba(255, 255, 255, 0.80);
+    background-color: rgb(255, 255, 255,0.85);
     backdrop-filter: blur(6px);
 
-    padding: 12px 0;
-    height: 50px;
+    height: 60px;
     /* 100% width so that it will take up the whole width */
     width: 100%;
 
-}
-
-#navcontainer{
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 50px;
+    padding: 0 30px;
 
     /* note:temporary colors to help with flexbox layout */
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+
+    /* padding inside the width of nav bar */
+    box-sizing: border-box;
+
 }
+
+/* #navcontainer{
+
+} */
 
 /* logo of the page */
 
@@ -80,10 +84,11 @@ body {
 }
 
 
+
 .navitems{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
 
     /* gap so they r not too close to each other */
     gap: 32px;
@@ -95,12 +100,46 @@ body {
     /* nav menu default colors */
     color: #33363F;
     
-    background-color: aqua;
 }
 
 .navitems li{
     font-size: 20px;
+    /* list-style: none; */
 }
+
+.navitems a{
+    text-decoration: none;
+}
+
+/* animation for when hovering the nav items */
+.navitems a:hover{
+    color: #a200ff;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+}
+
+/* .loginbutton{
+    
+} */
+
+#loginbtn{
+    padding: 8px 75px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    background-color: #33363f;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    color: white;
+
+    /* pointer when cursor is over the button */
+    cursor: pointer;
+
+}
+
+
+
+
 
 
 /* header/navigation section done by ada  */
@@ -109,23 +148,152 @@ body {
 
 /* content of the index page - done by ada*/
 
-/* #content{
-
-} */
+/* hero section */
+#content{
+    position: relative;
+    height: 100vh;
+    /* make the image fill up the height of the viewport */
+}
 
 #main{
     margin: 0;
     width: 100%;
+    height: 100%;
 }
 
 #main img{
     width: 100%;
-    height: auto;
+    height: 100%;
     background-size: cover;
-    filter: brightness(45%);
+    filter: brightness(45%) blur(4px);
+
+    object-fit: cover;
 }
 
 .desc-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: flex-end;
+    align-items: center;
+
+    margin-top: 45px;
+    padding-right: 0;
+    /* background-color: #33363F; */
+
+
+
+}
+
+.desctext-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 32px;
+    border-radius: 20px;
+    max-width: 500px;
+    height: 550px;
+    margin-right: 150px;
+
+    /* designing the container */
+    background-color: #33363f85;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+
+}
+
+.desctext-box h2{
+    font-size: 50px;
+    text-align: center;
+}
+.desctext-box p{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 90px;
+}
+
+/* hero section done by ada */
+
+/* ===================================================================================== */
+
+
+.title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* map section done by ada */
+#hawkerlocationmap-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 100px 20px;
+    gap: 32px;
+
+    background-color: #222222;
+}   
+
+#map { 
+    height: 750px; 
+    width: 90%;
+}
+
+/* hawker centre section */
+#hawkercentres-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 100px 20px;
+    gap: 32px;
+
     background-color: #33363F;
 }
 
+
+
+/* about us section */
+
+#aboutus-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 100px 20px;
+    gap: 32px;
+
+    background-color: #222222;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+#footercontainer{
+    margin-top: 90px;
+    height: 350px;
+    background-color: grey;
+}
