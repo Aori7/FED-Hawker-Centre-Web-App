@@ -118,9 +118,9 @@ body {
     text-decoration: underline;
 }
 
-.loginbutton{
+/* .loginbutton{
     
-}
+} */
 
 #loginbtn{
     padding: 8px 75px;
@@ -242,6 +242,10 @@ body {
     background-color: #222222;
 }   
 
+#map { 
+    height: 750px; 
+    width: 90%;
+}
 
 /* hawker centre section */
 #hawkercentres-section{
@@ -256,6 +260,8 @@ body {
 }
 
 
+
+/* about us section */
 
 #aboutus-section{
     display: flex;
