@@ -181,6 +181,12 @@ body {
 /* ===================================================================================== */
 
 
+.title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
 /* map section done by ada */
 #hawkerlocationmap-section{
     display: flex;
@@ -191,4 +197,54 @@ body {
     gap: 32px;
 
     background-color: #222222;
+}   
+
+
+/* hawker centre section */
+#hawkercentres-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 100px 20px;
+    gap: 32px;
+
+    background-color: #33363F;
+}
+
+
+
+#aboutus-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 100px 20px;
+    gap: 32px;
+
+    background-color: #222222;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+#footercontainer{
+    margin-top: 90px;
+    height: 350px;
+    background-color: grey;
 }

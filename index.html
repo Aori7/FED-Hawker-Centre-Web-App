@@ -75,9 +75,12 @@
 
     <!-- the map + hawker location section? -->
     <section id="hawkerlocationmap-section">
-        <h1>
-            Hawker Centres Available
-        </h1>
+        <div class="title">
+            <h1>
+                Hawker Centres Available
+            </h1>
+        </div>
+        
 
         <div class="map">
             <!-- image of map, locations with api etc here -->
@@ -101,9 +104,9 @@
 
     <!-- popular hawker centres section -->
     <section id="hawkercentres-section">
-        <h1>
-            Popular Hawker Centres
-        </h1>
+        <div class="title">
+            <h1>Popular Hawker Centres</h1>
+        </div>
 
         <!-- ???? -->
         <div class="hawker-carousell">
@@ -138,7 +141,7 @@
 
 
     <!-- about us section -->
-    <section class="aboutus-section">
+    <section id="aboutus-section">
         <div class="title">
             <h1>About Us</h1>
         </div>
@@ -152,8 +155,48 @@
     </section>
 
 
+    <section id="be-a-member-section">
+        <div class="title">
+            <h1>Be a Member!</h1>
+        </div>
+
+        <div class="member-desc">
+            <p>Join our community of food lovers and hawker centre managers. Sign up today to enjoy exclusive benefits, special offers, and early access to new features.</p>
+        </div>
+
+        <div class="register-button">
+            <a href="">
+                <button id="registerbtn">Register Now</button>
+            </a>
+        </div>
+    </section>
 
 
+    <section id="contactus-section">
+        <div class="title">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="useremail">
+            <input type="email" id="email" name="email" placeholder="Your email address">
+        </div>
+        <div class="usersubject">
+            <input type="text" id="subject" name="subject" placeholder="Subject">
+        </div>
+        <div class="usermessage">
+            <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
+        </div>
+
+        <div class="sendmessagebtn">
+            <button id="sendbtn">Send Message</button>
+        </div>
+    </section>
+
+
+
+    <footer id="footercontainer">
+        <!-- footer contents here -->
+
+    </footer>
 
     <!-- linking to javascirpt -->
     <script src="script.js"></script>
