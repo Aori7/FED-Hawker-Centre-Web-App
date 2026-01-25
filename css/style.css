@@ -30,39 +30,38 @@ body {
     font-family: 'Noto Serif', serif;
     position: fixed; 
     /* fixed position so that it will stay as u scroll */
-    z-index: 1;
+    z-index: 1000;
     /* z index to make layer stay on top of everything else */
     top: 0;
+    /* left: 0; */
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    
 
     /* making the navigation bar background translucent/glass look colour */
     background-color: rgb(255, 255, 255,0.85);
     backdrop-filter: blur(6px);
 
-    padding: 12px 0;
-    height: 50px;
+    height: 60px;
     /* 100% width so that it will take up the whole width */
     width: 100%;
 
-}
-
-#navcontainer{
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 50px;
+    padding: 0 30px;
 
     /* note:temporary colors to help with flexbox layout */
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+
+    /* padding inside the width of nav bar */
+    box-sizing: border-box;
+
 }
+
+/* #navcontainer{
+
+} */
 
 /* logo of the page */
 
@@ -85,10 +84,11 @@ body {
 }
 
 
+
 .navitems{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
 
     /* gap so they r not too close to each other */
     gap: 32px;
@@ -100,25 +100,41 @@ body {
     /* nav menu default colors */
     color: #33363F;
     
-    background-color: aqua;
 }
 
 .navitems li{
     font-size: 20px;
+    /* list-style: none; */
 }
 
+.navitems a{
+    text-decoration: none;
+}
 
+/* animation for when hovering the nav items */
+.navitems a:hover{
+    color: #a200ff;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+}
 
+.loginbutton{
+    
+}
 
+#loginbtn{
+    padding: 10px 90px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    background-color: #33363F;
+    color: white;
 
+    /* pointer when cursor is over the button */
+    cursor: pointer;
 
-
-
-
-
-
-
-
+}
 
 
 
