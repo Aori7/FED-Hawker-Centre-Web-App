@@ -14,7 +14,7 @@ body {
     background-color: black;
     /* max-width: 100%; */
 
-    color: white;
+    color: black;
 }
 
 
@@ -227,6 +227,7 @@ body {
 .title{
     font-size: 20px;
     font-weight: 700;
+    color: black;
 }
 
 
@@ -239,12 +240,34 @@ body {
     padding: 100px 20px;
     gap: 32px;
 
-    background-color: #222222;
+    background-color: white;
 }   
 
 #map { 
     height: 750px; 
     width: 90%;
+    border-radius: 20px;
+}
+
+#hawkersearch{
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #222222;
+    border: none;
+    width: 600px;
+}
+
+#searchbtn{
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 150px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    background-color: #33363F;
+    color: white;
+    cursor: pointer;
 }
 
 /* hawker centre section */
@@ -277,14 +300,20 @@ body {
 
 
 
+/* register section */
+#be-a-member-section{
+    color: white;
+    background-color: white;
+}
 
 
 
 
 
-
-
-
+/* contact section */
+#contactus-section{
+    background-color: #222222;
+}
 
 
 
