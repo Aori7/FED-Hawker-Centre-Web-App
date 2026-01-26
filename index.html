@@ -119,33 +119,50 @@
 
         <!-- ???? -->
         <div class="hawker-carousell">
-            <div class="hawkerimage">
-                <!-- image of carousel of hawker centres? -->
-                 <img src="" alt="">
+    <!-- items will be updated according to the js using dom later on? --> 
+      <!--loop cards in js later on  -->
+            <div class="carousel-card-hawker">
+                <div class="hawkerimage">
+                    <!-- image of carousel of hawker centres? -->
+                    <!-- example of hawker image here -->
+                    <img src="images/picture-icon.jpg" alt="Hawker Centre">
+                </div>
+
+                <div class="hawkerinfo">
+                    <h2 class="hawkername">
+                        Hawker Centre Name
+                    </h2>
+
+                    <p class="hawkerlocation">
+                        Location
+                    </p>
+
+                    <p class="hawkerdesc">
+                        Description
+                    </p>
+
+                    <p class="hawkerrating">
+                        Rating:
+                         4.5 / 5
+                        <!-- star icon -->
+                        <span class="material-symbols-rounded">
+                            star_rate
+                        </span>
+                    </p>
+
+                    <!-- order button -->
+                    <a href="">
+                        <button class="orderhawkerbtn">Order Now</button>
+                    </a>
+                    <!-- heart icon for fav -->
+                    <span class="material-symbols-rounded hawkerfavicon">
+                        favorite
+                    </span>
+                </div>  
+
             </div>
 
-            <h2 class="hawkername">
-                hawker centre name
-            </h2>
-
-            <h2 class="hawkerlocation">
-                hawker location
-            </h2>
-
-            <h2 class="hawkerdesc">
-                hawker description
-            </h2>
-
-            <h2 class="hawkerrating">
-                hawker ratings
-            </h2>
-
-            <!-- order button -->
-            <a href="">
-                <button class="orderhawkerbtn">Order Now</button>
         </div>
-
-
     </section>
 
 
@@ -208,7 +225,6 @@
          footer
     </footer>
 
-<!-- this is a test line. ignore. -->
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="

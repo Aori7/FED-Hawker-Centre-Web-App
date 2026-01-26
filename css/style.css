@@ -282,6 +282,22 @@ body {
     background-color: #33363F;
 }
 
+.carousel-card-hawker{
+    position: relative;
+}
+
+.hawkerimage img{
+    height: 700px;
+    width: auto;
+    /* object-fit: cover; */
+    border-radius: 20px;
+}
+
+.hawkerinfo{
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+}
 
 
 /* about us section */
