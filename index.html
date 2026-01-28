@@ -40,7 +40,7 @@
 
             <ul class="navitems">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="">Order</a></li>
+                <li><a href="order-hawker.html">Order</a></li>
                 <li><a href="">Hawkers</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Contact Us</a></li>
@@ -48,7 +48,7 @@
 
             <div class="loginbutton">
                 <!-- maybe href is login.html? -->
-                <a href="">
+                <a href="login.html">
                     <button id="loginbtn">Login</button>
                 </a>
             </div>
@@ -119,33 +119,50 @@
 
         <!-- ???? -->
         <div class="hawker-carousell">
-            <div class="hawkerimage">
-                <!-- image of carousel of hawker centres? -->
-                 <img src="" alt="">
+    <!-- items will be updated according to the js using dom later on? --> 
+      <!--loop cards in js later on  -->
+            <div class="carousel-card-hawker">
+                <div class="hawkerimage">
+                    <!-- image of carousel of hawker centres? -->
+                    <!-- example of hawker image here -->
+                    <img src="images/picture-icon.jpg" alt="Hawker Centre">
+                </div>
+
+                <div class="hawkerinfo">
+                    <h2 class="hawkername">
+                        Hawker Centre Name
+                    </h2>
+
+                    <p class="hawkerlocation">
+                        Location
+                    </p>
+
+                    <p class="hawkerdesc">
+                        Description
+                    </p>
+
+                    <p class="hawkerrating">
+                        Rating:
+                         4.5 / 5
+                        <!-- star icon -->
+                        <span class="material-symbols-rounded">
+                            star_rate
+                        </span>
+                    </p>
+
+                    <!-- order button -->
+                    <a href="">
+                        <button class="orderhawkerbtn">Order Now</button>
+                    </a>
+                    <!-- heart icon for fav -->
+                    <span class="material-symbols-rounded hawkerfavicon">
+                        favorite
+                    </span>
+                </div>  
+
             </div>
 
-            <h2 class="hawkername">
-                hawker centre name
-            </h2>
-
-            <h2 class="hawkerlocation">
-                hawker location
-            </h2>
-
-            <h2 class="hawkerdesc">
-                hawker description
-            </h2>
-
-            <h2 class="hawkerrating">
-                hawker ratings
-            </h2>
-
-            <!-- order button -->
-            <a href="">
-                <button class="orderhawkerbtn">Order Now</button>
         </div>
-
-
     </section>
 
 
@@ -158,7 +175,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fugit, perferendis tempora rem labore fuga exercitationem laboriosam enim culpa sunt, porro odit eius, nisi suscipit error reiciendis impedit vel repellendus.</p>
         </div>
         <div class="aboutus-image">
-            <img src="" alt="">
+            <img src="images/picture-icon.jpg" alt="">
         </div>
 
     </section>
@@ -185,18 +202,20 @@
         <div class="title">
             <h1>Contact Us</h1>
         </div>
-        <div class="useremail">
-            <input type="email" id="email" name="email" placeholder="Your email address">
-        </div>
-        <div class="usersubject">
-            <input type="text" id="subject" name="subject" placeholder="Subject">
-        </div>
-        <div class="usermessage">
-            <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
-        </div>
+        <div class="form-contactus">
+            <div class="useremail">
+                <input type="email" id="email" name="email" placeholder="Your email address">
+            </div>
+            <div class="usersubject">
+                <input type="text" id="subject" name="subject" placeholder="Subject">
+            </div>
+            <div class="usermessage">
+                <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
+            </div>
 
-        <div class="sendmessagebtn">
-            <button id="sendbtn">Send Message</button>
+            <div class="sendmessagebtn">
+                <button id="sendbtn">Send Message</button>
+            </div>
         </div>
     </section>
 
@@ -208,7 +227,6 @@
          footer
     </footer>
 
-<!-- this is a test line. ignore. -->
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
