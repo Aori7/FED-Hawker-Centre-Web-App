@@ -14,7 +14,7 @@ body {
     background-color: black;
     /* max-width: 100%; */
 
-    color: black;
+    color: white;
 }
 
 
@@ -366,3 +366,44 @@ body {
     height: 350px;
     background-color: grey;
 }
+
+
+
+
+
+
+
+
+
+/* ===================================================== */
+/* Order-hawker.html */
+
+.header-section{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.img-header{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(50%) blur(2px);
+}
+
+.header-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
