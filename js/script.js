@@ -1,31 +1,27 @@
-// new Swiper(".hawker-carousel", {
-//     slidesPerView: 1.2,
-//     centeredSlides: true,
-//     spaceBetween: 30,
-//     loop: true,
 
-//     navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//     },
 
-//     pagination: {
-//         el: ".swiper-pagination",
-//         clickable: true,
-//     },
+// debugging, check whether script loads
+console.log("script loaded");
 
-//     breakpoints: {
-//         0: {
-//         slidesPerView: 1,
-//         },
-//         768: {
-//         slidesPerView: 2,
-//         },
-//         1024: {
-//         slidesPerView: 3,
-//         }
-//     }
-// });
+// for login auth script. login.html
+const authContainer = document.getElementById('auth-container');
+const loginBtn = document.getElementById('login-tab');
+const singupBtn = document.getElementById('signup-tab');
+
+loginBtn.onclick = () => {
+    loginBtn.classList.add('active');
+    singupBtn.classList.remove('active');
+    console.log("login clicked");
+}
+
+singupBtn.onclick = () => {
+    singupBtn.classList.add('active');
+    loginBtn.classList.remove('active');
+    console.log("signup clicked");
+}
+
+
+// ==================================================
 
 // initiailise the swiper 
 const swiper = new Swiper('.swiper', {
@@ -41,3 +37,9 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+
+
+
+
+
