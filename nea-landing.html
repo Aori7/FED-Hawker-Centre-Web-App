@@ -1,77 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>NEA | Hawker Centres</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; }
-    header { background: #2e7d32; color: white; padding: 15px; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; margin-left: 15px; text-decoration: none; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font chosen by ada: Archivo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    .hero {
-      background: #e0e0e0;
-      padding: 60px;
-      text-align: center;
-    }
+    <!-- font 2 for nav bar-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    .hero button {
-      padding: 12px 20px;
-      background: #ff9800;
-      border: none;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
+    <!-- google rounded icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+    
+    <!-- leaflet js library for interactive map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
 
-    section {
-      background: white;
-      margin: 20px;
-      padding: 30px;
-      border-radius: 6px;
-    }
 
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-  </style>
+    <title>Singapore Hawker Centre Management System</title>
 </head>
 <body>
 
-<header>
-  <nav>
-    <strong>NEA</strong>
-    <div>
-      <a href="#">Home</a>
-      <a href="#">Hawker Centres</a>
-      <a href="#">About</a>
-      <a href="nea-login.html">Officer Login</a>
-    </div>
-  </nav>
-</header>
+    <!-- navigation bar done by ada-->
+    <header id="navigationbar">
+        <!-- <nav id="navcontainer"> -->
+            <div class="logo">
+                <a href="index.html">
+                    <!-- image of logo sourced from google icons -->
+                    <img src="images/fork_spoon.png" alt="logo" id="logoimg">
+                    <h1 id="logotitle">HawkerSG</h1>
+                </a>
+            </div>
 
-<div class="hero">
-  <h1>Singapore Hawker Centres</h1>
-  <p>Ensuring food safety and hygiene standards</p>
-  <button>Explore Hawker Centres</button>
-</div>
+            <ul class="navitems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="order-hawker.html">Order</a></li>
+                <li><a href="">Hawkers</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
 
-<section>
-  <h2>Popular Hawker Centres</h2>
-  <p>Discover licensed hawker centres across Singapore.</p>
-</section>
+            <div class="loginbutton">
+                <!-- maybe href is login.html? -->
+                <a href="login.html">
+                    <button id="loginbtn">Login</button>
+                </a>
+            </div>
 
-<section>
-  <h2>About NEA</h2>
-  <p>The National Environment Agency oversees hygiene, inspections, and food safety standards.</p>
-</section>
+        <!-- </nav> -->
+    </header>
 
-<footer>
-  © 2026 National Environment Agency
-</footer>
 
+
+<!-- the "order now" section -->
+    <section id="content">
+        <!-- content of index.html here -->
+        <div id="main">
+            <img src="images/Hawker_centre.jpg" alt="">
+        </div>
+
+        <div class="desc-container">
+            <div class="desctext-box">
+                <h2>Welcome to HawkerSG!</h2>
+                <p>Your one-stop solution for managing and exploring Singapore's vibrant hawker centres. Whether you're a food lover looking to discover new culinary delights or a hawker centre manager aiming to streamline operations, HawkerSG has got you covered.</p>
+
+                <a href="">
+                <button id="orderbutton">Order Now</button>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+    
+
+    <!-- the map + hawker location section? -->
+    <section id="hawkerlocationmap-section">
+        <div class="title">
+            <h1>
+                Hawker Centres Available
+            </h1>
+        </div>
+        
+
+        <div id="map">
+            <!-- image of map, locations with api etc here -->
+             <!-- example of map
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Singapore_map_no_titles.png" alt="" style="height: 900px; width: auto;"> -->
+        </div>
+        
+        <h1>
+            Find Us!
+        </h1>
+
+        <div class="searchHawker">
+            <!-- search bar for hawker centres here -->
+            <input type="text" id="hawkersearch" name="hawkersearch" placeholder="Search for hawker centres...">
+            <button type="submit" id="searchbtn">Search</button>
+        </div>
+
+    </section>
+
+
+
+    <!-- popular hawker centres section -->
+    <section id="hawkercentres-section">
+        <div class="title">
+            <h1>Popular Hawker Centres</h1>
+        </div>
+
+        <!-- ???? -->
+        <div class="hawker-carousell">
+    <!-- items will be updated according to the js using dom later on? --> 
+      <!--loop cards in js later on  -->
+            <div class="carousel-card-hawker">
+                <div class="hawkerimage">
+                    <!-- image of carousel of hawker centres? -->
+                    <!-- example of hawker image here -->
+                    <img src="images/picture-icon.jpg" alt="Hawker Centre">
+                </div>
+
+                <div class="hawkerinfo">
+                    <h2 class="hawkername">
+                        Hawker Centre Name
+                    </h2>
+
+                    <p class="hawkerlocation">
+                        Location
+                    </p>
+
+                    <p class="hawkerdesc">
+                        Description
+                    </p>
+
+                    <p class="hawkerrating">
+                        Rating:
+                         4.5 / 5
+                        <!-- star icon -->
+                        <span class="material-symbols-rounded">
+                            star_rate
+                        </span>
+                    </p>
+
+                    <!-- order button -->
+                    <a href="">
+                        <button class="orderhawkerbtn">Order Now</button>
+                    </a>
+                    <!-- heart icon for fav -->
+                    <span class="material-symbols-rounded hawkerfavicon">
+                        favorite
+                    </span>
+                </div>  
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- about us section -->
+    <section id="aboutus-section">
+        <div class="title">
+            <h1>About Us</h1>
+        </div>
+        <div class="aboutus-desc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fugit, perferendis tempora rem labore fuga exercitationem laboriosam enim culpa sunt, porro odit eius, nisi suscipit error reiciendis impedit vel repellendus.</p>
+        </div>
+        <div class="aboutus-image">
+            <img src="images/picture-icon.jpg" alt="">
+        </div>
+
+    </section>
+
+
+    <section id="be-a-member-section">
+        <div class="title">
+            <h1>Be a Member!</h1>
+        </div>
+
+        <div class="member-desc">
+            <p>Join our community of food lovers and hawker centre managers. Sign up today to enjoy exclusive benefits, special offers, and early access to new features.</p>
+        </div>
+
+        <div class="register-button">
+            <a href="">
+                <button id="registerbtn">Register Now</button>
+            </a>
+        </div>
+    </section>
+
+
+    <section id="contactus-section">
+        <div class="title">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="form-contactus">
+            <div class="useremail">
+                <input type="email" id="email" name="email" placeholder="Your email address">
+            </div>
+            <div class="usersubject">
+                <input type="text" id="subject" name="subject" placeholder="Subject">
+            </div>
+            <div class="usermessage">
+                <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
+            </div>
+
+            <div class="sendmessagebtn">
+                <button id="sendbtn">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer id="footercontainer">
+        <!-- footer contents here -->
+        <!-- content 1: link to lead to credit.html? -->
+         footer
+    </footer>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     <script src="js/leaflet.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
