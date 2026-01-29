@@ -33,7 +33,7 @@
             <ul class="navitems">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="order-hawker.html">Order</a></li>
-                <li><a href="">Hawkers</a></li>
+                <li><a href="main-hawkers.html">Hawkers</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Contact Us</a></li>
             </ul>
@@ -54,13 +54,133 @@
             <img src="images/Hawker_centre.jpg" alt="">
         </div>
         <div class="header-text">
-            <h1>Order Your Favourite Hawker Food</h1>
+            <h1>Order</h1>
             <p>Browse through the list of hawker centres available on HawkerSG and order your favourite hawker food with ease!</p>
         </div>
     </div>
 
-    
+    <section id="order-hero">
+            <div class="searchHawker">
+            <!-- search bar for hawker centres here -->
+            <input type="text" id="hawkersearch" name="hawkersearch" placeholder="Search for hawker centres...">
+            <button type="submit" id="searchbtn">Search</button>
+        </div>
+    </section>
 
-    
+    <section id="order-content">
+        <section id="filter-container">
+            <div class="filter-title">
+                <h1>Filter</h1>
+            </div>
+
+            <div class="filter-options">
+                <label for="location">Location:</label>
+                <select id="location" name="location">
+                    <option value="all">All</option>
+                    <option value="north">North</option>
+                    <option value="south">South</option>
+                    <option value="east">East</option>
+                    <option value="west">West</option>
+                    <option value="central">Central</option>
+                </select>
+
+                <label for="cuisine">Cuisine Type:</label>
+                <ul>
+                    <li><input type="checkbox" id="chinese" name="cuisine" value="chinese">
+                        <label for="chinese">Chinese</label></li>
+                    <li><input type="checkbox" id="malay" name="cuisine" value="malay">
+                        <label for="malay">Malay</label></li>
+                    <li><input type="checkbox" id="indian" name="cuisine" value="indian">
+                        <label for="indian">Indian</label></li>
+                    <li><input type="checkbox" id="seafood" name="cuisine" value="seafood">
+                        <label for="seafood">Seafood</label></li>
+                    <li><input type="checkbox" id="vegetarian" name="cuisine" value="vegetarian">
+                        <label for="vegetarian">Vegetarian</label></li>
+                    <li><input type="checkbox" id="western" name="cuisine" value="western">
+                        <label for="western">Western</label></li>
+                    <li><input type="checkbox" id="western" name="cuisine" value="western">
+                        <label for="western">Western</label></li>
+                    <li><input type="checkbox" id="western" name="cuisine" value="western">
+                        <label for="western">Western</label></li>
+                </ul>
+
+                <button type="submit" id="applyFilters">Apply Filters</button>
+            </div>
+        </section>
+
+        <section id="hawker-listing">
+            <div class="hawker-lists">
+                <!-- hawker centre cards here -->
+                <div class="popular-hawker-centres">
+                    <div class="hawker-card">
+                        <img src="images/picture-icon.jpg" alt="Hawker Centre 1">
+                        <h3>Maxwell Food Centre</h3>
+                        <p>Location: Central</p>
+                        <p>Cuisine: Chinese, Seafood</p>
+                        <button type="button">View Stalls</button>
+                    </div>
+
+                    <div class="hawker-card">
+                        <img src="images/picture-icon.jpg" alt="Hawker Centre 2">
+                        <h3>Chomp Chomp Food Centre</h3>
+                        <p>Location: East</p>
+                        <p>Cuisine: Malay, Indian</p>
+                        <button type="button">View Stalls</button>
+                    </div>
+
+                    <div class="hawker-card">
+                        <img src="images/picture-icon.jpg" alt="Hawker Centre 3">
+                        <h3>Tiong Bahru Market</h3>
+                        <p>Location: Central</p>
+                        <p>Cuisine: Chinese, Vegetarian</p>
+                        <button type="button">View Stalls</button>
+                    </div>
+
+                    <div class="hawker-card">
+                        <img src="images/picture-icon.jpg" alt="Hawker Centre 4">
+                        <h3>Old Airport Road Food Centre</h3>
+                        <p>Location: East</p>
+                        <p>Cuisine: Western, Chinese</p>
+                        <button type="button">View Stalls</button>
+                    </div>
+                </div>
+
+                <div class="all-hawker-centres">
+                    <div class="hawker-card">
+                        <img src="images/picture-icon.jpg" alt="Hawker Centre 5">
+                        <h3>Newton Food Centre</h3>
+                        <p>Location: Central</p>
+                        <p>Cuisine: Seafood, Chinese</p>
+                        <button type="button">View Stalls</button>
+                    </div>
+
+                    <div class="hawker-card">
+                        <img src="images/picture-icon.jpg" alt="Hawker Centre 6">
+                        <h3>Geylang Serai Market</h3>
+                        <p>Location: East</p>
+                        <p>Cuisine: Malay, Indian</p>
+                        <button type="button">View Stalls</button>
+                    </div>
+
+                    <div class="hawker-card">
+                        <img src="images/picture-icon.jpg" alt="Hawker Centre 7">
+                        <h3>Adam Road Food Centre</h3>
+                        <p>Location: West</p>
+                        <p>Cuisine: Chinese, Vegetarian</p>
+                        <button type="button">View Stalls</button>
+                    </div>
+
+                    <div class="hawker-card">
+                        <img src="images/picture-icon.jpg" alt="Hawker Centre 8">
+                        <h3>Tekka Centre</h3>
+                        <p>Location: North</p>
+                        <p>Cuisine: Indian, Chinese</p>
+                        <button type="button">View Stalls</button>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+    </section>
 </body>
 </html>

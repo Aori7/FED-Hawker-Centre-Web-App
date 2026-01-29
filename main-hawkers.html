@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font chosen by ada: Archivo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- font 2 for nav bar-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- google rounded icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+    
+    <!-- leaflet js library for interactive map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <title>Hawkers</title>
+</head>
+<body>
+        <!-- navigation bar done by ada-->
+    <header id="navigationbar">
+        <!-- <nav id="navcontainer"> -->
+            <div class="logo">
+                <a href="index.html">
+                    <!-- image of logo sourced from google icons -->
+                    <img src="images/fork_spoon.png" alt="logo" id="logoimg">
+                    <h1 id="logotitle">HawkerSG</h1>
+                </a>
+            </div>
+
+            <ul class="navitems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="order-hawker.html">Order</a></li>
+                <li><a href="main-hawkers.html">Hawkers</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+
+            <div class="loginbutton">
+                <!-- maybe href is login.html? -->
+                <a href="login.html">
+                    <button id="loginbtn">Login</button>
+                </a>
+            </div>
+
+        <!-- </nav> -->
+    </header>
+
+    <div class="header-section">
+        <div class="img-header">
+            <img src="images/Hawker_centre.jpg" alt="">
+        </div>
+        <div class="header-text">
+            <h1>Our Location</h1>
+        </div>
+    </div>
+
+    <!-- the map + hawker location section? -->
+    <section id="hawkerlocationmap-section">
+        <div class="title">
+            <h1>
+                Hawker Centres Available
+            </h1>
+        </div>
+        
+
+        <div id="map">
+            <!-- image of map, locations with api etc here -->
+             <!-- example of map
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Singapore_map_no_titles.png" alt="" style="height: 900px; width: auto;"> -->
+        </div>
+        
+        <h1>
+            Find Us!
+        </h1>
+
+        <div class="searchHawker">
+            <!-- search bar for hawker centres here -->
+            <input type="text" id="hawkersearch" name="hawkersearch" placeholder="Search for hawker centres...">
+            <button type="submit" id="searchbtn">Search</button>
+        </div>
+
+    </section>
+
+    <section id="popular-hawker-centre">
+        <div class="title">
+            <h1>
+                Popular Hawker Centres
+            </h1>
+        </div>
+
+        <div class="hawker-cards-container">
+            <!-- hawker centre cards here -->
+            <div class="hawker-card">
+                <img src="images/hawker1.jpg" alt="Hawker Centre 1">
+                <h2>Maxwell Food Centre</h2>
+                <p>Location: Chinatown</p>
+            </div>
+
+            <div class="hawker-card">
+                <img src="images/hawker2.jpg" alt="Hawker Centre 2">
+                <h2>Lau Pa Sat</h2>
+                <p>Location: Downtown Core</p>
+            </div>
+
+            <div class="hawker-card">
+                <img src="images/hawker3.jpg" alt="Hawker Centre 3">
+                <h2>Chinatown Complex Food Centre</h2>
+                <p>Location: Chinatown</p>
+            </div>
+
+        </div>
+    </section>
+    
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
