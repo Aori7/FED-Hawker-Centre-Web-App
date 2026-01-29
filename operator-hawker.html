@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Operators Hawker Page</title>
+</head>
+<style>
+    body {
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    margin: 0;
+    background-color: white;
+    /* max-width: 100%; */
+    color: black;
+}
+.hawker-info {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+
+  /* ===== Hawker description card ===== */
+  .hawker-card {
+    display: flex;
+    gap: 24px;
+
+    background: #e0e0e0;
+    padding: 24px;
+    border-radius: 16px;
+
+    width: 100%;
+    max-width: 800px; 
+  }
+
+
+  .hawker-img {
+    width: 160px;
+    height: 120px;
+    border-radius: 12px;
+    background: #cfcfcf;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .hawker-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .hawker-details {
+    flex: 1;
+    text-align: center;  
+    color: #000;
+  }
+
+  .hawker-details h3 {
+    margin: 0 0 6px 0;
+  }
+
+  .hawker-details p {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .hawker-location {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+  }
+</style>
+<body>
+    <header id="navigationbar">
+        <!-- <nav id="navcontainer"> -->
+            <div class="logo">
+                <a href="index.html">
+                    <!-- image of logo sourced from google icons -->
+                    <img src="images/fork_spoon.png" alt="logo" id="logoimg">
+                    <h1 id="logotitle">HawkerSG</h1>
+                </a>
+            </div>
+
+            <ul class="navitems">
+                <li><a href="operator-main.html">Home</a></li>
+                <li><a href="operator-hawker.html">Hawker</a></li>
+                <li><a href="operator-schedule.html">Schedule</a></li>
+                <li><a href="">Profile</a></li>
+            </ul>
+
+            <div class="loginbutton">
+                <!-- maybe href is login.html? -->
+                <a href="">
+                    <button id="loginbtn">Operator</button>
+                </a>
+            </div>
+
+        <!-- </nav> -->
+    </header>
+    <main id="hawker-page" style="min-height:100vh; padding-top:90px;text-align:center; ">
+        <h2 class="page-title"style="margin: 20px 0 30px 0;">
+            Your Hawker Centres
+        </h2>
+        <section class="map-section">
+            <div class="map-placeholder"
+                 style="height:320px; width:70%; margin:20px auto; background:#d9d9d9; border-radius:10px;">
+              <!-- map placeholder -->
+            </div>
+          </section>
+          <section class="hawker-select">
+            <label for="hawkerCentreSelect" class="sr-only">Select Hawker Centre</label>
+            <select id="hawkerCentreSelect">
+              <option value="laupasat" selected>▼ Select Hawker Centre</option>
+              <option value="laupasat">Lau Pa Sat</option>
+              <option value="maxwell">Maxwell Food Centre</option>
+              <option value="tanjongpagar">Tanjong Pagar Plaza</option>
+            </select>
+          </section>
+          <section class="hawker-info">
+            <div class="hawker-card">
+          
+              <div class="hawker-img">
+                <img src="" alt="Lau Pa Sat">
+              </div>
+          
+              <div class="hawker-details">
+                <h3>Lau Pa Sat</h3>
+                <p class="hawker-location">Location</p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+          
+            </div>
+          </section>
+          <br>
+          <section class="stats-section" aria-label="Hawker statistics" style="text-align: center;">
+            <div class="stats-card">
+              <!-- Left: metric selector -->
+              <div class="metric-selector" style="max-width: 800px; margin: 20px; padding-right: 100px; " >
+                <label for="metricSelect" class="sr-only">Select</label>
+                <select id="metricSelect">
+                  <option value="profitLost" selected>Profit &amp; Lost</option>
+                  <option value="reviews">Reviews</option>
+                  <option value="hygiene">Hygiene Grade</option>
+                </select>
+              </div>
+              <!-- Center: pie chart -->
+              <div class="chart-area" style="width: 260px; height: 260px; border-radius: 50%; background: #000;margin: 0 auto; ">
+                <canvas id="pieChart" width="420" height="260" aria-label="Interactive pie chart"></canvas>
+              </div>
+              <!-- Right: legend / summary -->
+              <div class="chart-summary" id="chartSummary" style="padding-left: 400px; ">
+                <p><strong>Profit</strong> - <span id="summaryA">xx</span></p>
+                <p><strong>Lost</strong> - <span id="summaryB">xx</span></p>
+              </div>
+      
+            </div>
+      
+            <!-- click output -->
+            <div id="chartClickInfo" style="margin-top:12px;"></div>
+          </section>
+    </main>
+  <!--idk how to do the script part tho.... -->
+</body>
