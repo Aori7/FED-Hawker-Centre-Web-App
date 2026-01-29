@@ -270,7 +270,9 @@ body {
     cursor: pointer;
 }
 
-/* hawker centre section */
+
+/* ======================================================= */
+/* popular hawker centre section */
 #hawkercentres-section{
     display: flex;
     flex-direction: column;
@@ -280,27 +282,15 @@ body {
     gap: 32px;
 
     background-color: #33363F;
+    height: auto;
 }
 
-
-.carousel-card-hawker{
-    position: relative;
-}
-
-.hawkerimage img{
+.swiper{
+    width: 1000px;
     height: 700px;
-    width: auto;
-    /* object-fit: cover; */
-    border-radius: 20px;
 }
 
-.hawkerinfo{
-    position: absolute;
-    bottom: 40px;
-    left: 30px;
-}
-
-
+/* ======================================================= */
 /* about us section */
 
 #aboutus-section{
