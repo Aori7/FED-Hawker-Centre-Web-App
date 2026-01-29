@@ -11,10 +11,10 @@ body {
 
     
     margin: 0;
-    background-color: black;
+    background-color: white;
     /* max-width: 100%; */
 
-    color: white;
+    color: black;
 }
 
 
@@ -270,7 +270,10 @@ body {
     cursor: pointer;
 }
 
-/* hawker centre section */
+
+/* ======================================================= */
+/* popular hawker centre section */
+
 #hawkercentres-section{
     display: flex;
     flex-direction: column;
@@ -280,27 +283,82 @@ body {
     gap: 32px;
 
     background-color: #33363F;
+    height: auto;
 }
 
+.swiper{
+    width: 100%;
+    height: auto;
+    background-color: purple;
+}
 
-.carousel-card-hawker{
+/* .swiper-wrapper.hawker-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+ /* .swiper-wrapper.hawker-carousel{
+    background-color: bisque;
+ } */
+
+.swiper-slide.hawker-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: auto;
+    width: auto; */
+    /* width: 0%; */
+    /* position: relative;  */
+    /* background-color: aquamarine; */
+}
+
+.hawker-card-image{
     position: relative;
-}
-
-.hawkerimage img{
     height: 700px;
-    width: auto;
-    /* object-fit: cover; */
+}
+.hawker-card-image img{
+    object-fit: cover;
     border-radius: 20px;
+    width: 900px;
 }
-
-.hawkerinfo{
+.hawker-content{
     position: absolute;
-    bottom: 40px;
-    left: 30px;
+    color: black;
+    bottom: 50px;
+    left: 400px;
+
+    width: 50%;
+    height:auto ;
+    max-width: 100%;
+
+    padding: 32px;
+    font-size: 20px;
+    
+    background-color: #222222;
+}
+
+.hawker-rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.hawker-rating .stars{
+    color: gold;
+    /* font-size: 10px; */
+    margin: 0;
+    gap: 0;
+    padding: 0px;
+}
+
+.favourite-hawker{
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 
+/* ======================================================= */
 /* about us section */
 
 #aboutus-section{
@@ -405,5 +463,31 @@ body {
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
+}
+
+
+#order-hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px;
+    gap: 32px;
+
+    background-color:#a200ff ;
+}
+
+#order-content{
+    display: flex;
+    flex-direction: row;
+
+    background-color: aqua;
+}
+#filter-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    height: auto;
+    background-color: #222222;
 }
 

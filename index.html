@@ -22,6 +22,12 @@
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
 
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+
 
     <title>Singapore Hawker Centre Management System</title>
 </head>
@@ -41,7 +47,7 @@
             <ul class="navitems">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="order-hawker.html">Order</a></li>
-                <li><a href="">Hawkers</a></li>
+                <li><a href="main-hawkers.html">Hawkers</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Contact Us</a></li>
             </ul>
@@ -116,55 +122,136 @@
         <div class="title">
             <h1>Popular Hawker Centres</h1>
         </div>
+        <!-- swiper.js library used for carousel -->
+        <div class="swiper">
+            <div class="swiper-wrapper hawker-carousel">
+                
+                <!-- swiper slide for each hawker -->
+                <div class="swiper-slide hawker-card">
+                    <div class="hawker-card-image">
+                        <img src="images/picture-icon.jpg" alt="Hawker Image">
+                    </div>
+                    <div class="hawker-content">
+                        <div class="hawker-name">
+                            Hawker Name
+                        </div>
+                        <div class="hawker-add">
+                            Hawker Address
+                        </div>
+                        <div class="hawker-desc">
+                            Hawker Description
+                        </div>
+                        <div class="hawker-rating">
+                            Rating: 4.5/5
+                            <div class="stars">
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                            </div>
+                        </div>
+                        <div class="order-here-btn">
+                            <button id="ordernowbtn">Order Here</button>
+                        </div>
+                        <div class="favourite-hawker">
+                            <span class="material-symbols-rounded">
+                                favorite
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- swiper -->
+               <!-- swiper slide for each hawker -->
+                <div class="swiper-slide hawker-card">
+                    <div class="hawker-card-image">
+                        <img src="images/picture-icon.jpg" alt="Hawker Image">
+                    </div>
+                    <div class="hawker-content">
+                        <div class="hawker-name">
+                            Hawker Name
+                        </div>
+                        <div class="hawker-add">
+                            Hawker Address
+                        </div>
+                        <div class="hawker-desc">
+                            Hawker Description
+                        </div>
+                        <div class="hawker-rating">
+                            Rating: 4.5/5
+                            <div class="stars">
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                            </div>
+                        </div>
+                        <div class="order-here-btn">
+                            <button id="ordernowbtn">Order Here</button>
+                        </div>
+                        <div class="favourite-hawker">
+                            <span class="material-symbols-rounded">
+                                favorite
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- swiper -->               <!-- swiper slide for each hawker -->
+                <div class="swiper-slide hawker-card">
+                    <div class="hawker-card-image">
+                        <img src="images/picture-icon.jpg" alt="Hawker Image">
+                    </div>
+                    <div class="hawker-content">
+                        <div class="hawker-name">
+                            Hawker Name
+                        </div>
+                        <div class="hawker-add">
+                            Hawker Address
+                        </div>
+                        <div class="hawker-desc">
+                            Hawker Description
+                        </div>
+                        <div class="hawker-rating">
+                            Rating: 4.5/5
+                            <div class="stars">
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                                <span class="material-symbols-rounded">star</span>
+                            </div>
+                        </div>
+                        <div class="order-here-btn">
+                            <button id="ordernowbtn">Order Here</button>
+                        </div>
+                        <div class="favourite-hawker">
+                            <span class="material-symbols-rounded">
+                                favorite
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- swiper -->
 
-        <!-- ???? -->
-        <div class="hawker-carousell">
-    <!-- items will be updated according to the js using dom later on? --> 
-      <!--loop cards in js later on  -->
-            <div class="carousel-card-hawker">
-                <div class="hawkerimage">
-                    <!-- image of carousel of hawker centres? -->
-                    <!-- example of hawker image here -->
-                    <img src="images/picture-icon.jpg" alt="Hawker Centre">
+                <div class="swiper-pagination">
+
+                </div>
+                <div class="swiper-button-prev">
+                    <span class="material-symbols-rounded">
+                        arrow_back
+                    </span>
+                </div>
+                <div class="swiper-button-next">
+                    <span class="material-symbols-rounded">
+                        arrow_forward
+                    </span>
                 </div>
 
-                <div class="hawkerinfo">
-                    <h2 class="hawkername">
-                        Hawker Centre Name
-                    </h2>
-
-                    <p class="hawkerlocation">
-                        Location
-                    </p>
-
-                    <p class="hawkerdesc">
-                        Description
-                    </p>
-
-                    <p class="hawkerrating">
-                        Rating:
-                         4.5 / 5
-                        <!-- star icon -->
-                        <span class="material-symbols-rounded">
-                            star_rate
-                        </span>
-                    </p>
-
-                    <!-- order button -->
-                    <a href="">
-                        <button class="orderhawkerbtn">Order Now</button>
-                    </a>
-                    <!-- heart icon for fav -->
-                    <span class="material-symbols-rounded hawkerfavicon">
-                        favorite
-                    </span>
-                </div>  
-
             </div>
-
         </div>
     </section>
-
+    
 
     <!-- about us section -->
     <section id="aboutus-section">
@@ -229,9 +316,11 @@
 
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-     <script src="js/leaflet.js"></script>
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="js/leaflet.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 </html>
