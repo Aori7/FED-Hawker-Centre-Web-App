@@ -273,6 +273,7 @@ body {
 
 /* ======================================================= */
 /* popular hawker centre section */
+
 #hawkercentres-section{
     display: flex;
     flex-direction: column;
@@ -286,9 +287,76 @@ body {
 }
 
 .swiper{
-    width: 1000px;
+    width: 100%;
+    height: auto;
+    background-color: purple;
+}
+
+/* .swiper-wrapper.hawker-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+ /* .swiper-wrapper.hawker-carousel{
+    background-color: bisque;
+ } */
+
+.swiper-slide.hawker-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: auto;
+    width: auto; */
+    /* width: 0%; */
+    /* position: relative;  */
+    /* background-color: aquamarine; */
+}
+
+.hawker-card-image{
+    position: relative;
     height: 700px;
 }
+.hawker-card-image img{
+    object-fit: cover;
+    border-radius: 20px;
+    width: 900px;
+}
+.hawker-content{
+    position: absolute;
+    color: black;
+    bottom: 50px;
+    left: 400px;
+
+    width: 50%;
+    height:auto ;
+    max-width: 100%;
+
+    padding: 32px;
+    font-size: 20px;
+    
+    background-color: #222222;
+}
+
+.hawker-rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.hawker-rating .stars{
+    color: gold;
+    /* font-size: 10px; */
+    margin: 0;
+    gap: 0;
+    padding: 0px;
+}
+
+.favourite-hawker{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 
 /* ======================================================= */
 /* about us section */
