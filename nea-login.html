@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEA Officer Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <!-- nav bar -->
+    <header class="navbar">
+        <div class="logo">Logo</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Location</a>
+            <a href="#">Order</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </nav>
+        <a class="login-btn" href="nea-login.html">Log In</a>
+    </header>
+
+    <!-- login section -->
+    <div class="login-bg">
+        <div class="login-card">
+
+            <h2>Log In</h2>
+
+            <!-- role selector -->
+            <label>I am a</label>
+            <select>
+                <option>NEA Officer</option>
+                <option disabled>Customer</option>
+                <option disabled>Operator</option>
+                <option disabled>Vendor</option>
+            </select>
+
+            <!-- login method switch -->
+            <div class="login-switch">
+                <a href="nea-loginqr.html">SingPass App</a>
+                <strong>Password Log In</strong>
+            </div>
+
+            <!-- password login -->
+            <form>
+                <input type="text" placeholder="SingPass ID" required>
+                <input type="password" placeholder="Password" required>
+
+                <!-- after login goes to nea landing/dashboard -->
+                <button type="submit" formaction="nea-landing.html">
+                    Log In
+                </button>
+            </form>
+
+            <p class="register-text">
+                New Here? <a href="#">Click Here to Register!</a>
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>
