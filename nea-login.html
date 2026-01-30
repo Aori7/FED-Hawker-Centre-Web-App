@@ -27,7 +27,7 @@
 
             <h2>Log In</h2>
 
-            <!-- role selector -->
+            <!-- role -->
             <label>I am a</label>
             <select>
                 <option>NEA Officer</option>
@@ -36,18 +36,17 @@
                 <option disabled>Vendor</option>
             </select>
 
-            <!-- login method switch -->
+            <!-- login method buttons -->
             <div class="login-switch">
-                <a href="nea-loginqr.html">SingPass App</a>
-                <strong>Password Log In</strong>
+                <a class="switch-btn" href="nea-loginqr.html">SingPass App</a>
+                <button class="active-btn" disabled>Password Log In</button>
             </div>
 
-            <!-- password login -->
+            <!-- password login (default shown) -->
             <form>
                 <input type="text" placeholder="SingPass ID" required>
                 <input type="password" placeholder="Password" required>
 
-                <!-- after login goes to nea landing/dashboard -->
                 <button type="submit" formaction="nea-landing.html">
                     Log In
                 </button>
