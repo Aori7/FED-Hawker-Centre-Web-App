@@ -274,6 +274,68 @@ body {
 /* ======================================================= */
 /* popular hawker centre section */
 
+
+#hawker-centre-section{
+    height: 1000px;
+    background-color: rgb(172, 187, 202);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+
+.card-wrapper{
+    max-width: 1900px;
+    margin: 0 60px 35px;
+    overflow: hidden;
+}
+
+
+
+
+.card-list .card-item{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-list .card-item .card-link{
+    user-select: none;
+    width: 900px;
+    display: block;
+    background: #33363F;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+.card-list .card-item .card-link:hover{
+    border-color: rgba(255, 255, 255, 0.26);
+}
+
+.card-list .card-link .card-image{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-list .card-link .card-button{
+    width: 500px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+/* 
 #hawkercentres-section{
     display: flex;
     flex-direction: column;
@@ -292,7 +354,7 @@ body {
     background-color: purple;
 }
 
-/* .swiper-wrapper.hawker-carousel {
+.swiper-wrapper.hawker-carousel {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,19 +362,19 @@ body {
  /* .swiper-wrapper.hawker-carousel{
     background-color: bisque;
  } */
-
+/* 
 .swiper-slide.hawker-card{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* height: auto;
+    justify-content: center; */
+    /* /* height: auto;
     width: auto; */
     /* width: 0%; */
     /* position: relative;  */
     /* background-color: aquamarine; */
-}
-
+/* } 
+/* 
 .hawker-card-image{
     position: relative;
     height: 700px;
@@ -346,7 +408,7 @@ body {
 }
 .hawker-rating .stars{
     color: gold;
-    /* font-size: 10px; */
+    font-size: 10px;
     margin: 0;
     gap: 0;
     padding: 0px;
@@ -355,7 +417,7 @@ body {
 .favourite-hawker{
     display: flex;
     flex-direction: row-reverse;
-}
+} */
 
 
 /* ======================================================= */
@@ -491,3 +553,8 @@ body {
     background-color: #222222;
 }
 
+
+
+
+/* ========================================================= */
+/* main-hawkers.html */
