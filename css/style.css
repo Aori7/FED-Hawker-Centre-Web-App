@@ -203,6 +203,7 @@ body {
     margin-right: 150px;
 
     /* designing the container */
+    
     background-color: #33363f85;
     backdrop-filter: blur(8px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
@@ -212,11 +213,54 @@ body {
 .desctext-box h2{
     font-size: 50px;
     text-align: center;
+    color: white;
 }
 .desctext-box p{
+    color: white;
     text-align: center;
     font-size: 20px;
     margin-bottom: 90px;
+    
+}
+
+.desctext-box{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.desctext-box:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+}
+.desctext-box #orderbutton{
+  padding: 12px 28px;
+  border-radius: 20px;
+  width: 300px;
+  height: auto;
+
+  background: linear-gradient(135deg, #2a0879, #883fff);
+  color: white;
+
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  border: none;
+  cursor: pointer;
+
+  box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.desctext-box #orderbutton:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(139, 92, 246, 0.45);
+}
+
+.desctext-box #orderbutton:active{
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(139, 92, 246, 0.25);
+
 }
 
 /* hero section done by ada */
