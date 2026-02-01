@@ -69,6 +69,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
 }
 
 #logoimg{
@@ -96,10 +97,6 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-
-    /* nav menu default colors */
-    color: #33363F;
-    
 }
 
 .navitems li{
@@ -108,37 +105,77 @@ body {
 }
 
 .navitems a{
-    text-decoration: none;
+    text-decoration: none;  
+    font-size: 23px;
+    font-weight: bold;
+    color: #3a2b6e;
+    padding: 6px 10px;
+    position: relative;
+    transition: color 0.2s ease;
 }
 
 /* animation for when hovering the nav items */
 .navitems a:hover{
-    color: #a200ff;
+    color: #883fff;
     transition: color 0.3s ease;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+}
+.navitems a.active{
+    color: #000000;
+    font-weight: 600;
+}
+.navitems a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #2a0879, #883fff);
+    transition: width 0.25s ease;
 }
 
-/* .loginbutton{
-    
-} */
+.navitems a:hover::after,
+.navitems a.active::after{
+    width: 100%;
+}
 
 #loginbtn{
-    padding: 8px 75px;
-    font-size: 20px;
-    font-weight: bold;
+    padding: 10px 60px;
+    font-size: 18px;
+    font-weight: 600;
+
     border: none;
-    border-radius: 15px;
-    background-color: #33363f;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+
     color: white;
+    background: linear-gradient(135deg, #da0d0d, #f7770e);
 
-    /* pointer when cursor is over the button */
+    box-shadow:
+        0 8px 24px rgba(255, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 22, 22, 0.15);
+
     cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+    }
 
+#loginbtn:hover{
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 32px rgba(255, 255, 255, 0.45),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+    filter: brightness(1.05);
 }
 
-
-
+#loginbtn:active{
+    transform: translateY(0);
+    box-shadow:
+        0 6px 14px rgba(139, 92, 246, 0.25),
+        inset 0 2px 6px rgba(0,0,0,0.25);
+}
 
 
 
@@ -152,6 +189,7 @@ body {
 #content{
     position: relative;
     height: 100vh;
+        overflow: hidden;
     /* make the image fill up the height of the viewport */
 }
 
@@ -160,16 +198,20 @@ body {
     width: 100%;
     height: 100%;
 }
+#content .hero-bg{
+    position: absolute;
+    inset: -20px;
 
-#main img{
-    width: 100%;
-    height: 100%;
+    background-image: url("../images/Hawker_centre.jpg");
     background-size: cover;
-    filter: brightness(45%) blur(4px);
+    background-position: center;
 
-    object-fit: cover;
+    filter: blur(8px) brightness(45%);
+    transform: scale(1.05);
+    inset: -40px;
+    z-index: -1;
 }
-
+    
 .desc-container{
     position: absolute;
     top: 0;
@@ -203,8 +245,9 @@ body {
     margin-right: 150px;
 
     /* designing the container */
-    
-    background-color: #33363f85;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
     backdrop-filter: blur(8px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 
@@ -224,37 +267,40 @@ body {
 }
 
 .desctext-box{
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .desctext-box:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
-}
-.desctext-box #orderbutton{
-  padding: 12px 28px;
-  border-radius: 20px;
-  width: 300px;
-  height: auto;
+    transform: translateY(-6px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+    }
+    .desctext-box #orderbutton{
+    padding: 12px 28px;
+    border-radius: 20px;
+    width: 300px;
+    height: auto;
+    background: linear-gradient(135deg, #da0d0d, #f7770e);
 
-  background: linear-gradient(135deg, #2a0879, #883fff);
-  color: white;
+    /* background: linear-gradient(135deg, #2a0879, #883fff); */
+    color: white;
 
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 
-  border: none;
-  cursor: pointer;
+    border: none;
+    cursor: pointer;
 
-  box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 
+            0 8px 24px rgba(255, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 22, 22, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
 }
 
 .desctext-box #orderbutton:hover{
     transform: translateY(-3px);
-    box-shadow: 0 14px 28px rgba(139, 92, 246, 0.45);
+    box-shadow: 0 14px 28px rgba(255, 255, 255, 0.45);
 }
 
 .desctext-box #orderbutton:active{
@@ -293,27 +339,55 @@ body {
     border-radius: 20px;
 }
 
+
+
 #hawkersearch{
     padding: 10px 20px;
     font-size: 18px;
-    border-radius: 10px;
+    border-radius: 14px;
     background-color: #222222;
     border: none;
     width: 600px;
+    height: 30px;
 }
-
+#hawkersearch::placeholder{
+    color: rgba(255, 255, 255, 0.55);
+}
+#hawkersearch:focus{
+    box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.6);
+}
+#hawkersearch:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(139, 92, 246, 0.45);
+}
 #searchbtn{
-    padding: 10px 20px;
-    font-size: 18px;
-    width: 150px;
-    border-radius: 10px;
-    font-weight: bold;
-    border: none;
-    background-color: #33363F;
+    padding: 14px 28px;
+    border-radius: 20px;
+    width: 200px;
+    height: 50px;
+
+    background: linear-gradient(135deg, #da0d0d, #f7770e);
     color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border: none;
     cursor: pointer;
+
+    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+#searchbtn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(255, 188, 188, 0.45);
+}
+
+#searchbtn:active{
+    transform: translateY(0);
+    box-shadow: 0 8px 16px rgba(139, 92, 246, 0.25);
+}
 
 /* ======================================================= */
 /* popular hawker centre section */
