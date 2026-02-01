@@ -71,16 +71,23 @@ body {
     gap: 8px;
     text-decoration: none;
 }
+.logo span{
+    font-size: 32px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #da0d0d, #f7770e);
+    border-radius: 10px;
+    padding: 4px;
+}
 
-#logoimg{
+/* #logoimg{
     height: 32px;
     width: 32px;
-}
+} */
 
 #logotitle{
     font-size: 24px;
     font-weight: 700;
-    color: #33363F;
+    color: #ff0000;
     text-decoration: none;
 }
 
@@ -108,7 +115,7 @@ body {
     text-decoration: none;  
     font-size: 23px;
     font-weight: bold;
-    color: #3a2b6e;
+    color: #ff000091;
     padding: 6px 10px;
     position: relative;
     transition: color 0.2s ease;
@@ -202,7 +209,7 @@ body {
     position: absolute;
     inset: -20px;
 
-    background-image: url("../images/Hawker_centre.jpg");
+    background-image: url("../images/bg-img.jpg");
     background-size: cover;
     background-position: center;
 
