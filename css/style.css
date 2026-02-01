@@ -572,6 +572,23 @@ body {
     padding: 100px 20px;
 }
 
+.register-button #registerbtn{
+    padding: 14px 60px;
+    border-radius: 18px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    cursor: pointer;
+    color: white;
+
+    background: linear-gradient(135deg, #da0d0d, #f7770e);
+
+    box-shadow: 0 10px 24px rgba(255, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
 
 
 
@@ -678,60 +695,6 @@ body {
 }
 
 
-
-/* 
-.form-contactus input,
-.form-contactus textarea{
-    width: 90%;
-    padding: 14px 16px;
-    border-radius: 12px;
-
-    background: rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.25);
-
-    color: white;
-    font-size: 16px;
-    outline: none;
-
-    transition: border 0.2s ease, background 0.2s ease;
-}
-
-.form-contactus input::placeholder,
-.form-contactus textarea::placeholder{
-    color: rgba(255,255,255,0.65);
-}
-
-.form-contactus input:focus,
-.form-contactus textarea:focus{
-    border-color: #883fff;
-    background: rgba(0,0,0,0.45);
-}
-#sendbtn{
-    margin-top: 10px;
-    padding: 14px;
-    border-radius: 18px;
-
-    font-size: 18px;
-    font-weight: 600;
-
-    border: none;
-    cursor: pointer;
-    color: white;
-
-    background: linear-gradient(135deg, #2a0879, #883fff);
-
-    box-shadow: 0 10px 24px rgba(139,92,246,0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#sendbtn:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(139,92,246,0.5);
-}
-
-#sendbtn:active{
-    transform: translateY(0);
-} */
 
 
 
