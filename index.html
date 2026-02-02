@@ -298,25 +298,74 @@
 
 
     <section id="contactus-section">
-        <div class="contact-content">
+        <div class="contact-header">
             <div class="title">
                 <h1>Contact Us</h1>
-                <p>Have a question or feedback? We’d love to hear from you.</p>
             </div>
-            
-            <div class="form-contactus">
-                <div class="useremail">
-                    <input type="email" id="email" name="email" placeholder="Your email address">
+            <div class="contact-desc">
+                <p>Have questions or feedback? We'd love to hear from you! Reach out to our team for assistance or to share your thoughts on how we can improve HawkerSG.</p>
+            </div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-form">
+                <div class="title">
+                    <h2>Get In Touch</h2>
                 </div>
-                <div class="usersubject">
-                    <input type="text" id="subject" name="subject" placeholder="Subject">
-                </div>
-                <div class="usermessage">
-                    <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
-                </div>
+                <form action="">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name..">
 
-                <div class="sendmessagebtn">
-                    <button id="sendbtn">Send Message</button>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email..">
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject..">
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Write your message.." style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit" id="submitbtn">
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-business-info">
+                    <div class="title">
+                        <h2>Contact Information</h2>
+                    </div>
+                    <div class="phone">
+                        <span class="material-symbols-rounded">phone</span>
+                        <h2>Phone</h2>
+                        <p>+65 1234 5678</p>
+                    </div>
+                    <div class="email">
+                        <span class="material-symbols-rounded">email</span>
+                        <h2>Email</h2>
+                        <p>contact@hawker.sg</p>
+                    </div>
+                    <div class="address">
+                        <span class="material-symbols-rounded">location_on</span>
+                        <h2>Address</h2>
+                        <p>123 Hawker St, Singapore 123456</p>
+                    </div>
+                </div>
+                <div class="contact-business-hrs">
+                    <div class="title">
+                        <h2>Business Hours</h2>
+                    </div>
+                    <div class="days">
+                        <div class="mon-fri">
+                            <h2>Monday-Friday</h2>
+                            <p>8:00 AM - 8:00 PM</p>
+                        </div>
+                        <div class="saturday">
+                            <h2>Saturday</h2>
+                            <p>9:00 AM - 6:00 PM</p>
+                        </div>
+                        <div class="sunday">
+                            <h2>Sunday</h2>
+                            <p>Closed</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
