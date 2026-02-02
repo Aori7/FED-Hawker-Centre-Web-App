@@ -7,18 +7,27 @@
     <title>Log In</title>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login to HawkerSG</h2>
-        <form action="#" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+    <section id="auth-container">
+        <div class="auth-tab">
+            <button id="login-tab">Log In</button>
+            <button id="signup-tab">Sign Up</button>
+        </div>
 
-            <button type="submit">Login</button>
-        </form>
-        <p class="signup-link">Don't have an account? <a href="#">Sign up here</a></p>
-    </div>
+        <!-- user login choose log in as customer,nea,operator or vendor -->
+        <div class="auth-form">
+            <div class="auth-title">
+                <h1>Select User Type</h1>
+            </div>
+            <button data-role="customer">Customer</button>
+            <button data-role="vendor">Vendor</button>
+            <button data-role="operator">Operator</button>
+            <button data-role="nea">NEA Officer</button>
+  
+        </div>
+    </section>
+
+
+    <script src="js/script.js"></script>
 </body>
 </html>
