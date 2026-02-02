@@ -1,20 +1,41 @@
+/* defining colors for our theme to be constant */
+:root{
+    /* --primary-color: rgb(250, 129, 18);
+    --secondary-color: rgb(245, 231, 198);
+    --background-color: rgb(250, 243, 225); */
+    --black-text-color: rgb(34, 34, 34);
+    --orange-color: rgb(250, 129, 18);
+    --dark-orange-color:rgb(196, 12, 12) ;
+    --beige-color:rgb(245, 231, 198);
+    --lighter-beige:rgb(250, 243, 225);
+}
 
-
-body {
-    /* font: archivo, added by ada, source: google fonts*/
-    font-family: "Archivo", sans-serif;
+*{
+    /* setting the font for the web */
+    font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
+}
 
-    
+/* overall button design. for consistency */
+button{
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.10);
+}
+
+body {
     margin: 0;
-    background-color: white;
     /* max-width: 100%; */
-
-    color: black;
+    color: var(--black-text-color);
+    /* using an image as a background, and its fixed */
+    background-image: url('../images/background-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--lighter-beige);
+    /* temporary background color in case bg image doesnt load? */
 }
 
 
@@ -27,7 +48,7 @@ body {
 #navigationbar{
     
     /*font noto serif  */
-    font-family: 'Noto Serif', serif;
+    /* font-family: 'Noto Serif', serif; */
     position: fixed; 
     /* fixed position so that it will stay as u scroll */
     z-index: 1000;
@@ -68,30 +89,32 @@ body {
 .logo a{
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     text-decoration: none;
 }
 .logo span{
+    /* the logo symbol icon */
     font-size: 32px;
     color: #ffffff;
-    background: linear-gradient(135deg, #da0d0d, #f7770e);
-    border-radius: 10px;
+    background: var(--orange-color);
+    border-radius: 20px;
     padding: 4px;
 }
 
-/* #logoimg{
-    height: 32px;
-    width: 32px;
-} */
+
 
 #logotitle{
     font-size: 24px;
-    font-weight: 700;
-    color: #ff0000;
+    font-weight: 550;
+    color: var(--orange-color);
     text-decoration: none;
 }
 
-
+#logotitle em{
+    font-style: italic;
+    color: var(--black-text-color);
+    font-weight: 750;
+}
 
 .navitems{
     display: flex;
@@ -111,11 +134,12 @@ body {
     /* list-style: none; */
 }
 
+/* navigations */
 .navitems a{
     text-decoration: none;  
     font-size: 23px;
     font-weight: bold;
-    color: #ff000091;
+    color: var(--orange-color);
     padding: 6px 10px;
     position: relative;
     transition: color 0.2s ease;
@@ -123,14 +147,19 @@ body {
 
 /* animation for when hovering the nav items */
 .navitems a:hover{
-    color: #883fff;
+    color: var(--dark-orange-color);
     transition: color 0.3s ease;
     /* text-decoration: underline; */
 }
+
+/* while the navigation is active state */
 .navitems a.active{
-    color: #000000;
+    /* dark orange color for active nav */
+    color: var(--dark-orange-color);
     font-weight: 600;
 }
+
+/* animation for hovering over nav items */
 .navitems a::after{
     content: "";
     position: absolute;
@@ -138,7 +167,7 @@ body {
     bottom: -4px;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, #2a0879, #883fff);
+    background: var(--dark-orange-color);
     transition: width 0.25s ease;
 }
 
@@ -156,11 +185,11 @@ body {
     border-radius: 20px;
 
     color: white;
-    background: linear-gradient(135deg, #da0d0d, #f7770e);
+    background: var(--orange-color);
 
-    box-shadow:
-        0 8px 24px rgba(255, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 22, 22, 0.15);
+    /* box-shadow:
+        0 8px 24px var(--dark-orange-color),
+        inset 0 1px 0 var(--orange-color); */
 
     cursor: pointer;
     transition:
@@ -170,6 +199,7 @@ body {
     }
 
 #loginbtn:hover{
+    /* make button shift up abit when hovered over */
     transform: translateY(-2px);
     box-shadow:
         0 12px 32px rgba(255, 255, 255, 0.45),
@@ -179,9 +209,6 @@ body {
 
 #loginbtn:active{
     transform: translateY(0);
-    box-shadow:
-        0 6px 14px rgba(139, 92, 246, 0.25),
-        inset 0 2px 6px rgba(0,0,0,0.25);
 }
 
 
@@ -265,6 +292,13 @@ body {
     text-align: center;
     color: white;
 }
+
+.desctext-box h2 em{
+    font-style: italic;
+    color: var(--orange-color);
+    font-weight: 700;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.6);;
+}
 .desctext-box p{
     color: white;
     text-align: center;
@@ -280,15 +314,15 @@ body {
 .desctext-box:hover{
     transform: translateY(-6px);
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
-    }
-    .desctext-box #orderbutton{
+}
+
+.desctext-box #orderbutton{
     padding: 12px 28px;
     border-radius: 20px;
     width: 300px;
     height: auto;
-    background: linear-gradient(135deg, #da0d0d, #f7770e);
+    background: var(--orange-color);
 
-    /* background: linear-gradient(135deg, #2a0879, #883fff); */
     color: white;
 
     font-size: 25px;
@@ -298,9 +332,9 @@ body {
     border: none;
     cursor: pointer;
 
-    box-shadow: 
+    /* box-shadow: 
             0 8px 24px rgba(255, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 22, 22, 0.15);
+        inset 0 1px 0 rgba(255, 22, 22, 0.15); */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
 }
@@ -324,7 +358,7 @@ body {
 .title{
     font-size: 20px;
     font-weight: 700;
-    color: black;
+    color: var(--black-text-color);
 }
 
 
@@ -337,7 +371,7 @@ body {
     padding: 100px 20px;
     gap: 32px;
 
-    background-color: white;
+    /* background-color: white; */
 }   
 
 #map { 
@@ -346,26 +380,29 @@ body {
     border-radius: 20px;
 }
 
-
+#hawkerlocationmap-section h1{
+    margin: 0;
+}
 
 #hawkersearch{
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 14px;
-    background-color: #222222;
+    background-color: var(--beige-color);
     border: none;
     width: 600px;
     height: 30px;
 }
 #hawkersearch::placeholder{
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--black-text-color);
 }
 #hawkersearch:focus{
-    box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.6);
+    box-shadow: inset 0 0 0 1px var(--dark-orange-color);
 }
+/* hover effect */
 #hawkersearch:hover{
     transform: translateY(-2px);
-    box-shadow: 0 14px 28px rgba(139, 92, 246, 0.45);
+    /* box-shadow: 0 14px 28px rgba(139, 92, 246, 0.45); */
 }
 #searchbtn{
     padding: 14px 28px;
@@ -373,7 +410,7 @@ body {
     width: 200px;
     height: 50px;
 
-    background: linear-gradient(135deg, #da0d0d, #f7770e);
+    background: var(--orange-color);
     color: white;
 
     font-size: 16px;
@@ -382,25 +419,132 @@ body {
     border: none;
     cursor: pointer;
 
-    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35);
+    /* box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35); */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #searchbtn:hover{
     transform: translateY(-2px);
-    box-shadow: 0 14px 28px rgba(255, 188, 188, 0.45);
+    /* box-shadow: 0 14px 28px rgba(255, 188, 188, 0.45); */
 }
 
 #searchbtn:active{
     transform: translateY(0);
-    box-shadow: 0 8px 16px rgba(139, 92, 246, 0.25);
+    /* box-shadow: 0 8px 16px rgba(139, 92, 246, 0.25); */
 }
+
 
 /* ======================================================= */
 /* popular hawker centre section */
 
-
 #hawker-centre-section{
+    /* testing color */
+    background-color: var(--orange-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.wrapper{
+    max-width: 1500px;
+    padding: 20px 20px;
+    margin: 0 60px 35px;
+    overflow: hidden;
+}
+
+.wrapper .card{
+    display: flex;
+    flex-direction: column;
+    /* width: 700px; */
+    height: auto;
+    background: var(--beige-color);
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.10);
+    transition: transform 0.3s ease;
+
+    /* margin: 20px; */
+}
+
+.wrapper .card:hover{
+    transform: translateY(-10px);
+}
+.card-image{
+    padding: 10px;
+    position: relative;
+}
+
+.card .card-image img{
+    width: 100%;
+    border-radius: 22px;
+    /* padding: 10px; */
+    /* height: auto; */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.card .card-image .hawker-rating{
+    position: absolute;
+    left: 30px;
+    top: 5px;
+    background: var(--orange-color);
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.10);
+}
+
+.card .card-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px 25px;
+}
+
+.card .card-content .hawker-name{
+    font-size: 30px;
+    font-weight: 600;   
+    margin: 0px;
+}
+
+.card .card-content .hawker-address{
+    font-size: 18px;
+    margin: 0;
+    color: rgb(80, 80, 80);
+}
+
+.card .card-content .card-footer{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid black;
+}
+
+.card .card-content .card-footer button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: var(--orange-color);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+
+}
+
+/* overwrite the button design. */
+.card .card-content .card-footer .card-fav{
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* #hawker-centre-section{
     height: 1000px;
     background-color: rgb(172, 187, 202);
     margin: 0;
@@ -409,8 +553,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
+} */
+/* 
 .swiper {
   width: 100%;
   padding: 40px 0;
@@ -458,91 +602,8 @@ body {
     width: 500px;
     height: 30px;
     border-radius: 5px;
-}
-
-/* 
-#hawkercentres-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 100px 20px;
-    gap: 32px;
-
-    background-color: #33363F;
-    height: auto;
-}
-
-.swiper{
-    width: 100%;
-    height: auto;
-    background-color: purple;
-}
-
-.swiper-wrapper.hawker-carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 } */
- /* .swiper-wrapper.hawker-carousel{
-    background-color: bisque;
- } */
-/* 
-.swiper-slide.hawker-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    /* /* height: auto;
-    width: auto; */
-    /* width: 0%; */
-    /* position: relative;  */
-    /* background-color: aquamarine; */
-/* } 
-/* 
-.hawker-card-image{
-    position: relative;
-    height: 700px;
-}
-.hawker-card-image img{
-    object-fit: cover;
-    border-radius: 20px;
-    width: 900px;
-}
-.hawker-content{
-    position: absolute;
-    color: black;
-    bottom: 50px;
-    left: 400px;
 
-    width: 50%;
-    height:auto ;
-    max-width: 100%;
-
-    padding: 32px;
-    font-size: 20px;
-    
-    background-color: #222222;
-}
-
-.hawker-rating{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-}
-.hawker-rating .stars{
-    color: gold;
-    font-size: 10px;
-    margin: 0;
-    gap: 0;
-    padding: 0px;
-}
-
-.favourite-hawker{
-    display: flex;
-    flex-direction: row-reverse;
-} */
 
 
 /* ======================================================= */
@@ -556,7 +617,7 @@ body {
     padding: 100px 20px;
     gap: 32px;
 
-    background-color: #222222;
+    /* background-color: #222222; */
 }
 
 
@@ -583,9 +644,9 @@ body {
     cursor: pointer;
     color: white;
 
-    background: linear-gradient(135deg, #da0d0d, #f7770e);
+    background: var(--orange-color);
 
-    box-shadow: 0 10px 24px rgba(255, 0, 0, 0.4);
+    /* box-shadow: 0 2px 50px black; */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -688,9 +749,9 @@ body {
     cursor: pointer;
     color: white;
 
-    background: linear-gradient(135deg, #da0d0d, #f7770e);
+    background: var(--orange-color);
 
-    box-shadow: 0 10px 24px rgba(255, 0, 0, 0.4);
+    /* box-shadow: 0 10px 24px rgba(255, 0, 0, 0.4); */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -706,9 +767,7 @@ body {
     flex-direction:column;
     align-items: center;
     height: 350px;
-    background-color: rgb(0, 0, 0);
-
-    color: white;
+    background-color: var(--lighter-beige);
 }
 
 
@@ -731,6 +790,7 @@ body {
 }
 
 .img-header{
+    background-image: url('../images/bg-img.jpg');
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -773,11 +833,22 @@ body {
     flex-direction: column;
     gap: 16px;
 
+    min-width: 400px;
+
     height: auto;
     background-color: #222222;
 }
 
 
+.hawker-lists .popular-hawker-centres{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.popular-hawker-centres .hawker-card{
+    
+}
 
 
 /* ========================================================= */
