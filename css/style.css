@@ -628,16 +628,39 @@ body {
 
 #aboutus-section{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    padding: 100px 30px;
 
-    padding: 100px 20px;
-    gap: 32px;
+    margin: 0;
 
-    /* background-color: #222222; */
+    /* background-color: black ; */
 }
 
-
+.about-us-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin-right: 50px;
+}
+.about-us-content .title h1{
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.aboutus-text p{
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+.about-us-image img{
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
+}
 
 
 /* register section */
@@ -646,7 +669,7 @@ body {
     flex-direction: column;
     align-items: center;
     color: black;
-    background-color: white;
+    background-color: var(--lighter-beige);
     padding: 100px 20px;
 }
 
@@ -674,9 +697,10 @@ body {
 /* contact section */
 #contactus-section{
     position: relative;
-    background-image: url('../images/bg-img2.jpg');
+    /* background-image: url('../images/bg-img2.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    background-color: var(--orange-color);
     height: 700px;
     /* filter: blur(8px) brightness(45%); */
 
@@ -694,7 +718,7 @@ body {
     margin-bottom: 28px;
     
     font-size: bold;
-    color: white;
+    /* color: white; */
 
 
 }
@@ -712,8 +736,8 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-
-    background: rgba(255,255,255,0.18);
+    background: var(--beige-color);
+    /* background: rgba(255,255,255,0.18); */
     backdrop-filter: blur(14px) saturate(160%);
     -webkit-backdrop-filter: blur(14px) saturate(160%);
 
