@@ -1,57 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEA Officer Login - QR</title>
-    <link rel="stylesheet" href="css/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEA Login QR</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="header">
+    <div class="logo">NEA</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- nav bar -->
-    <header class="navbar">
-        <div class="logo">Logo</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#">Location</a>
-            <a href="#">Order</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-        </nav>
-        <a class="login-btn" href="nea-login.html">Log In</a>
-    </header>
+  <section class="login-section">
+    <h2>Singpass / QR Login</h2>
+    <p>Scan the QR code with your Singpass app.</p>
+    <img src="qr-placeholder.png" alt="QR Code" class="qr-code">
+    <p><a href="nea-login.html" class="link-btn">Back to Password Login</a></p>
+  </section>
 
-    <!-- login section -->
-    <div class="login-bg">
-        <div class="login-card">
-
-            <h2>Log In</h2>
-
-            <!-- role -->
-            <label>I am a</label>
-            <select>
-                <option>NEA Officer</option>
-                <option disabled>Customer</option>
-                <option disabled>Operator</option>
-            </select>
-
-            <!-- login method buttons -->
-            <div class="login-switch">
-                <button class="active-btn" disabled>SingPass App</button>
-                <a class="switch-btn" href="nea-login.html">Password Log In</a>
-            </div>
-
-            <!-- qr code login -->
-            <div class="qr-section">
-                <img src="images/qr-placeholder.png" alt="SingPass QR Code">
-            </div>
-
-            <p class="register-text">
-                New Here? <a href="#">Click Here to Register!</a>
-            </p>
-
-        </div>
-    </div>
-
+  <footer class="footer">
+    <p>&copy; 2026 NEA. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

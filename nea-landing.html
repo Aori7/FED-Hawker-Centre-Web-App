@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEA Dashboard | HawkerSG</title>
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&display=swap" rel="stylesheet">
-
-    <!-- icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEA Landing</title>
+<link rel="stylesheet" href="css/nea-styles.css">
 </head>
 <body>
+<!-- navigation -->
+<nav id="navigationbar">
+  <div class="logo">
+    <a href="index.html">
+      <img id="logoimg" src="images/logo.png" alt="logo">
+      <span id="logotitle">NEA</span>
+    </a>
+  </div>
 
-<!-- navigation bar -->
-<header id="navigationbar">
-    <div class="logo">
-        <a href="nea-landing.html">
-            <img src="images/fork_spoon.png" alt="logo" id="logoimg">
-            <h1 id="logotitle">HawkerSG</h1>
-        </a>
-    </div>
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-    <ul class="navitems">
-        <li><a href="nea-landing.html">Home</a></li>
-        <li><a href="#">Centres</a></li>
-        <li><a href="#">Reports</a></li>
-        <li><a href="#">Compliance</a></li>
-    </ul>
+  <ul class="navitems">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
 
-    <div class="loginbutton">
-        <a href="index.html">
-            <button id="loginbtn">Log Out</button>
-        </a>
-    </div>
-</header>
+  <button id="loginbtn" onclick="showLogin()">Login</button>
+</nav>
 
 <!-- hero section -->
 <section id="content">
-    <div class="desc-container">
-        <div class="desctext-box">
-            <h2>Welcome, NEA Officer</h2>
-            <p>Monitor hawker centres, review compliance status, and manage reports across Singapore.</p>
-        </div>
+  <div id="main">
+    <img src="images/hero-bg.jpg" alt="hero">
+  </div>
+  <div class="desc-container">
+    <div class="desctext-box">
+      <h2>Welcome Officer</h2>
+      <p>Access your dashboard securely.</p>
     </div>
+  </div>
 </section>
 
-<!-- nea quick actions -->
-<section id="hawkercentres-section">
-    <div class="title">
-        <h1>NEA Officer Actions</h1>
-    </div>
-
-    <div class="hawker-carousell">
-
-        <div class="carousel-card-hawker">
-            <div class="hawkerinfo">
-                <h2>View Hawker Centres</h2>
-                <p>Access registered hawker centres and stall data.</p>
-                <a href="#"><button class="orderhawkerbtn">View</button></a>
-            </div>
-        </div>
-
-        <div class="carousel-card-hawker">
-            <div class="hawkerinfo">
-                <h2>Inspection Reports</h2>
-                <p>Review hygiene and safety inspection results.</p>
-                <a href="#"><button class="orderhawkerbtn">View</button></a>
-            </div>
-        </div>
-
-        <div class="carousel-card-hawker">
-            <div class="hawkerinfo">
-                <h2>Compliance Status</h2>
-                <p>Track compliance issues and follow-ups.</p>
-                <a href="#"><button class="orderhawkerbtn">View</button></a>
-            </div>
-        </div>
-
-    </div>
+<!-- login container -->
+<section id="login-container" class="login-section">
+  <div id="nea-login">
+    <h2>Password Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button id="loginbtn">Login</button>
+    <p>or <button class="link-btn" onclick="showQR()">Singpass/QR Login</button></p>
+  </div>
+  <div id="nea-loginqr" style="display:none;">
+    <h2>Singpass / QR Login</h2>
+    <img src="images/qr-placeholder.png" class="qr-code" alt="QR Code">
+    <p><button class="link-btn" onclick="showPassword()">Back to Password Login</button></p>
+  </div>
 </section>
 
 <!-- footer -->
 <footer id="footercontainer">
-    <p>© HawkerSG | NEA Officer Portal</p>
+  <p>&copy; 2026 NEA. All Rights Reserved.</p>
 </footer>
 
+<script>
+/* hamburger toggle */
+function toggleMenu() {
+  const nav = document.querySelector('.navitems');
+  nav.classList.toggle('show');
+}
+
+/* login section toggle */
+function showLogin() {
+  const container = document.getElementById('login-container');
+  container.style.display = 'block';
+  setTimeout(() => container.classList.add('show'), 10);
+  showPassword();
+  container.scrollIntoView({behavior:"smooth"});
+}
+
+function showQR() {
+  document.getElementById('nea-login').style.display = 'none';
+  document.getElementById('nea-loginqr').style.display = 'block';
+}
+
+function showPassword() {
+  document.getElementById('nea-loginqr').style.display = 'none';
+  document.getElementById('nea-login').style.display = 'block';
+}
+</script>
 </body>
 </html>
