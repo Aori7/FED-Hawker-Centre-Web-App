@@ -23,6 +23,16 @@
 /* overall button design. for consistency */
 button{
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.10);
+    border-radius: 30px;
+
+    cursor: pointer;
+    color: white;
+    background: var(--orange-color);
+    border: none;
+    padding: 10px 50px;
+    font-size: 20px;
+    font-weight: 600;
+
 }
 
 button:hover{
@@ -183,7 +193,7 @@ body {
     width: 100%;
 }
 
-#loginbtn{
+/* #loginbtn{
     padding: 10px 60px;
     font-size: 18px;
     font-weight: 600;
@@ -194,16 +204,16 @@ body {
     color: white;
     background: var(--orange-color);
 
-    /* box-shadow:
+    box-shadow:
         0 8px 24px var(--dark-orange-color),
         inset 0 1px 0 var(--orange-color); */
 
-    cursor: pointer;
+    /* cursor: pointer;
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
         filter 0.2s ease;
-    }
+} */
 
 /* #loginbtn:hover{ */
     /* make button shift up abit when hovered over */
@@ -323,7 +333,7 @@ body {
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
 }
 
-.desctext-box #orderbutton{
+/* .desctext-box #orderbutton{
     padding: 12px 28px;
     border-radius: 20px;
     width: 300px;
@@ -339,12 +349,12 @@ body {
     border: none;
     cursor: pointer;
 
-    /* box-shadow: 
+    box-shadow: 
             0 8px 24px rgba(255, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 22, 22, 0.15); */
+        inset 0 1px 0 rgba(255, 22, 22, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-}
+} */
 
 /* .desctext-box #orderbutton:hover{
     transform: translateY(-3px);
@@ -411,7 +421,7 @@ body {
     transform: translateY(-2px);
     /* box-shadow: 0 14px 28px rgba(139, 92, 246, 0.45); */
 }
-#searchbtn{
+/* #searchbtn{
     padding: 14px 28px;
     border-radius: 20px;
     width: 200px;
@@ -426,9 +436,9 @@ body {
     border: none;
     cursor: pointer;
 
-    /* box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35); */
+    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+} */
 
 /* #searchbtn:hover{
     transform: translateY(-2px);
@@ -532,7 +542,7 @@ body {
     border-top: 1px solid black;
 }
 
-.card .card-content .card-footer button{
+/* .card .card-content .card-footer button{
     padding: 10px 20px;
     border-radius: 20px;
     background: var(--orange-color);
@@ -542,7 +552,7 @@ body {
     border: none;
     cursor: pointer;
 
-}
+} */
 
 /* overwrite the button design. */
 .card .card-content .card-footer .card-fav{
@@ -640,7 +650,7 @@ body {
     padding: 100px 20px;
 }
 
-.register-button #registerbtn{
+/* .register-button #registerbtn{
     padding: 14px 60px;
     border-radius: 18px;
 
@@ -654,8 +664,8 @@ body {
     background: var(--orange-color);
 
     /* box-shadow: 0 2px 50px black; */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    /* transition: transform 0.2s ease, box-shadow 0.2s ease;
+} */ 
 
 
 
@@ -744,7 +754,7 @@ body {
     transition: border 0.2s ease, background 0.2s ease;
 }
 
-#sendbtn{
+/* #sendbtn{
     margin-top: 10px;
     padding: 14px 60px;
     border-radius: 18px;
@@ -758,9 +768,9 @@ body {
 
     background: var(--orange-color);
 
-    /* box-shadow: 0 10px 24px rgba(255, 0, 0, 0.4); */
+    box-shadow: 0 10px 24px rgba(255, 0, 0, 0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+} */
 
 
 
