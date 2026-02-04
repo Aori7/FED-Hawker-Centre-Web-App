@@ -34,6 +34,38 @@ button:hover{
     transition: transform 0.4s ease;
     filter: brightness(1.20);
 }
+/* set a universal input design... so to keep consistency*/
+input{
+    width: 400px;
+    height: 50px;
+    padding: 0 20px;
+
+    border-radius: 25px;
+    border: 2px solid transparent;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black-text-color);
+
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+
+    outline: none;
+    transition: 
+        border 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+input:focus{
+    border-color: var(--orange-color);
+    box-shadow: 
+        0 0 0 4px rgba(250, 129, 18, 0.2),
+        0 10px 20px rgba(0, 0, 0, 0.12);
+}
+input::placeholder{
+    color: #999;
+    font-weight: 500;
+}
 
 
 body{
@@ -135,18 +167,25 @@ body{
     justify-content: center;
     align-items: center;
 }
+/* display only on active state */
 .login-state.active{
     display: block;
+    display: flex;
+
 }
 .login-state{
     display: none;
 }
 
-#choose-role{
+/* same border card design for all states to keep consistency */
+#choose-role,
+#customer-login,
+#vendor-login,
+#nea-login,
+#operator-login{
     background-color: var(--lighter-beige);
     width: 70%;
     height: 80%;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -155,13 +194,62 @@ body{
 }
 
 .roles{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     flex-direction: column;
     gap: 20px;
 }
 
 .roles button{
     /* override universal width of button */
-    width: 500px;
+    width: 250px;
+    margin: 6px;
+}
+.register{
+    display: flex;
+    flex-direction: column;
+}
+.register p{
+    font-size: 20px;
+    margin: 0;
+    margin-top: 60px;
+    margin-bottom: 15px;
 }
 
+/* state customer login  */
+#customer-login .login-info{
+    display: flex;
+    flex-direction: column;
+}
+/* #customer-login .login-info input{
+
+} */
+
+.email-title,.pass-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* margin: 0;
+    margin-top: 15px; */
+    margin: 10px 0px 10px 0px;
+
+    font-size: 25px;
+    gap: 8px;
+}
+
+.forgot-pass{
+    margin: 20px;
+}
+
+.login{
+    margin: 20px;
+}
+
+.login-with-google{
+    border-top: 1px solid black;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
