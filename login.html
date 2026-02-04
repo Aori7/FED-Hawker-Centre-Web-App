@@ -3,29 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google rounded icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+    <!-- import font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/login.css">
     <title>Log In</title>
 </head>
 <body>
 
-    <section id="auth-container">
-        <div class="auth-tab">
-            <button id="login-tab">Log In</button>
-            <button id="signup-tab">Sign Up</button>
+    <section class="login-container">
+        <div class="left-container">
+            <div class="bg-image">
+            </div>
+            <div class="logo">
+                <a href="index.html">
+                    <!-- image of logo sourced from google icons -->
+                    <span class="material-symbols-rounded">restaurant_menu</span>
+                    <h1 id="logotitle">Hawker<em>SG</em></h1>
+                </a>
+            </div>
         </div>
 
-        <!-- user login choose log in as customer,nea,operator or vendor -->
-        <div class="auth-form">
-            <div class="auth-title">
-                <h1>Select User Type</h1>
+
+        <div class="right-container">
+            <!-- default state - choosing the role -->
+            <div class="login-state active" id="choose-role">
+                <div class="title">
+                    <h1>Choose a login method</h1>
+                </div>
+                <div class="roles">
+                    <button data-role="customer">Customer</button>
+                    <button data-role="vendor">Vendor</button>
+                    <button data-role="nea-officer">NEA-Officer</button>
+                    <button data-role="operator">Operator</button>
+                </div>
             </div>
-            <button data-role="customer">Customer</button>
-            <button data-role="vendor">Vendor</button>
-            <button data-role="operator">Operator</button>
-            <button data-role="nea">NEA Officer</button>
-  
+
+            <!-- each state turns into active depending on user's click -->
+            <div class="login-state" id="customer-login">
+                
+            </div>
+
+            <div class="login-state" id="vendor-login">
+
+            </div>
+
+            <div class="login-state" id="nea-login">
+
+            </div>
+
+            <div class="login-state" id="operator-login">
+
+            </div>
         </div>
     </section>
+
 
 
     <script src="js/script.js"></script>
