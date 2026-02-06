@@ -39,7 +39,7 @@ const swiper = new Swiper('.swiper .wrapper', {
 //since live api call doesnt work (CORS error)
 // document.addEventListener("DOMContentLoaded", () => {
 
-fetch("js/hawker-centre.json")
+fetch("https://hawker-centre-a7461-default-rtdb.asia-southeast1.firebasedatabase.app/.json")
   .then(res => res.json())
   .then(data => {
     hawkers = data.features;
