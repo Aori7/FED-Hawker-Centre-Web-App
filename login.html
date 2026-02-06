@@ -58,6 +58,7 @@
 
             <!-- each state turns into active depending on user's click -->
             <div class="login-state " id="customer-login">
+                <button class="back-btn">← Back</button>
                 <div class="title">
                     <h1>Login</h1>
                 </div>
@@ -82,14 +83,16 @@
                 </div>
             </div>
 
-            <div class="login-state " id="vendor-login">
+            <!-- "other-login" id as nea,operator, and vendor shares the same singpass flow of login so they will share states -->
+            <div class="login-state " id="other-login">
+                <button class="back-btn">← Back</button>
                 <div class="title">
                     <h1>Login with Singpass</h1>
                 </div>
                 <!-- toggle in between password/qr to login by using 2 states -->
                 <div class="choose-login">
                     <!-- login method by singpass password -->
-                    <button class="singpass-login active" data-method="passoword">Password Log In</button>
+                    <button class="singpass-login active" data-method="password">Password Log In</button>
                     <!-- login method by singpass qr app -->
                     <button class="singpass-login " data-method="qr">Singpass App</button>
                 </div>
@@ -116,7 +119,7 @@
                         </div>
                     </div>
                     <!-- state 2: qr login method -->
-                    <div class="login-method " id="login-qr">
+                    <div class="login-method" id="login-qr">
                         <div class="qr-input">
                             <div class="title">
                                 <h2>Login with Singpass QR App</h2>
@@ -135,7 +138,7 @@
                 </div>
             </div>
 
-            <div class="login-state" id="nea-login">
+            <!-- <div class="login-state" id="nea-login">
 
             </div>
 
@@ -145,12 +148,12 @@
             
             <div class="login-state" id="register-acc">
 
-            </div>
+            </div> -->
         </div>
     </section>
 
 
 
-    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

@@ -76,6 +76,24 @@ body{
     background-color: var(--orange-color);
 }
 
+.back-btn{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    background: none;
+    color: var(--black-text-color);
+    box-shadow: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.back-btn:hover{
+    transform: none;
+    color: var(--orange-color);
+}
+
+
 .login-container{
     /* position: absolute; */
     width: 100%;
@@ -183,9 +201,7 @@ body{
 /* same border card design for all states to keep consistency */
 #choose-role,
 #customer-login,
-#vendor-login,
-#nea-login,
-#operator-login{
+#other-login{
     background-color: var(--lighter-beige);
     width: 70%;
     height: 80%;
