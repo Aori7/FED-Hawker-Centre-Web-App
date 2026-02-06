@@ -1,6 +1,7 @@
 :root{
     --black-text-color: rgb(34, 34, 34);
     --orange-color: rgb(250, 129, 18);
+    --ligter-orange: rgb(255, 183, 117);
     --dark-orange-color:rgb(196, 12, 12) ;
     --beige-color:rgb(245, 231, 198);
     --lighter-beige:rgb(250, 243, 225);
@@ -14,6 +15,8 @@
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
+    /* default text color throughout the page */
+    color: var(--black-text-color);
 }
 /* set universal button design, same as index theme */
 button{
@@ -194,17 +197,41 @@ body{
 }
 
 .roles{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     gap: 20px;
 }
 
 .roles button{
     /* override universal width of button */
-    width: 250px;
+    width: 350px;
     margin: 6px;
 }
+.roles select{
+    right: 22px; 
+}
+/* dropdown list deco */
+#role-select{
+    width: 500px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    outline: none;
+
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
 .register{
     display: flex;
     flex-direction: column;
@@ -252,4 +279,106 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.google-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+/* google image icon */
+.login-with-google .google-title img{
+    width: 40px;
+    height: auto;
+}
+.google-title a{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+/* singpass login methods */
+/* for vendor, nea and operator */
+
+/* if the login type is active, button ui is lighter color */
+.singpass-login.active{
+    background: var(--ligter-orange);
+}
+/* if not toggled - not active = default button color */
+
+/* show only the active states of the login methods */
+/* .login-methods{
+
+} */
+.login-method.active{
+    display:block;
+    width: 100%;
+}
+.login-method{
+    display: none;
+}
+.singpass-input,
+.qr-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 1. password login singpasss */
+#login-password{
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#login-password form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+/* 2. using qr login singpass */
+#login-qr .qr-input .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.singpass-qr-code{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 5px solid red;
+    border-radius: 15px;
+}
+.singpass-qr-code img{
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+}
+.login-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-top: 20px;
+    text-align: center;
+}
+.login-footer a{
+    text-decoration: none;
+    margin: 0;
+    color: rgb(26, 26, 165);
+}
+.login-footer a:hover{
+    color: rgb(83, 83, 255);
+}
+.login-footer p{
+    margin: 0;
 }
