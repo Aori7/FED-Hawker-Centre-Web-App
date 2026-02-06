@@ -57,10 +57,10 @@
     
           <div class="profile-hero-text">
             <h2 id="displayName">Name</h2>
-            <p class="muted" id="displayRole">Operator</p>
+            <p id="displayRole">Operator</p>
     
             <div class="hero-actions">
-              <button class="btn btn-primary" id="btnEditProfile">Edit Profile</button>
+                <button id="btnEditProfile" class="btn-primary">Edit Profile</button>
             </div>
           </div>
         </section>
@@ -71,25 +71,25 @@
         <section class="profile-card">
             <h3>Personal Information</h3>
           
-            <p><strong>Name:</strong> XXXX</p>
-            <p><strong>Email:</strong> XXXX@gmail.com</p>
-            <p><strong>Phone:</strong> 12345678</p>
-            <p><strong>Hawker Centres Managed:</strong> X</p>
-          
-            <button class="btn-primary">Edit Personal Information</button>
+            <p><strong>Name:</strong> <span id="infoName">XXXX</span></p>
+            <p><strong>Email:</strong> <span id="infoEmail">XXXX@gmail.com</span></p>
+            <p><strong>Phone:</strong> <span id="infoPhone">12345678</span></p>
+            <p><strong>Hawker Centres Managed:</strong> <span id="infoManaged">X</span></p>
+                    
+            <button id="btnEditPersonal" class="btn-primary">Edit Personal Information</button>
           </section>
     
         <!-- Leasing Details -->
         <section class="profile-card">
             <h3>Leasing Details</h3>
           
-            <p><strong>Total Active Leases:</strong> X</p>
-            <p><strong>Upcoming Payments:</strong> X</p>
-            <p><strong>Leases Expiring Soon:</strong> X</p>
+            <p><strong>Total Active Leases:</strong> <span id="leaseActive">X</span></p>
+            <p><strong>Upcoming Payments:</strong> <span id="leasePayments">X</span></p>
+            <p><strong>Leases Expiring Soon:</strong> <span id="leaseExpiring">X</span></p>
           
             <div class="card-actions">
-              <button class="btn-primary">View All Leases</button>
-              <button class="btn-outline">Request New Leases</button>
+                <button id="btnViewLeases" class="btn-primary">View All Leases</button>
+                <button id="btnRequestLease" class="btn-outline">Request New Leases</button>
             </div>
           </section>
       </main>
@@ -114,5 +114,6 @@
           </div>
         </div>
       </div>
+      <script src="js/operator-profile.js"></script>
     </body>
 </html>

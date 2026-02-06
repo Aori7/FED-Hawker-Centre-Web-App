@@ -16,6 +16,7 @@
   
     <!-- google rounded icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+
     <link rel="stylesheet" href="css/operator.css">  
     <title>Operators Schedule Page</title>
   </head>
@@ -65,15 +66,15 @@
         <section class="section">
           <h3>Cleaning Schedule</h3>
           <div class="inner">
-            <table aria-label="Cleaning schedule table" class="grid-table">
-              <tbody>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              </tbody>
-            </table>
+            <div class="calendar">
+              <div class="calendar-header">
+                <button id="prevMonth">◀</button>
+                <h4 id="monthYear"></h4>
+                <button id="nextMonth">▶</button>
+              </div>
+        
+              <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
           </div>
         </section>
     
@@ -92,17 +93,17 @@
     
         <!-- Maintenance Schedule -->
         <section class="section">
-          <h3>Maintaince Schedule</h3>
+          <h3>Maintenance Schedule</h3>
           <div class="inner">
-            <table aria-label="Maintenance schedule table" class="grid-table">
-              <tbody>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              </tbody>
-            </table>
+            <div class="calendar">
+              <div class="calendar-header">
+                <button id="prevMonthMaintenance">◀</button>
+                <h4 id="monthYearMaintenance"></h4>
+                <button id="nextMonthMaintenance">▶</button>
+              </div>
+        
+              <div class="calendar-grid" id="maintenanceCalendarGrid"></div>
+            </div>
           </div>
         </section>
     
@@ -120,4 +121,5 @@
         </section>
       </main>
       <script src="js/operator-hawker.js"></script>
+      <script src="js/operator-schedule.js"></script>
 </body>
