@@ -2,7 +2,9 @@
 console.log("script loaded");
 
 // swiper.js - for carousel
-const swiper = new Swiper('.swiper .wrapper', {
+let swiper;
+if (document.querySelector('.swiper')){
+ swiper = new Swiper('.swiper .wrapper', {
   // Optional parameters
   loop: true,
 
@@ -33,7 +35,7 @@ const swiper = new Swiper('.swiper .wrapper', {
         slidesPerView: 3,
     },
   } 
-});
+})};
   
 // fetch list of hawker centre n its info via json file
 //since live api call doesnt work (CORS error)
@@ -65,8 +67,26 @@ fetch("https://hawker-centre-a7461-default-rtdb.asia-southeast1.firebasedatabase
       img = card.querySelector(".card-image img");
       img.src = props.PHOTOURL || "images/picture-icon.jpg";
       img.alt = props.NAME || "Hawker Centre";
+
+      console.log("Rendered hawker:", props.NAME, props.OBJECTID);
+
+      card.querySelector(".card-button").addEventListener("click", () => {
+      console.log("Clicked hawker OBJECTID:", props.OBJECTID);
+
+      sessionStorage.setItem("selectedHawkerId", props.OBJECTID);
+
+      console.log(
+        "Stored selectedHawkerId:",
+        sessionStorage.getItem("selectedHawkerId")
+      );
+      
+      window.location.href = "order-stall.html";
     });
 
+    });
+    
+      
+    // update swiper instance to reflect new content
     if (typeof swiper !== "undefined") {
       swiper.update();
     }
