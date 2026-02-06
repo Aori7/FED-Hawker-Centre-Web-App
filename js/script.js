@@ -1,43 +1,37 @@
-// new Swiper(".hawker-carousel", {
-//     slidesPerView: 1.2,
-//     centeredSlides: true,
-//     spaceBetween: 30,
-//     loop: true,
+// debugging, check whether script loads
+console.log("script loaded");
 
-//     navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//     },
+// swiper.js - for carousel
+const swiper = new Swiper('.wrapper', {
+  // Optional parameters
+  loop: true,
 
-//     pagination: {
-//         el: ".swiper-pagination",
-//         clickable: true,
-//     },
+  slidesPerView: 3,
+  spaceBetween: 24,
 
-//     breakpoints: {
-//         0: {
-//         slidesPerView: 1,
-//         },
-//         768: {
-//         slidesPerView: 2,
-//         },
-//         1024: {
-//         slidesPerView: 3,
-//         }
-//     }
-// });
+  // pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    Dynamicbullets: true,
+  },
 
-// initiailise the swiper 
-const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-    pagination: {
-        el: '.swiper-pagination',
+  breakpoints:{
+    0:{
+        slidesPerView: 1,
     },
-
-    navigation:{
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+    768:{
+        slidesPerView: 2,
     },
+    1024:{
+        slidesPerView: 3,
+    },
+  } 
 });
+
