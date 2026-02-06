@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <!-- font chosen by ada: Archivo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- font 2 for nav bar-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- google rounded icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+  <link rel="stylesheet" href="css/operator.css">  
   <title>Operators Main Page</title>
 </head>
-<style>
-  .announcement-item {
-    border: 2px solid #000;
-    border-radius: 14px;
-    padding: 14px;
-  }
-</style>
-<body>
-    <header id="navigationbar">
-        <!-- <nav id="navcontainer"> -->
-            <div class="logo">
-                <a href="index.html">
-                    <!-- image of logo sourced from google icons -->
-                    <img src="images/fork_spoon.png" alt="logo" id="logoimg">
-                    <h1 id="logotitle">HawkerSG</h1>
-                </a>
-            </div>
+
+<body class="page-main">
+  <header id="navigationbar">
+    <!-- <nav id="navcontainer"> -->
+        <div class="logo">
+            <a href="index.html">
+                <!-- image of logo sourced from google icons -->
+                <!-- <img src="images/fork_spoon.png" alt="logo" id="logoimg"> -->
+                <span class="material-symbols-rounded">restaurant_menu</span>
+                <h1 id="logotitle">HawkerSG</h1>
+            </a>
+        </div>
 
             <ul class="navitems">
                 <li><a href="operator-main.html">Home</a></li>
@@ -33,7 +41,7 @@
 
             <div class="loginbutton">
                 <!-- maybe href is login.html? -->
-                <a href="">
+                <a href="login.html">
                     <button id="loginbtn">Operator</button>
                 </a>
             </div>
@@ -68,10 +76,8 @@
           </div>
         </div>
       </div>
-      <div class="content-left" style="position:absolute; top:250px; left:80px; z-index:5; font-size: 42px;">
-        <div class="welcome-section">
-          <img src="images/fork_spoon.png" alt="Logo" id="logoimg"/>
-        <div class="welcome-text">Welcome, ______!</div>
+      <div class="content-left">   
+        <div class="welcome-text">Welcome!</div>
       </div>
     </section>
     </body>
