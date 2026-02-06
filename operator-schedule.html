@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/operator.css">  
     <title>Operators Schedule Page</title>
   </head>
-  
+
   <body class="page-sub">
     <header id="navigationbar">
       <!-- <nav id="navcontainer"> -->
@@ -41,7 +41,7 @@
 
             <div class="loginbutton">
                 <!-- maybe href is login.html? -->
-                <a href="">
+                <a href="login.html">
                     <button id="loginbtn">Operator</button>
                 </a>
             </div>
@@ -50,11 +50,15 @@
     </header>
     <main class="page">
         <div class="controls">
-          <select class="hawker-select">
-            <option selected>Select Hawker Centre</option>
-            <option>Hawker Centre A</option>
-            <option>Hawker Centre B</option>
-          </select>
+          <section class="hawker-select">
+            <label for="hawkerCentreSelect" class="sr-only">Select Hawker Centre</label>
+            <select id="hawkerCentreSelect">
+              <option value="" selected disabled>▼ Select Hawker Centre</option>
+              <option value="laupasat">Lau Pa Sat</option>
+              <option value="maxwell">Maxwell Food Centre</option>
+              <option value="tanjongpagar">Tanjong Pagar Plaza</option>
+            </select>
+          </section>
         </div>
     
         <!-- Cleaning Schedule -->
@@ -115,5 +119,5 @@
           </div>
         </section>
       </main>
-
+      <script src="js/operator.js"></script>
 </body>

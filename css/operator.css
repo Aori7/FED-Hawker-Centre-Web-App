@@ -305,7 +305,7 @@
   .chart-summary{
     text-align: left;
   }
-  
+
   .map-placeholder{
     height: 360px;           
     width: min(900px, 92%);
@@ -348,5 +348,77 @@
       position: relative;
       margin: 110px 18px 0;
     }
+  }
+
+  /*Schedule Page*/
+  .page{
+    width: min(1100px, 92%);
+    margin: 28px auto 60px;
+  }
+  
+  /* Each section becomes a "card" */
+  .section{
+    margin: 18px 0 26px;
+  }
+  
+  .section h3{
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: 900;
+    color: #0f172a;
+  }
+  
+  /* white card container */
+  .section .inner{
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(15,23,42,.12);
+    border-radius: 18px;
+    padding: 18px;
+  
+    /* ✅ pretty shadow */
+    box-shadow: 0 18px 40px rgba(0,0,0,.10);
+  }
+  
+  /* TABLE GRID LINES*/
+  .grid-table{
+    width: 100%;
+    border-collapse: collapse; 
+    table-layout: fixed;
+    background: transparent;
+    border-radius: 14px;
+    overflow: hidden;         
+  /* outer border */
+    border: 1px solid rgba(15,23,42,.18);
+  }
+  
+  /* cell size + inner lines */
+  .grid-table td{
+    height: 54px;
+    border: 1px solid rgba(15,23,42,.18);  /* ✅ your grid lines */
+    background: rgba(255,255,255,.70);
+  }
+  
+  /* optional: subtle hover so it feels interactive */
+  .grid-table td:hover{
+    background: rgba(255,122,0,.08);
+  }
+  
+  /*BULLET LIST nicer */
+  .bullet-list{
+    margin: 0;
+    padding-left: 18px;
+  }
+  
+  .bullet-list li{
+    margin: 8px 0;
+    font-weight: 600;
+    color: #0f172a;
+  }
+  
+  /* Controls alignment */
+  .controls{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 26px;
   }
   
