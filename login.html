@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/login.css">
+    <script type="module" src="js/login.js" defer></script>
+
     <title>Log In</title>
 </head>
 <body>
@@ -144,16 +146,42 @@
 
             <div class="login-state" id="operator-login">
 
-            </div>
-            
-            <div class="login-state" id="register-acc">
-
             </div> -->
+            
+            <div class="login-state " id="register-acc">
+                <button class="back-btn">← Back</button>
+
+                <div class="title">
+                    <h1>Register Patron Account</h1>
+                </div>
+
+                <form class="reg-info">
+                    <p class="email-title">
+                    <span class="material-symbols-rounded">mail</span>Email
+                    </p>
+                    <input type="email" placeholder="Email" id="email" required>
+
+                    <p class="pass-title">
+                    <span class="material-symbols-rounded">password</span>Password
+                    </p>
+                    <input type="password" placeholder="Password" id="password" required>
+
+                    <p class="pass-title">
+                    <span class="material-symbols-rounded">password</span>Password
+                    </p>
+                    <input type="password" placeholder="Input password again" id="confirm-password" required>
+                </form>
+
+                <div class="register">
+                    <button class="reg-btn">Register</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
 
 
-    <script src="js/login.js"></script>
+    <!-- <script src="js/login.js"></script> -->
 </body>
 </html>

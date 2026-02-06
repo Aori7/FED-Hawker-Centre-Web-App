@@ -201,7 +201,8 @@ body{
 /* same border card design for all states to keep consistency */
 #choose-role,
 #customer-login,
-#other-login{
+#other-login,
+#register-acc{
     background-color: var(--lighter-beige);
     width: 70%;
     height: 80%;
@@ -398,3 +399,22 @@ body{
 .login-footer p{
     margin: 0;
 }
+
+/* register section */
+/* #register-acc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+} */
+
+
+
+/* register button container */
+#register-acc .register {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
