@@ -1,84 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css">
-  <title>Operators Schedule Page</title>
-</head>
-<style>
-    body{
-  margin:0;
-  background: var(--bg);
-  color: var(--text);
-}
-.page{
-  margin: 14px auto 18px;
-  background: var(--page);
-  border: 1px solid #bdbdbd;
-}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font chosen by ada: Archivo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+    <!-- font 2 for nav bar-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+    <!-- google rounded icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
 
-/* dropdown */
-.controls{
-  padding: 12px 14px 0;
-}
+    <link rel="stylesheet" href="css/operator.css">  
+    <title>Operators Schedule Page</title>
+  </head>
 
-.hawker-select{
-  width:100%;
-  height: 24px;
-  border-radius: 12px;
-  border: 1px solid #cfcfcf;
-  background:#efefef;
-  padding: 0 10px;
-  font-size: 12px;
-  outline:none;
-}
-
-/* sections */
-.section{
-  margin: 12px 14px 0;
-  background: var(--card);
-  padding: 12px;
-  border-radius: 2px;
-}
-
-.section h3{
-  margin: 0 0 10px;
-  text-align:center;
-  font-size: 13px;
-  font-weight: 700;
-  color:#2b2b2b;
-}
-
-.inner{
-  background: var(--inner);
-  border: 1px solid #e2e2e2;
-  border-radius: 2px;
-  padding: 12px;
-}
-
-.grid-table{
-  width:100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  border: 1px solid var(--line);
-}
-
-.grid-table td{
-  height: 18px;
-  border: 1px solid var(--line);
-}
-</style>
-<body>
+  <body class="page-sub">
     <header id="navigationbar">
-        <!-- <nav id="navcontainer"> -->
-            <div class="logo">
-                <a href="index.html">
-                    <!-- image of logo sourced from google icons -->
-                    <img src="images/fork_spoon.png" alt="logo" id="logoimg">
-                    <h1 id="logotitle">HawkerSG</h1>
-                </a>
-            </div>
+      <!-- <nav id="navcontainer"> -->
+          <div class="logo">
+              <a href="index.html">
+                  <!-- image of logo sourced from google icons -->
+                  <!-- <img src="images/fork_spoon.png" alt="logo" id="logoimg"> -->
+                  <span class="material-symbols-rounded">restaurant_menu</span>
+                  <h1 id="logotitle">HawkerSG</h1>
+              </a>
+          </div>
 
             <ul class="navitems">
                 <li><a href="operator-main.html">Home</a></li>
@@ -89,7 +42,7 @@
 
             <div class="loginbutton">
                 <!-- maybe href is login.html? -->
-                <a href="">
+                <a href="login.html">
                     <button id="loginbtn">Operator</button>
                 </a>
             </div>
@@ -98,26 +51,30 @@
     </header>
     <main class="page">
         <div class="controls">
-          <select class="hawker-select">
-            <option selected>Select Hawker Centre</option>
-            <option>Hawker Centre A</option>
-            <option>Hawker Centre B</option>
-          </select>
+          <section class="hawker-select">
+            <label for="hawkerCentreSelect" class="sr-only">Select Hawker Centre</label>
+            <select id="hawkerCentreSelect">
+              <option value="" selected disabled>▼ Select Hawker Centre</option>
+              <option value="laupasat">Lau Pa Sat</option>
+              <option value="maxwell">Maxwell Food Centre</option>
+              <option value="tanjongpagar">Tanjong Pagar Plaza</option>
+            </select>
+          </section>
         </div>
     
         <!-- Cleaning Schedule -->
         <section class="section">
           <h3>Cleaning Schedule</h3>
           <div class="inner">
-            <table aria-label="Cleaning schedule table" class="grid-table">
-              <tbody>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              </tbody>
-            </table>
+            <div class="calendar">
+              <div class="calendar-header">
+                <button id="prevMonth">◀</button>
+                <h4 id="monthYear"></h4>
+                <button id="nextMonth">▶</button>
+              </div>
+        
+              <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
           </div>
         </section>
     
@@ -136,17 +93,17 @@
     
         <!-- Maintenance Schedule -->
         <section class="section">
-          <h3>Maintaince Schedule</h3>
+          <h3>Maintenance Schedule</h3>
           <div class="inner">
-            <table aria-label="Maintenance schedule table" class="grid-table">
-              <tbody>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-              </tbody>
-            </table>
+            <div class="calendar">
+              <div class="calendar-header">
+                <button id="prevMonthMaintenance">◀</button>
+                <h4 id="monthYearMaintenance"></h4>
+                <button id="nextMonthMaintenance">▶</button>
+              </div>
+        
+              <div class="calendar-grid" id="maintenanceCalendarGrid"></div>
+            </div>
           </div>
         </section>
     
@@ -163,5 +120,6 @@
           </div>
         </section>
       </main>
-
+      <script src="js/operator-hawker.js"></script>
+      <script src="js/operator-schedule.js"></script>
 </body>
