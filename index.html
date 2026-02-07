@@ -1,8 +1,11 @@
+<!-- index.html created by Ada -->
+<!-- this is the main page for guest users and logged in patron accounts -->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- link to main css -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- font chosen by ada: Archivo -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -100,14 +103,14 @@
       </div>
     </section>
 
-    <!-- the map + hawker location section? -->
+    <!-- the map + hawker location section -->
     <section id="hawkerlocationmap-section">
       <div class="title">
         <h1>Hawker Centres Available</h1>
       </div>
 
       <div id="map">
-        <!-- image of map, locations with api etc here -->
+        <!-- map initialised using leaflet.js library, markers added by using firebase api. refer to js/leaflet.js for map initialisation-->
       </div>
 
       <h1>Find Us!</h1>
@@ -125,6 +128,8 @@
     </section>
 
     <!-- popular hawker centres section -->
+     <!-- in this html file section, this part acts as a skeleton of the html and texts will be overwritten by using js. the data used to replace the information are from the hawker centre api
+    this section also uses the swiper.js library, to make a nice carousel of hawker centres available. swiper initialisation can be found in my file js/script.js-->
     <section id="hawker-centre-section">
       <div class="title">
         <h1>Popular Hawker Centres</h1>
@@ -278,6 +283,7 @@
       </div>
     </section>
 
+    <!-- about us section -->
     <section id="be-a-member-section">
       <div class="title">
         <h1>Be a Member!</h1>
@@ -298,6 +304,7 @@
       </div>
     </section>
 
+    <!-- contact us section -->
     <section id="contactus-section">
       <div class="contact-header">
         <div class="title">
@@ -396,7 +403,7 @@
       </div>
     </section>
 
-    <!-- Order History Overlay -->
+    <!-- Order History Overlay , only shows for users who are logged in-->
     <div id="history-overlay"></div>
 
     <!-- Order History Sidebar -->
@@ -407,7 +414,8 @@
       </div>
 
       <div class="history-list">
-        <!-- SAMPLE ORDER CARD (design only for now) -->
+        <!-- SAMPLE ORDER CARD (design only for now),
+         the cards will be overwritten in js. -->
         <div class="history-card">
           <h4>Ah Seng Chicken Rice</h4>
           <p>2 items</p>
@@ -430,11 +438,13 @@
       footer
     </footer>
 
+    <!-- importing leaflet js library using cdn link -->
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+      crossorigin="">
+    </script>
+    <!-- importing swiper js library -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="js/leaflet.js"></script>
     <script src="js/script.js"></script>

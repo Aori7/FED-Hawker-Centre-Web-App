@@ -1,6 +1,11 @@
+// script.js created by Ada
+// used accross files that shares the same js functions
+
 // debugging, check whether script loads
 console.log("script loaded");
+// importing firebase auth and database - used for login auth
 import { auth, db } from "./auth.js"
+// importing firestore helper functions, firestore used for storing order details of cutsomers
 import {
   collection,
   addDoc,
@@ -12,13 +17,15 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"
 
 
-// swiper.js - for carousel
+// swiper.js carousel initialisation, runs after DOM fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+  // check if the swiper library is loaded, if not return warning
   if (typeof Swiper === "undefined") {
     console.warn("Swiper not loaded");
     return;
   }
-
+  // only initilase swiper if the swiper container exists: class swiper
+  // swiper initialisation is included with the javascript library, hence, this section was referenced from the swiper js library website.
   if (document.querySelector(".swiper")) {
     new Swiper(".swiper .wrapper", {
       loop: true,
@@ -46,12 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //creating simple array of stalls
+//used for all hawker centre
 const stallData = [
   { code: "S1", name: "Ah Seng Chicken Rice", desc: "Famous Hainanese chicken rice" },
   { code: "S2", name: "Fatty Char Kway Teow", desc: "Wok-fried noodles with cockles" },
   { code: "S3", name: "Laksa King", desc: "Spicy coconut laksa" },
   { code: "S4", name: "Kopi & Teh", desc: "Traditional kopi & drinks" }
 ];
+// menu items that are mapped to the stall code
 const menuData = {
   S1: [
     { name: "Chicken Rice", desc: "Steamed chicken with fragrant rice", price: 4.5 },
@@ -78,73 +87,85 @@ const menuData = {
     { name: "Iced Lemon Tea", desc: "Refreshing citrus tea", price: 2.5 }
   ]
 };
-const stallPage = document.querySelector(".stall-available-section");
+// stall selection logic
+// for order-stall.html
+const stallPage = document.querySelector(".stall-available-section"); // select all elements with this class
 if (stallPage) {
+  // retrieve selected hawker id from session storage, this is useful for displaying the user's selected hawker centre's name in the order-stall.html
   const hawkerId = sessionStorage.getItem("selectedHawkerId");
-
+  //redirecrt user to hawker centres page if hawker not selected
   if (!hawkerId) {
     window.location.href = "order-hawker.html";
   }
+  // select all the stall cards
   const stallCards = document.querySelectorAll(".card");
+  //looping all cards to put data
   stallCards.forEach((card, index) => {
     const stall = stallData[index];
     if (!stall) return;
-
+    // create a unique stall id consisting of hawker id and stallcode
     const stallId = `${hawkerId}-${stall.code}`;
-
+    //fill card content in order-stall.html (overwriting)
     card.querySelector(".stall-name").textContent = stall.name;
     card.querySelector(".stall-address").textContent = `Stall ID: ${stallId}`;
     card.querySelector(".stall-desc").textContent = stall.desc;
-
+    ///handle the order button when user clicks
     const orderBtn = card.querySelector(".card-button");
     orderBtn.addEventListener("click", () => {
+      //stores the stall and stall name into session to be used for displaying in menu page
       sessionStorage.setItem("selectedStallId", stallId);
       sessionStorage.setItem("selectedStallName", stall.name);
+      //redirect users to the menu page once button clicked
       window.location.href = "order-menuItems.html";
     });
   });
 }
 
-
+// menu items logic
+// made for order-menuitems.html
+//select the class section
 const menuPage = document.querySelector(".menu-items-section");
 if (menuPage) {
+  //retrieve stored information in order to display at the header
   const stallId = sessionStorage.getItem("selectedStallId");
   const stallName = sessionStorage.getItem("selectedStallName");
   const headerDesc = document.querySelector(".order-hawker-header p");
-
+  //redirect users if stall not selceted
   if (!stallId) {
     window.location.href = "order-stall.html";
   }
+  //updating the page header according to the stored info
   const headerTitle = document.querySelector(".order-hawker-header h1");
   if (headerTitle && stallName) {
     headerTitle.textContent = stallName;
   }
+  //extracting the stall code from the stall id
+  //previously, stall id  = hawkercentreid+stallcode
   const stallCode = stallId.split("-")[1];
+  // find which part of the stalldata array matches the stall code n retrieve the info
   const stallInfo = stallData.find(s => s.code === stallCode);
   if (headerDesc && stallInfo) {
-  headerDesc.textContent = `${stallInfo.desc} • Stall ID: ${stallId}`;
-}
-
+  headerDesc.textContent = `${stallInfo.desc} : Stall ID: ${stallId}`;
+  }
+  //get menu items for stall
   const items = menuData[stallCode];
-
   const menuCards = document.querySelectorAll(".menu-card");
-
+  //loop through each card and overwrite info
   menuCards.forEach((card, index) => {
     const item = items[index];
     if (!item) return;
-
+    //overwrite
     card.querySelector("h3").textContent = item.name;
     card.querySelector(".menu-desc").textContent = item.desc;
     card.querySelector(".price").textContent = `$${item.price.toFixed(2)}`;
 
-    //cart
+    //add to cart logic
     const addBtn = card.querySelector(".add-btn");
-
     addBtn.addEventListener("click", () => {
+      //retrieve the session storage cart or initailise array if cart empty
       let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
       const itemId = `${stallId}-${item.name}`;
-
       const existingItem = cart.find(i => i.id === itemId);
 
       if (existingItem) {
@@ -162,44 +183,45 @@ if (menuPage) {
       renderCart();
     });
   });
-
-  
-  
 }
 
+//dispaying selected hawker name for order-stall.html
+//retrieve selected hawker thru ses storage
 const hawkerName = sessionStorage.getItem("selectedHawkerName");
+//selecting the element where the hawker name shld appear
 const hawkerElem = document.querySelector(".hawker-selected-name");
-
-
 if (hawkerElem && hawkerName) {
   hawkerElem.textContent = hawkerName;
 }
 
-
-// fetch list of hawker centre n its info via firebase
-
+//for listing hawker centres information (cards)
+// api FETCH list of hawker centre n its info via firebase
+//selecting all the elements that has this class
 const hawkerpage = document.querySelector(".hawker-name");
 if(hawkerpage){
+  //fetch geojson hawker centre data from firebase realtime database created by Ada.
   fetch("https://hawker-centre-a7461-default-rtdb.asia-southeast1.firebasedatabase.app/.json")
     .then(res => res.json())
     .then(data => {
+      //extracting information from the json
+      //json stores data inside an array called "features", so we extract from this array
       const hawkers = data.features;
+      // select all elements with .card class
       const cards = document.querySelectorAll(".card");
-
+      //since we have a list of around 129 hawker centres, i just want to choose a random 5 to display, therefore we shuffle by using the math random function
       const shuffled = [...hawkers].sort(() => 0.5 - Math.random());
-
+      //loop for each card
       cards.forEach((card, index) => {
         const hawker = shuffled[index];
         if (!hawker) return;
-
+        //extract the information of hawkers, its stored in the properties object, from here can easily access each hawker info like the addr name etc..
         const props = hawker.properties;
-
+        
+        //setting all the information accordingly,if value null return alternative text
         card.querySelector(".hawker-name").textContent =
           props.NAME || "Unknown Hawker Centre";
-
         card.querySelector(".hawker-address").textContent =
           props.ADDRESS_MYENV || "Address not available";
-
         card.querySelector(".hawker-desc").textContent =
           `A popular hawker centre with ${props.NUMBER_OF_COOKED_FOOD_STALLS || "many"} food stalls.`;
 
@@ -207,81 +229,79 @@ if(hawkerpage){
         img.src = props.PHOTOURL || "images/picture-icon.jpg";
         img.alt = props.NAME || "Hawker Centre";
 
-        // storing hawker object into card for later retrieval
+        //debug log - ignore
         console.log("Rendered hawker:", props.NAME, props.OBJECTID);
-
+        //handle for when user click on button
         card.querySelector(".card-button").addEventListener("click", () => {
-        console.log("Clicked hawker OBJECTID:", props.OBJECTID);
+        console.log("Clicked hawker OBJECTID:", props.OBJECTID); //debug log
 
-        // set the hawker centre id into ses storage
+        // set the hawker centre id into ses storage - used for displaying info
         sessionStorage.setItem("selectedHawkerId", props.OBJECTID);
         //set the hawker name to ses storage
         sessionStorage.setItem("selectedHawkerName", props.NAME);
         
-        console.log(
-          "Stored selectedHawkerId:",
-          sessionStorage.getItem("selectedHawkerId")
-        );
+        console.log("Stored selectedHawkerId:",sessionStorage.getItem("selectedHawkerId")); //debug log
         // directing the user to the stall page after button clicked
         window.location.href = "order-stall.html";
       });
-
     });
-    
-    
     // update swiper instance to reflect new content
     if (typeof swiper !== "undefined") {
       swiper.update();
     }
   })
-  .catch(err => console.error(err));
-
+  .catch(err => console.error(err)); //catch fetch errors
 }
 
 
 
-//checkout button
+//checkout cart function
 document.addEventListener("DOMContentLoaded", () => {
+  //select all the elements related to checkout
   const checkoutBtn = document.querySelector(".checkout-btn")
   const checkoutSection = document.querySelector(".checkout-section")
   const checkoutSummary = document.querySelector(".checkout-summary")
   const confirmBtn = document.querySelector(".confirm-btn")
   const cancelBtn = document.querySelector(".cancel-btn")
-
+  //debug purposes, exit if button doesnt exist
   if (!checkoutBtn || !confirmBtn) {
-    console.log("Checkout buttons not found on this page")
+    console.log("Checkout buttons not found on this page") //debug log
     return
   }
-
+  //when checkout button is clicked
   checkoutBtn.addEventListener("click", () => {
-    console.log("CHECKOUT CLICKED")
-
-    const cart = JSON.parse(sessionStorage.getItem("cart")) || []
-    if (cart.length === 0) {
-      alert("Cart empty")
-      return
-    }
-
-    checkoutSection.style.display = "block"
-
-    const total = cart.reduce((s, i) => s + i.price * i.qty, 0)
-    const qty = cart.reduce((s, i) => s + i.qty, 0)
-
-    checkoutSummary.textContent =
-      `You have ${qty} items. Total: $${total.toFixed(2)}`
+      console.log("CHECKOUT CLICKED") //debug log
+      //retrieve cart from session storage
+      const cart = JSON.parse(sessionStorage.getItem("cart")) || []
+      //preventing checkout when cart is empty.
+      if (cart.length === 0) {
+        alert("Cart empty")
+        return
+      }
+      //show checkout section
+      checkoutSection.style.display = "block"
+      //calculate total and qty of items in cart
+      const total = cart.reduce((s, i) => s + i.price * i.qty, 0)
+      const qty = cart.reduce((s, i) => s + i.qty, 0)
+      //display checkout summary
+      checkoutSummary.textContent =
+        `You have ${qty} items. Total: $${total.toFixed(2)}`
   })
-
+  //confirm payment and place order
   confirmBtn.addEventListener("click", async () => {
-    console.log("CONFIRM CLICKED")
+    console.log("CONFIRM CLICKED") //debug log
 
     const cart = JSON.parse(sessionStorage.getItem("cart")) || []
     const user = auth.currentUser
-
+    //requires user to be logged in
+    //NOTE: TO BE UPDATED
     if (!user) {
       alert("Please log in")
       return
     }
 
+    //Firebase firestore
+    //prepare order object for storing into firestore db
     const orderData = {
       userId: user.uid,
       hawkerName: sessionStorage.getItem("selectedHawkerName"),
@@ -291,13 +311,13 @@ document.addEventListener("DOMContentLoaded", () => {
       status: "paid",
       createdAt: serverTimestamp()
     }
-
+    //save order to firestore
     await addDoc(collection(db, "orders"), orderData)
-
+    //resets cart and the ui
     alert("Order placed successfully")
     sessionStorage.removeItem("cart")
     renderCart()
-    checkoutSection.style.display = "none"
+    checkoutSection.style.display = "none" //unshow the checkout section
   })
 
   cancelBtn.addEventListener("click", () => {
@@ -315,26 +335,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//cart function
-//cart ui
+//cart function and ui
 function renderCart() {
+  //select cart container and total
   const cartItemsContainer = document.querySelector(".cart-items");
   const cartFooterTotal = document.querySelector(".cart-footer p");
 
   if (!cartItemsContainer) return;
-
-  const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-  cartItemsContainer.innerHTML = "";
-
+  const cart = JSON.parse(sessionStorage.getItem("cart")) || []; //retrieve cart from session storage
+  cartItemsContainer.innerHTML = ""; //clear cart ui
+  //handle empty cart state
   if (cart.length === 0) {
     cartItemsContainer.innerHTML = "<p>No items added yet</p>";
     cartFooterTotal.textContent = "Total: $0.00";
     return;
   }
 
-  let total = 0;
-
+  let total = 0; //default total
+  //loop each cart items
   cart.forEach(item => {
     total += item.price * item.qty;
 
@@ -380,19 +398,15 @@ function renderCart() {
       sessionStorage.setItem("cart", JSON.stringify(cart));
       renderCart();
     });
-
-
-
     cartItemsContainer.appendChild(itemDiv);
   });
-
   cartFooterTotal.textContent = `Total: $${total.toFixed(2)}`;
 }
 
+//order history sidebar controls
 const viewOrdersBtn = document.getElementById("view-orders-btn");
 const ordersSection = document.querySelector(".order-history");
 const ordersList = document.querySelector(".orders-list");
-
 const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
 
 if (isLoggedIn && viewOrdersBtn) {
@@ -426,8 +440,7 @@ if (viewOrdersBtn && ordersSection) {
     });
   });
 }
-
-
+//order history controlsa
 const openHistoryBtn = document.getElementById("open-history-btn");
 const closeHistoryBtn = document.getElementById("close-history");
 const historySidebar = document.getElementById("order-history-sidebar");
@@ -454,6 +467,7 @@ if (historyOverlay) {
     historyOverlay.classList.remove("active");
   });
 }
+//loading the history function
 async function loadOrderHistory() {
   const historyList = document.querySelector(".history-list")
   if (!historyList) return
