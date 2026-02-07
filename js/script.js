@@ -13,7 +13,9 @@ import {
   query,
   where,
   getDocs,
-  orderBy
+  orderBy,
+  deleteDoc,
+  doc
 } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"
 
 
@@ -240,6 +242,21 @@ if(hawkerpage){
 
         //debug log - ignore
         console.log("Rendered hawker:", props.NAME, props.OBJECTID);
+        //for favouriting hawker centres for logeged in users
+        const favIcon = card.querySelector(".card-fav");
+        if (favIcon) {
+          // default state (outlined heart)
+          favIcon.textContent = "favorite_border";
+
+          favIcon.addEventListener("click", (e) => {
+            e.stopPropagation(); // prevents card click
+            toggleHawkerFavourite(
+              props.OBJECTID,
+              props.NAME,
+              favIcon
+            );
+          });
+        }
         //handle for when user click on button
         card.querySelector(".card-button").addEventListener("click", () => {
         console.log("Clicked hawker OBJECTID:", props.OBJECTID); //debug log
@@ -309,6 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //   return
     // }
     //updated version
+    //if users are not logged, usertype will be guest and have no userid..
     let userType = "guest";
     let userId = null;
     if (user) {
@@ -333,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
       userType: userType,
       guestId: userType === "guest"
         ? sessionStorage.getItem("guestId")
-        : null,
+        : null, //if usertype not guest, guestid is "null"
       hawkerName: sessionStorage.getItem("selectedHawkerName"),
       stallName: sessionStorage.getItem("selectedStallName"),
       items: cart,
@@ -360,10 +378,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 }
 })
-
-
-
-
 
 
 //cart function and ui
@@ -555,6 +569,101 @@ async function loadOrderHistory() {
   } catch (err) {
     console.error(err)
     historyList.innerHTML = "<p>Error loading orders.</p>"
+  }
+}
+
+// contact us form logic
+//to handle users to give feedbacks, complaints, suggestions or others
+const contactForm = document.querySelector(".contact-form form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // retrieve form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value.trim();
+
+    // basic validation
+    if (!name || !email || !subject || !message) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    const user = auth.currentUser;
+
+    // determine user type
+    const userType = user ? "registered" : "guest";
+    const userId = user ? user.uid : null;
+    const guestId = userType === "guest"
+      ? sessionStorage.getItem("guestId")
+      : null;
+
+    // prepare data to store in Firestore
+    const contactData = {
+      name,
+      email,
+      subject,
+      message,
+      userType,
+      userId,
+      guestId,
+      createdAt: serverTimestamp()
+    };
+
+    try {
+      await addDoc(collection(db, "contactMessages"), contactData);
+
+      alert("Your message has been sent successfully!");
+      contactForm.reset();
+    } catch (err) {
+      console.error(err);
+      alert("Error sending message. Please try again.");
+    }
+  });
+}
+
+//for logged in users, they are able to favourite hawker centres
+async function toggleHawkerFavourite(hawkerId, hawkerName, favIcon) {
+  const user = auth.currentUser;
+
+  if (!user) {
+    alert("Please log in to save favourites");
+    return;
+  }
+
+  const favQuery = query(
+    collection(db, "favourites"),
+    where("userId", "==", user.uid),
+    where("type", "==", "hawker"),
+    where("targetId", "==", hawkerId)
+  );
+
+  const snapshot = await getDocs(favQuery);
+
+  // already favourited → remove
+  if (!snapshot.empty) {
+    snapshot.forEach(docSnap => {
+      deleteDoc(doc(db, "favourites", docSnap.id));
+    });
+
+    favIcon.textContent = "favorite_border";
+    favIcon.classList.remove("active");
+  }
+  // not favourited → add
+  else {
+    await addDoc(collection(db, "favourites"), {
+      userId: user.uid,
+      type: "hawker",
+      targetId: hawkerId,
+      targetName: hawkerName,
+      createdAt: serverTimestamp()
+    });
+
+    favIcon.textContent = "favorite";
+    favIcon.classList.add("active");
   }
 }
 

@@ -89,12 +89,14 @@
             />
 
             <label for="subject">Subject:</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Subject.."
-            />
+            <select id="subject" name="subject">
+              <option value="">Select a subject</option>
+              <option value="Complaint">Complaint</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Suggestion">Suggestion</option>
+              <option value="Others">Others</option>
+            </select>
+
 
             <label for="message">Message:</label>
             <textarea
