@@ -157,16 +157,16 @@ Validation + QA checks used:
 - `js/login.js`
 - `js/script.js`
 - `js/leaflet.js`
+- `js/hawker-centre.json`
 
 ### Calista (Operator)
-- Operator pages + scripts *(TBC if filenames not finalised by teammate)*
 - `operator-hawker.html`
 - `operator-main.html`
 - `oeprator-profile.html`
 - `operator-schedule.html`
-- `operator-hawker.js`
-- `operator-profile.js`
-- `operator-schedule.js`
+- `js/operator-hawker.js`
+- `js/operator-profile.js`
+- `js/operator-schedule.js`
 
 ### Dayana (NEA Officer)
 - Pending / TBC
@@ -182,3 +182,7 @@ Validation + QA checks used:
 - Vendor + NEA real authentication flow
 - Improve footer + polish UI sections
 - More advanced analytics dashboards and admin tools
+
+---
+
+README written by **Ada**
