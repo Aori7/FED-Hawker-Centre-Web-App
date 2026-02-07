@@ -1,10 +1,9 @@
+ // implemented by Ada
+// login.html js
 
-    // implemented by Ada
-    // login.html js
-
-    // for login states - 3 different types of login states
-    // choose-role state, customer-login state, and other-login state
-    //adding the function to toggle between the states
+// for login states - 3 different types of login states
+// choose-role state, customer-login state, and other-login state
+//adding the function to toggle between the states
 function toggleLoginState(loginstate){
     // remove all the "active" from all the login states first
     document.querySelectorAll(".login-state").forEach(state => {
@@ -106,31 +105,11 @@ singpassbtn.forEach(btn => {
 });
         
 
-//firebase authentication
-// firebase is only used for CUSTOMER authentication (for now)
-// refered to week 12 tutorial and youtube
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 
+// firebase authentication for customers
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+import { auth } from "./auth.js"
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-apiKey: "AIzaSyAUkw_-4fRby8jYZ-d_QwixwcCKVosYw7A",
-authDomain: "hawker-centre-a7461.firebaseapp.com",
-databaseURL: "https://hawker-centre-a7461-default-rtdb.asia-southeast1.firebasedatabase.app",
-projectId: "hawker-centre-a7461",
-storageBucket: "hawker-centre-a7461.firebasestorage.app",
-messagingSenderId: "971970826785",
-appId: "1:971970826785:web:2d5daeae78dc079d6c0960"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
 //customer login email and password
 const customerLoginBtn = document.getElementById("customer-login-btn");
@@ -183,12 +162,11 @@ submit.addEventListener("click", function(event){
     .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
-        // ...
+        console.log("account created") //debug log
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
     });
 })
 
