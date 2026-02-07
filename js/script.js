@@ -1,41 +1,41 @@
 // debugging, check whether script loads
 console.log("script loaded");
+import { auth, db } from "./auth.js"
+import { collection, addDoc, serverTimestamp } 
+from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"
 
 // swiper.js - for carousel
-let swiper;
-if (document.querySelector('.swiper')){
- swiper = new Swiper('.swiper .wrapper', {
-  // Optional parameters
-  loop: true,
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof Swiper === "undefined") {
+    console.warn("Swiper not loaded");
+    return;
+  }
 
-  slidesPerView: 3,
-  spaceBetween: 24,
+  if (document.querySelector(".swiper")) {
+    new Swiper(".swiper .wrapper", {
+      loop: true,
+      slidesPerView: 3,
+      spaceBetween: 24,
 
-  // pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    Dynamicbullets: true,
-  },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
 
-  breakpoints:{
-    0:{
-        slidesPerView: 1,
-    },
-    768:{
-        slidesPerView: 2,
-    },
-    1024:{
-        slidesPerView: 3,
-    },
-  } 
-})};
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  }
+});
+
 
 //creating simple array of stalls
 const stallData = [
@@ -159,8 +159,8 @@ if (menuPage) {
   
 }
 
-hawkerName = sessionStorage.getItem("selectedHawkerName");
-hawkerElem = document.querySelector(".hawker-selected-name");
+const hawkerName = sessionStorage.getItem("selectedHawkerName");
+const hawkerElem = document.querySelector(".hawker-selected-name");
 
 
 if (hawkerElem && hawkerName) {
@@ -195,7 +195,7 @@ if(hawkerpage){
         card.querySelector(".hawker-desc").textContent =
           `A popular hawker centre with ${props.NUMBER_OF_COOKED_FOOD_STALLS || "many"} food stalls.`;
 
-        img = card.querySelector(".card-image img");
+        const img = card.querySelector(".card-image img");
         img.src = props.PHOTOURL || "images/picture-icon.jpg";
         img.alt = props.NAME || "Hawker Centre";
 
@@ -233,40 +233,78 @@ if(hawkerpage){
 
 
 //checkout button
-const checkoutBtn = document.querySelector(".checkout-btn");
-const checkoutSection = document.querySelector(".checkout-section");
-const checkoutSummary = document.querySelector(".checkout-summary");
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutBtn = document.querySelector(".checkout-btn")
+  const checkoutSection = document.querySelector(".checkout-section")
+  const checkoutSummary = document.querySelector(".checkout-summary")
+  const confirmBtn = document.querySelector(".confirm-btn")
+  const cancelBtn = document.querySelector(".cancel-btn")
 
-checkoutBtn.addEventListener("click", () => {
-  const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-  if (cart.length === 0) {
-    alert("Cart empty");
-    return;
+  if (!checkoutBtn || !confirmBtn) {
+    console.log("Checkout buttons not found on this page")
+    return
   }
 
-  checkoutSection.style.display = "block";
+  checkoutBtn.addEventListener("click", () => {
+    console.log("CHECKOUT CLICKED")
 
-  let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || []
+    if (cart.length === 0) {
+      alert("Cart empty")
+      return
+    }
 
-  checkoutSummary.textContent =
-    `You have ${totalQty} items. Total: $${total.toFixed(2)}`;
+    checkoutSection.style.display = "block"
 
-});
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0)
+    const qty = cart.reduce((s, i) => s + i.qty, 0)
 
-document.querySelector(".confirm-btn").addEventListener("click", () => {
-  alert("Order placed");
+    checkoutSummary.textContent =
+      `You have ${qty} items. Total: $${total.toFixed(2)}`
+  })
 
-  sessionStorage.removeItem("cart");
-  renderCart();
+  confirmBtn.addEventListener("click", async () => {
+    console.log("CONFIRM CLICKED")
 
-  document.querySelector(".checkout-section").style.display = "none";
-});
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || []
+    const user = auth.currentUser
 
-document.querySelector(".cancel-btn").addEventListener("click", () => {
-  document.querySelector(".checkout-section").style.display = "none";
-});
+    if (!user) {
+      alert("Please log in")
+      return
+    }
+
+    const orderData = {
+      userId: user.uid,
+      hawkerName: sessionStorage.getItem("selectedHawkerName"),
+      stallName: sessionStorage.getItem("selectedStallName"),
+      items: cart,
+      total: cart.reduce((s, i) => s + i.price * i.qty, 0),
+      status: "paid",
+      createdAt: serverTimestamp()
+    }
+
+    await addDoc(collection(db, "orders"), orderData)
+
+    alert("Order placed successfully")
+    sessionStorage.removeItem("cart")
+    renderCart()
+    checkoutSection.style.display = "none"
+  })
+
+  cancelBtn.addEventListener("click", () => {
+    checkoutSection.style.display = "none"
+  })
+  if (cancelBtn && checkoutSection) {
+  cancelBtn.addEventListener("click", () => {
+    checkoutSection.style.display = "none";
+  });
+}
+})
+
+
+
+
 
 
 //cart function
@@ -341,4 +379,112 @@ function renderCart() {
   });
 
   cartFooterTotal.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+const viewOrdersBtn = document.getElementById("view-orders-btn");
+const ordersSection = document.querySelector(".order-history");
+const ordersList = document.querySelector(".orders-list");
+
+const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+
+if (isLoggedIn && viewOrdersBtn) {
+  viewOrdersBtn.style.display = "block";
+}
+
+if (viewOrdersBtn && ordersSection) {
+  viewOrdersBtn.addEventListener("click", () => {
+    ordersSection.style.display =
+      ordersSection.style.display === "none" ? "block" : "none";
+
+    const orders =
+      JSON.parse(sessionStorage.getItem("orderHistory")) || [];
+
+    ordersList.innerHTML = "";
+
+    if (orders.length === 0) {
+      ordersList.innerHTML = "<p>No orders yet</p>";
+      return;
+    }
+
+    orders.forEach(order => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <p><strong>${order.orderId}</strong></p>
+        <p>Total: $${order.total.toFixed(2)}</p>
+        <p>Date: ${order.date}</p>
+        <hr>
+      `;
+      ordersList.appendChild(div);
+    });
+  });
+}
+
+
+const openHistoryBtn = document.getElementById("open-history-btn");
+const closeHistoryBtn = document.getElementById("close-history");
+const historySidebar = document.getElementById("order-history-sidebar");
+const historyOverlay = document.getElementById("history-overlay");
+
+if (openHistoryBtn) {
+  openHistoryBtn.addEventListener("click", () => {
+    historySidebar.classList.add("active");
+    historyOverlay.classList.add("active");
+    loadOrderHistory();
+  });
+}
+
+if (closeHistoryBtn) {
+  closeHistoryBtn.addEventListener("click", () => {
+    historySidebar.classList.remove("active");
+    historyOverlay.classList.remove("active");
+  });
+}
+
+if (historyOverlay) {
+  historyOverlay.addEventListener("click", () => {
+    historySidebar.classList.remove("active");
+    historyOverlay.classList.remove("active");
+  });
+}
+function loadOrderHistory() {
+  const historyList = document.querySelector(".history-list");
+  if (!historyList) return;
+
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+  const userEmail = sessionStorage.getItem("userEmail");
+
+  historyList.innerHTML = "";
+
+  if (!isLoggedIn) {
+    historyList.innerHTML = "<p>Please log in to view order history.</p>";
+    return;
+  }
+
+  const allOrders = JSON.parse(localStorage.getItem("orderHistory")) || {};
+  const orders = allOrders[userEmail] || [];
+
+  if (orders.length === 0) {
+    historyList.innerHTML = "<p>No orders yet.</p>";
+    return;
+  }
+
+  orders.slice().reverse().forEach(order => {
+    const card = document.createElement("div");
+    card.className = "history-card";
+
+    card.innerHTML = `
+      <h4>${order.stall}</h4>
+      <p>${order.items.length} items</p>
+      <p class="history-meta">$${order.total.toFixed(2)} • ${order.date}</p>
+      <button class="reorder-btn">Reorder</button>
+    `;
+
+    card.querySelector(".reorder-btn").addEventListener("click", () => {
+      sessionStorage.setItem("cart", JSON.stringify(order.items));
+      renderCart();
+      alert("Items added to cart");
+    });
+
+    historyList.appendChild(card);
+  });
 }

@@ -34,9 +34,10 @@
             </ul>
 
             <div class="loginbutton">
-                <a href="login.html">
-                    <button id="loginbtn">Login</button>
+                <a href="login.html" id="login-link">
+                    <button id="login-btn">Login</button>
                 </a>
+                <button id="logout-btn" style="display: none;">Logout</button>
             </div>
     </header>
 
@@ -128,19 +129,20 @@
                 <button class="checkout-btn">Checkout</button>
             </div>
             <!-- summary section only shows when user clicks checkout. default state is displayed as none -->
-            <section class="checkout-section" style="display: none;">
-            <h2>Checkout</h2>
+                <section class="checkout-section" style="display: none;">
+                <h2>Checkout</h2>
 
-            <p class="checkout-summary"></p>
+                <p class="checkout-summary"></p>
 
-            <button class="confirm-btn">Confirm Order</button>
-            <button class="cancel-btn">Cancel</button>
-    </section>
+                <button class="confirm-btn">Confirm Order</button>
+                <button class="cancel-btn">Cancel</button>
+            </section>
         </div>
     </section>
 
 
-
-<script src="js/script.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module"src="js/script.js"></script>
+    
 </body>
 </html>

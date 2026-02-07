@@ -111,7 +111,7 @@ singpassbtn.forEach(btn => {
 // refered to week 12 tutorial and youtube
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -191,3 +191,5 @@ submit.addEventListener("click", function(event){
         // ..
     });
 })
+
+
