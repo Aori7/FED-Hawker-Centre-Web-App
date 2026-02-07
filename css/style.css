@@ -41,6 +41,10 @@ button:hover{
     filter: brightness(1.20);
 }
 
+button#login-btn,button#logout-btn{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
 body {
     margin: 0;
@@ -100,12 +104,10 @@ html, body {
 
     /* padding inside the width of nav bar */
     box-sizing: border-box;
+    margin-left: auto;
 
 }
 
-/* #navcontainer{
-
-} */
 
 /* logo of the page */
 
@@ -149,7 +151,8 @@ html, body {
 
     list-style: none;
     margin: 0;
-    padding: 0;
+    margin-left: auto;
+    padding: 0px;
 }
 
 .navitems li{
@@ -198,42 +201,6 @@ html, body {
 .navitems a.active::after{
     width: 100%;
 }
-
-/* #loginbtn{
-    padding: 10px 60px;
-    font-size: 18px;
-    font-weight: 600;
-
-    border: none;
-    border-radius: 20px;
-
-    color: white;
-    background: var(--orange-color);
-
-    box-shadow:
-        0 8px 24px var(--dark-orange-color),
-        inset 0 1px 0 var(--orange-color); */
-
-    /* cursor: pointer;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        filter 0.2s ease;
-} */
-
-/* #loginbtn:hover{ */
-    /* make button shift up abit when hovered over */
-    /* transform: translateY(-2px);
-    box-shadow:
-        0 12px 32px rgba(255, 255, 255, 0.45),
-        inset 0 1px 0 rgba(255,255,255,0.2);
-    filter: brightness(1.05);
-} */
-
-/* #loginbtn:active{
-    transform: translateY(0);
-} */
-
 
 
 /* header/navigation section done by ada  */
@@ -1197,7 +1164,14 @@ html, body {
 
 /* ========================================================= */
 /* main-hawkers.html */
-
+/* about-us.html */
+#aboutus-section-main,
+.about-us-more{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 /* order history side bar */
 /* ===== Order History Overlay ===== */
