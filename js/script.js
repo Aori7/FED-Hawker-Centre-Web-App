@@ -1,8 +1,16 @@
 // debugging, check whether script loads
 console.log("script loaded");
 import { auth, db } from "./auth.js"
-import { collection, addDoc, serverTimestamp } 
-from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"
+import {
+  collection,
+  addDoc,
+  serverTimestamp,
+  query,
+  where,
+  getDocs,
+  orderBy
+} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"
+
 
 // swiper.js - for carousel
 document.addEventListener("DOMContentLoaded", () => {
@@ -446,45 +454,70 @@ if (historyOverlay) {
     historyOverlay.classList.remove("active");
   });
 }
-function loadOrderHistory() {
-  const historyList = document.querySelector(".history-list");
-  if (!historyList) return;
+async function loadOrderHistory() {
+  const historyList = document.querySelector(".history-list")
+  if (!historyList) return
 
-  const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
-  const userEmail = sessionStorage.getItem("userEmail");
+  historyList.innerHTML = "<p>Loading orders...</p>"
 
-  historyList.innerHTML = "";
-
-  if (!isLoggedIn) {
-    historyList.innerHTML = "<p>Please log in to view order history.</p>";
-    return;
+  const user = auth.currentUser
+  if (!user) {
+    historyList.innerHTML = "<p>Please log in to view order history.</p>"
+    return
   }
 
-  const allOrders = JSON.parse(localStorage.getItem("orderHistory")) || {};
-  const orders = allOrders[userEmail] || [];
+  try {
+    const q = query(
+      collection(db, "orders"),
+      where("userId", "==", user.uid),
+      orderBy("createdAt", "desc")
+    )
 
-  if (orders.length === 0) {
-    historyList.innerHTML = "<p>No orders yet.</p>";
-    return;
+    const snapshot = await getDocs(q)
+
+    historyList.innerHTML = ""
+
+    if (snapshot.empty) {
+      historyList.innerHTML = "<p>No orders yet.</p>"
+      return
+    }
+
+    snapshot.forEach(doc => {
+      const order = doc.data()
+
+      const card = document.createElement("div")
+      card.className = "history-card"
+
+      card.innerHTML = `
+        <h4>${order.stallName}</h4>
+        <p>${order.items.length} items</p>
+        <p class="history-meta">
+          $${order.total.toFixed(2)} • ${new Date(order.createdAt.seconds * 1000).toLocaleString()}
+        </p>
+        <button class="reorder-btn">Reorder</button>
+      `
+
+      card.querySelector(".reorder-btn").addEventListener("click", () => {
+        sessionStorage.setItem("cart", JSON.stringify(order.items))
+        renderCart()
+        alert("Items added to cart")
+      })
+
+      historyList.appendChild(card)
+    })
+  } catch (err) {
+    console.error(err)
+    historyList.innerHTML = "<p>Error loading orders.</p>"
   }
-
-  orders.slice().reverse().forEach(order => {
-    const card = document.createElement("div");
-    card.className = "history-card";
-
-    card.innerHTML = `
-      <h4>${order.stall}</h4>
-      <p>${order.items.length} items</p>
-      <p class="history-meta">$${order.total.toFixed(2)} • ${order.date}</p>
-      <button class="reorder-btn">Reorder</button>
-    `;
-
-    card.querySelector(".reorder-btn").addEventListener("click", () => {
-      sessionStorage.setItem("cart", JSON.stringify(order.items));
-      renderCart();
-      alert("Items added to cart");
-    });
-
-    historyList.appendChild(card);
-  });
 }
+
+// for media queries
+const hamburgerBtn = document.getElementById("hamburger-btn")
+const navItems = document.querySelector(".navitems")
+
+if (hamburgerBtn && navItems) {
+  hamburgerBtn.addEventListener("click", () => {
+    navItems.classList.toggle("show")
+  })
+}
+
