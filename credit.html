@@ -1,11 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Page</title>
+  <meta charset="UTF-8" />
+  <title>Credits</title>
+
+  <style>
+    :root {
+      --orange: rgb(250, 129, 18);
+      --dark-orange: rgb(196, 12, 12);
+      --beige: rgb(245, 231, 198);
+      --light-beige: rgb(250, 243, 225);
+      --text: rgb(34, 34, 34);
+    }
+
+    body {
+      margin: 0;
+      padding: 60px 20px;
+      font-family: "Archivo", sans-serif;
+      background: var(--light-beige);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: var(--beige);
+      border-radius: 20px;
+      padding: 40px 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 42px;
+      color: var(--orange);
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 26px;
+      color: var(--dark-orange);
+      border-bottom: 2px solid var(--orange);
+      padding-bottom: 6px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--orange);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background: rgba(0,0,0,0.08);
+      padding: 4px 6px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-    
+  <div class="container">
+    <h1>Credits & References</h1>
+    <h2 style="display: flex; flex-direction: column; align-items: center; margin-top: 0; border-bottom: none;">Done by Ada</h2>
+    <h2>Fonts</h2>
+    <ul>
+      <li>
+        Archivo – Google Fonts  
+        <br />
+        <a href="https://fonts.google.com/specimen/Archivo" target="_blank">
+          https://fonts.google.com/specimen/Archivo
+        </a>
+      </li>
+        <li>
+        Noto Sans – Google Fonts  
+        <br />
+        <a href="https://fonts.google.com/noto/specimen/Noto+Sans" target="_blank">
+          https://fonts.google.com/noto/specimen/Noto+Sans
+        </a>
+      </li>
+    </ul>
+
+    <h2>Icons</h2>
+    <ul>
+      <li>
+        Google Material Symbols (Rounded)  
+        <br />
+        <a href="https://fonts.google.com/icons" target="_blank">
+          https://fonts.google.com/icons
+        </a>
+      </li>
+      <li>
+        Icon usage format:  
+        <br />
+        <code>&lt;span class="material-symbols-rounded"&gt;icon_name&lt;/span&gt;</code>
+      </li>
+    </ul>
+
+    <h2>Images</h2>
+    <ul>
+      <li>
+        Hawker centre banner inspiration  
+        <br />
+        <a href="https://www.getyourguide.com/explorer/singapore-ttd169042/hawker-centers-in-singapore/" target="_blank">
+          GetYourGuide – Hawker Centres in Singapore
+        </a>
+      </li>
+      <li>
+        Hawker centre photograph  
+        <br />
+        <a href="https://unsplash.com/photos/people-standing-in-front-of-store-during-daytime-NRTptNBkLLw" target="_blank">
+          Unsplash – Hawker Centre Image
+        </a>
+      </li>
+      <li>
+        Background image  
+        <br />
+        <a href="https://pngtree.com/back/down?id=OTk2NzI3&type=1" target="_blank">
+          PNGTree – Background Image
+        </a>
+      </li>
+      <li>
+        Hawker centre images retrieved from the Data.gov.sg dataset (PHOTOURL)
+      </li>
+    </ul>
+
+    <h2>JavaScript Libraries</h2>
+    <ul>
+      <li>
+        Leaflet.js – Interactive Map  
+        <br />
+        <a href="https://leafletjs.com/examples/quick-start/" target="_blank">
+          https://leafletjs.com/examples/quick-start/
+        </a>
+      </li>
+      <li>
+        Swiper.js – Carousel  
+        <br />
+        <a href="https://swiperjs.com/get-started" target="_blank">
+          https://swiperjs.com/get-started
+        </a>
+      </li>
+      <li>
+        Swiper.js tutorial reference  
+        <br />
+        <a href="https://www.youtube.com/watch?v=VUtJ7FWCfZA" target="_blank">
+          YouTube – Swiper Tutorial
+        </a>
+      </li>
+      <li>
+        JavaScript library reference list  
+        <br />
+        <a href="https://kinsta.com/blog/javascript-libraries/" target="_blank">
+          https://kinsta.com/blog/javascript-libraries/
+        </a>
+      </li>
+    </ul>
+
+    <h2>API & Data Sources</h2>
+    <ul>
+      <li>
+        Data.gov.sg – Hawker Centre Dataset  
+        <br />
+        <a href="https://data.gov.sg/datasets/d_4a086da0a5553be1d89383cd90d07ecd/view" target="_blank">
+          https://data.gov.sg/datasets/d_4a086da0a5553be1d89383cd90d07ecd/view
+        </a>
+      </li>
+      <li>
+        Dataset stored in Firebase Realtime Database due to browser CORS restrictions
+      </li>
+    </ul>
+
+    <h2>Backend & Authentication</h2>
+    <ul>
+      <li>Firebase Authentication (Email & Password, Google Login)</li>
+      <li>Firebase Firestore (Orders, favourites, feedback & complaints)</li>
+      <li>Firebase Realtime Database (Hawker centre GeoJSON storage)</li>
+    </ul>
+
+    <h2>Tutorials & Learning Resources</h2>
+    <ul>
+      <li>
+        Firebase Authentication Tutorial  
+        <br />
+        <a href="https://www.youtube.com/watch?v=WM178YopjfI" target="_blank">
+          YouTube – Firebase Web Authentication
+        </a>
+      </li>
+      <li>W3Schools (HTML, CSS, JavaScript)</li>
+      <li>Official documentation for Leaflet.js, Swiper.js, and Firebase</li>
+    </ul>
+
+  </div>
 </body>
 </html>
