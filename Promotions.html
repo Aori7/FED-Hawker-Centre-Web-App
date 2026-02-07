@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vendor Promotions</title>
+    <style>
+      nav {
+        height: 50px;
+        width: auto;
+        background-color: lightblue;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        height: 80px;
+        background-color: grey;
+      }
+      select {
+        font-size: 50px;
+      }
+      option {
+        font-size: 20px;
+      }
+      #activePromos-container {
+        height: auto;
+        padding: 20px;
+        background-color: lightblue;
+      }
+      #inactivePromos-container {
+        height: auto;
+        padding: 20px;
+        background-color: grey;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--nav bar-->
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">Orders</a>
+      <a href="#">Promotions</a>
+      <a href="#">Feedback</a>
+      <a href="#">Notices</a>
+      <a href="#">Profile</a>
+    </nav>
+
+    <!-- select stall -->
+    <header class="dropdown">
+      <select id="selectStall" name="stall">
+        <option value="stall-1">Chicken Rice Stall @hawker centre</option>
+        <option value="stall-2">Noodle Stall @hawker centre</option>
+      </select>
+    </header>
+
+    <!-- Active promos -->
+    <section id="activePromos-container">
+      <h1>Active Promotions</h1>
+
+      <div class="promoCode"><!-- added using js --></div>
+    </section>
+
+    <!-- inactive promos -->
+    <section id="inactivePromos-container">
+      <h1>Inactive Promotions</h1>
+    </section>
+  </body>
+</html>
