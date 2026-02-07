@@ -87,6 +87,15 @@ const menuData = {
     { name: "Iced Lemon Tea", desc: "Refreshing citrus tea", price: 2.5 }
   ]
 };
+
+//for guests who arent logged in
+if (!sessionStorage.getItem("guestId")) {
+  sessionStorage.setItem(
+    "guestId",
+    "guest-" + Date.now()
+  );
+}
+
 // stall selection logic
 // for order-stall.html
 const stallPage = document.querySelector(".stall-available-section"); // select all elements with this class
@@ -295,10 +304,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const user = auth.currentUser
     //requires user to be logged in
     //NOTE: TO BE UPDATED
-    if (!user) {
-      alert("Please log in")
-      return
+    // if (!user) {
+    //   alert("Please log in")
+    //   return
+    // }
+    //updated version
+    let userType = "guest";
+    let userId = null;
+    if (user) {
+      userType = "registered";
+      userId = user.uid;
     }
+
 
     const selectedPayment = document.querySelector(
       'input[name="payment"]:checked'
@@ -312,7 +329,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //Firebase firestore
     //prepare order object for storing into firestore db
     const orderData = {
-      userId: user.uid,
+      userId: userId,
+      userType: userType,
+      guestId: userType === "guest"
+        ? sessionStorage.getItem("guestId")
+        : null,
       hawkerName: sessionStorage.getItem("selectedHawkerName"),
       stallName: sessionStorage.getItem("selectedStallName"),
       items: cart,
