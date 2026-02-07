@@ -201,7 +201,8 @@ body{
 /* same border card design for all states to keep consistency */
 #choose-role,
 #customer-login,
-#other-login{
+#other-login,
+#register-acc{
     background-color: var(--lighter-beige);
     width: 70%;
     height: 80%;
@@ -397,4 +398,95 @@ body{
 }
 .login-footer p{
     margin: 0;
+}
+
+/* register section */
+/* #register-acc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+} */
+
+
+
+/* register button container */
+#register-acc .register {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+
+    /* layout */
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 40px;
+    }
+
+    /* hide left image panel */
+    .left-container {
+        display: none;
+    }
+
+    /* right side full screen */
+    .right-container {
+        width: 100%;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    /* login cards */
+    #choose-role,
+    #customer-login,
+    #other-login,
+    #register-acc {
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    /* titles */
+    .title h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    /* inputs + selects */
+    input,
+    #role-select {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* buttons */
+    button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* role buttons spacing */
+    .roles {
+        width: 100%;
+    }
+
+    /* back button */
+    .back-btn {
+        top: 16px;
+        left: 16px;
+    }
+
+    /* QR image */
+    .singpass-qr-code img {
+        width: 220px;
+    }
+    
 }
