@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+  const STORAGE_CLEANING = "hawkersg_cleaning_calendar";
+  const STORAGE_MAINTENANCE = "hawkersg_maintenance_calendar";
     function createCalendar(config) {
       const {
         gridEl,
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } = config;
   
       let currentDate = new Date();
-      let events = {}; // { 'YYYY-M-D': ['event'] }
+      let events = JSON.parse(localStorage.getItem(config.storageKey)) || {}; // { 'YYYY-M-D': ['event'] }
   
       function render() {
         gridEl.innerHTML = "";
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
             if (!events[dateKey]) events[dateKey] = [];
             events[dateKey].push(title);
+            localStorage.setItem(config.storageKey, JSON.stringify(events));
             render();
           });
   
@@ -84,7 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
       titleEl: document.getElementById("monthYear"),
       prevBtn: document.getElementById("prevMonth"),
       nextBtn: document.getElementById("nextMonth"),
-      promptText: "Add cleaning / inspection event:"
+      promptText: "Add cleaning / inspection event:",
+      storageKey: STORAGE_CLEANING
     });
 
     // Maintenance Calendar
@@ -93,7 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
       titleEl: document.getElementById("monthYearMaintenance"),
       prevBtn: document.getElementById("prevMonthMaintenance"),
       nextBtn: document.getElementById("nextMonthMaintenance"),
-      promptText: "Add maintenance event:"
+      promptText: "Add maintenance event:",
+      storageKey: STORAGE_MAINTENANCE
     });
+
+    localStorage.removeItem(STORAGE_CLEANING);
+    localStorage.removeItem(STORAGE_MAINTENANCE);
   
   });
