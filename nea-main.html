@@ -1,0 +1,91 @@
+<!-- nea officer - main page -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEA Officer - Main</title>
+    <link rel="stylesheet" href="css/nea-style.css">
+</head>
+<body>
+
+```
+<!-- navigation bar -->
+<nav class="nea-nav">
+    <div class="nav-left">
+        <div class="logo">Logo</div>
+        <ul class="nav-links">
+            <li class="active">Home</li>
+            <li>Dashboard</li>
+            <li>Inspections</li>
+            <li>Hawker Centre</li>
+        </ul>
+    </div>
+    <button class="logout-btn">Log Out</button>
+</nav>
+
+<!-- main content -->
+<main class="nea-main">
+    <h1 class="welcome">Welcome Back, ________</h1>
+
+    <!-- stats cards -->
+    <section class="stats-row">
+        <div class="stat-card">
+            <p>Non-Compliant Cases</p>
+            <h2>12</h2>
+        </div>
+        <div class="stat-card">
+            <p>Inspections this month</p>
+            <h2>15</h2>
+        </div>
+        <div class="stat-card">
+            <p>Average Hygiene Grade</p>
+            <h2>B</h2>
+        </div>
+    </section>
+
+    <!-- charts -->
+    <section class="charts-row">
+        <!-- hygiene grade breakdown -->
+        <div class="chart-card">
+            <h3>Hygiene Grade Breakdown</h3>
+            <div class="bar-chart">
+                <div class="bar" style="--value: 80%"><span>A</span></div>
+                <div class="bar" style="--value: 45%"><span>B</span></div>
+                <div class="bar" style="--value: 55%"><span>C</span></div>
+                <div class="bar" style="--value: 30%"><span>D</span></div>
+            </div>
+        </div>
+
+        <!-- compliance rate -->
+        <div class="chart-card">
+            <h3>Compliance Rate</h3>
+            <div class="pie-chart">
+                <span>75%</span>
+            </div>
+            <div class="legend">
+                <p><span class="dot compliant"></span> Compliant</p>
+                <p><span class="dot non-compliant"></span> Non-Compliant</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- monthly inspections -->
+    <section class="chart-card full-width">
+        <h3>Monthly Inspections</h3>
+        <div class="bar-chart monthly">
+            <div class="bar" style="--value: 40%"><span>Week 1</span></div>
+            <div class="bar" style="--value: 55%"><span>Week 2</span></div>
+            <div class="bar" style="--value: 70%"><span>Week 3</span></div>
+            <div class="bar" style="--value: 85%"><span>Week 4</span></div>
+        </div>
+    </section>
+</main>
+
+<script src="js/nea.js"></script>
+```
+
+</body>
+</html>
