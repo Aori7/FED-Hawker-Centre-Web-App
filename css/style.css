@@ -1,8 +1,5 @@
 /* defining colors for our theme to be constant */
 :root{
-    /* --primary-color: rgb(250, 129, 18);
-    --secondary-color: rgb(245, 231, 198);
-    --background-color: rgb(250, 243, 225); */
     --black-text-color: rgb(34, 34, 34);
     --orange-color: rgb(250, 129, 18);
     --dark-orange-color:rgb(196, 12, 12) ;
@@ -13,7 +10,7 @@
 *{
     /* setting the font for the web */
     font-family: "Noto Sans", sans-serif;
-    /* font-optical-sizing: auto; */
+    font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
     font-variation-settings:
@@ -451,45 +448,7 @@ html, body {
 }
 
 
-
-
-
-.card-list .card-item{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.card-list .card-item .card-link{
-    user-select: none;
-    width: 900px;
-    display: block;
-    background: #33363F;
-    padding: 18px;
-    border-radius: 12px;
-    text-decoration: none;
-    border: 2px solid transparent;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.45);
-}
-
-.card-list .card-item .card-link:hover{
-    border-color: rgba(255, 255, 255, 0.26);
-}
-
-.card-list .card-link .card-image{
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.card-list .card-link .card-button{
-    width: 500px;
-    height: 30px;
-    border-radius: 5px;
-} */
-
-
-
+/* ======================================================= */
 /* about us section */
 
 #aboutus-section{
@@ -498,7 +457,10 @@ html, body {
     align-items: center;
     justify-content: center;
     padding: 100px 30px;
+
     margin: 0;
+
+    /* background-color: black ; */
 }
 
 .about-us-content{
@@ -535,7 +497,6 @@ html, body {
     background-color: var(--lighter-beige);
     padding: 100px 20px;
 }
-
 
 
 
@@ -623,6 +584,8 @@ html, body {
     outline: none;
     cursor: pointer;
 
+
+
     background-image: url("data:image/svg+xml;utf8,<svg fill='%23222222' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
     background-repeat: no-repeat;
     background-position: right 16px center;
@@ -697,6 +660,11 @@ html, body {
 
 
 
+
+
+
+
+
 /* FOOTER */
 #footercontainer{
     display: flex;
@@ -705,6 +673,12 @@ html, body {
     height: 350px;
     background-color: var(--lighter-beige);
 }
+
+
+
+
+
+
 
 
 
@@ -1009,6 +983,7 @@ html, body {
 
 #history-overlay.active {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /*  Header  */
