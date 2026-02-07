@@ -300,6 +300,15 @@ document.addEventListener("DOMContentLoaded", () => {
       return
     }
 
+    const selectedPayment = document.querySelector(
+      'input[name="payment"]:checked'
+    )?.value;
+
+    if (!selectedPayment) {
+      alert("Please select a payment method");
+      return;
+}
+
     //Firebase firestore
     //prepare order object for storing into firestore db
     const orderData = {
@@ -308,6 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
       stallName: sessionStorage.getItem("selectedStallName"),
       items: cart,
       total: cart.reduce((s, i) => s + i.price * i.qty, 0),
+      paymentMethod: selectedPayment,
       status: "paid",
       createdAt: serverTimestamp()
     }
@@ -506,7 +516,9 @@ async function loadOrderHistory() {
         <h4>${order.stallName}</h4>
         <p>${order.items.length} items</p>
         <p class="history-meta">
-          $${order.total.toFixed(2)} • ${new Date(order.createdAt.seconds * 1000).toLocaleString()}
+          ${order.paymentMethod} | 
+          $${order.total.toFixed(2)} |
+          ${new Date(order.createdAt.seconds * 1000).toLocaleString()}
         </p>
         <button class="reorder-btn">Reorder</button>
       `
