@@ -182,17 +182,25 @@ body{
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* force chart size */
+/* default chart behaviour */
 .chart-card canvas{
     max-width: 100%;
+    display: block;
+}
+
+/* bar charts */
+#hygieneChart,
+#monthlyChart{
     height: 260px !important;
 }
 
-/* pie chart */
+/* pie chart (needs less space) */
 #complianceChart{
-    max-width: 360px;
+    height: 200px !important;
+    max-width: 320px;
     margin: 0 auto;
 }
+
 
 /* =========================
    TABLES
