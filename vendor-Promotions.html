@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vendor Promotions</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/vendor-style.css" />
+    <!-- <style>
+      nav {
+        height: 50px;
+        width: auto;
+        background-color: lightblue;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        height: 80px;
+        background-color: grey;
+      }
+      select {
+        font-size: 50px;
+      }
+      option {
+        font-size: 20px;
+      }
+      #activePromos-container {
+        height: auto;
+        padding: 20px;
+        background-color: lightblue;
+      }
+      #inactivePromos-container {
+        height: auto;
+        padding: 20px;
+        background-color: grey;
+      }
+      .promoCode {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 16px;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+      }
+      .promoCodesList {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 40px;
+      }
+
+      .promo-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+      .more-dropdown {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+        flex-direction: column;
+      }
+      .affectedItemsList {
+        display: none; 
+        margin-top: 12px;
+        border-top: 1px solid #ccc;
+        padding-top: 12px;
+      }
+
+      .affectedItem {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .affectedItem img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+    </style> -->
+  </head>
+
+  <body>
+    <!--nav bar-->
+    <nav>
+      <a href="vendor-Home.html">Home</a>
+      <a href="vendor-Menu.html">Menu</a>
+      <a href="vendor-Orders.html">Orders</a>
+      <a href="vendor-Promotions.html">Promotions</a>
+      <a href="vendor-Feedback.html">Feedback</a>
+      <a href="#">Profile</a>
+    </nav>
+
+    <!-- select stall -->
+    <header class="dropdown">
+      <select id="selectStall" name="stall">
+        <option value="stall-1">Chicken Rice Stall @hawker centre</option>
+        <option value="stall-2">Noodle Stall @hawker centre</option>
+      </select>
+    </header>
+
+    <button id="addPromo-btn-sticky">+ Add Promotion</button>
+
+    <!-- Active promos -->
+    <section id="activePromos-container" class="promo-section">
+      <h1>Active Promotions</h1>
+
+      <!-- promotion list -->
+      <div class="promoCodesList">
+        <!-- promtion item -->
+        <div class="promoCode">
+          <div class="promo-header">
+            <h2>PROMO CODE</h2>
+            <h3>04/04 - 05/05</h3>
+
+            <!-- button to add or remove or edit promotion -->
+            <button class="more-btn">⋮</button>
+            <div class="more-dropdown">
+              <button class="edit-btn">Edit</button>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+
+          <h4 class="desc">Buy 1 get 1 FREE</h4>
+
+          <!-- see affected items -->
+          <button class="affected-btn">
+            Affected items<span class="arrow">⌄</span>
+          </button>
+
+          <!-- affected item 1 -->
+          <div class="affectedItemsList">
+            <div class="affectedItem">
+              <img src="../images/chickenRice.png" alt="Chicken Rice" />
+              <p>Chicken Rice</p>
+              <p>Original Price: $3.50</p>
+            </div>
+
+            <!-- affected item 2 -->
+            <div class="affectedItem">
+              <img src="../images/meeGoreng.png" alt="Mee Goreng" />
+              <p>Mee Goreng</p>
+              <p>Original Price: $3.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- promtion item -->
+        <div class="promoCode">
+          <div class="promo-header">
+            <h2>PROMO CODE</h2>
+            <h3>04/04 - 05/05</h3>
+
+            <!-- button to add or remove or edit promotion -->
+            <button class="more-btn">⋮</button>
+            <div class="more-dropdown">
+              <button class="edit-btn">Edit</button>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+
+          <h4 class="desc">Buy 1 get 1 FREE</h4>
+
+          <!-- see affected items -->
+          <button class="affected-btn">
+            Affected items<span class="arrow">⌄</span>
+          </button>
+
+          <!-- affected item 1 -->
+          <div class="affectedItemsList">
+            <div class="affectedItem">
+              <img src="../images/chickenRice.png" alt="Chicken Rice" />
+              <p>Chicken Rice</p>
+              <p>Original Price: $3.50</p>
+            </div>
+
+            <!-- affected item 2 -->
+            <div class="affectedItem">
+              <img src="../images/meeGoreng.png" alt="Mee Goreng" />
+              <p>Mee Goreng</p>
+              <p>Original Price: $3.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- promtion item -->
+        <div class="promoCode">
+          <div class="promo-header">
+            <h2>PROMO CODE</h2>
+            <h3>04/04 - 05/05</h3>
+
+            <!-- button to add or remove or edit promotion -->
+            <button class="more-btn">⋮</button>
+            <div class="more-dropdown">
+              <button class="edit-btn">Edit</button>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+
+          <h4 class="desc">Buy 1 get 1 FREE</h4>
+
+          <!-- see affected items -->
+          <button class="affected-btn">
+            Affected items<span class="arrow">⌄</span>
+          </button>
+
+          <!-- affected item 1 -->
+          <div class="affectedItemsList">
+            <div class="affectedItem">
+              <img src="../images/chickenRice.png" alt="Chicken Rice" />
+              <p>Chicken Rice</p>
+              <p>Original Price: $3.50</p>
+            </div>
+
+            <!-- affected item 2 -->
+            <div class="affectedItem">
+              <img src="../images/meeGoreng.png" alt="Mee Goreng" />
+              <p>Mee Goreng</p>
+              <p>Original Price: $3.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- inactive promos -->
+    <section id="inactivePromos-container" class="promo-section">
+      <h1>Inactive Promotions</h1>
+      <div class="promoCodesList">
+        <!-- promtion item -->
+        <div class="promoCode">
+          <div class="promo-header">
+            <h2>PROMO CODE</h2>
+            <h3>04/04 - 05/05</h3>
+
+            <!-- button to add or remove or edit promotion -->
+            <button class="more-btn">⋮</button>
+            <div class="more-dropdown">
+              <button class="edit-btn">Edit</button>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+
+          <h4 class="desc">Buy 1 get 1 FREE</h4>
+
+          <!-- see affected items -->
+          <button class="affected-btn">
+            Affected items<span class="arrow">⌄</span>
+          </button>
+
+          <!-- affected item 1 -->
+          <div class="affectedItemsList">
+            <div class="affectedItem">
+              <img src="../images/chickenRice.png" alt="Chicken Rice" />
+              <p>Chicken Rice</p>
+              <p>Original Price: $3.50</p>
+            </div>
+
+            <!-- affected item 2 -->
+            <div class="affectedItem">
+              <img src="../images/meeGoreng.png" alt="Mee Goreng" />
+              <p>Mee Goreng</p>
+              <p>Original Price: $3.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- promtion item -->
+        <div class="promoCode">
+          <div class="promo-header">
+            <h2>PROMO CODE</h2>
+            <h3>04/04 - 05/05</h3>
+
+            <!-- button to add or remove or edit promotion -->
+            <button class="more-btn">⋮</button>
+            <div class="more-dropdown">
+              <button class="edit-btn">Edit</button>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </div>
+
+          <h4 class="desc">Buy 1 get 1 FREE</h4>
+
+          <!-- see affected items -->
+          <button class="affected-btn">
+            Affected items<span class="arrow">⌄</span>
+          </button>
+
+          <!-- affected item 1 -->
+          <div class="affectedItemsList">
+            <div class="affectedItem">
+              <img src="../images/chickenRice.png" alt="Chicken Rice" />
+              <p>Chicken Rice</p>
+              <p>Original Price: $3.50</p>
+            </div>
+
+            <!-- affected item 2 -->
+            <div class="affectedItem">
+              <img src="../images/meeGoreng.png" alt="Mee Goreng" />
+              <p>Mee Goreng</p>
+              <p>Original Price: $3.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="js/vendor-promotions-script.js"></script>
+  </body>
+</html>

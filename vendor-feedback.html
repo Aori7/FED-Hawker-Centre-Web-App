@@ -1,0 +1,154 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vendor Feedback on stalls</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/vendor-style.css" />
+    <!-- <style>
+      nav {
+        height: 50px;
+        width: auto;
+        background-color: lightblue;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      select {
+        font-size: 30px;
+      }
+      option {
+        font-size: 20px;
+      }
+      #formalComplaints-container {
+        background-color: grey;
+        margin: 30px;
+        padding: 50px 20px;
+        height: auto;
+      }
+      .complaint {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        width: 300px;
+        height: 200px;
+        gap: 50px;
+      }
+      #feedback-container {
+        margin: 30px;
+        padding: 50px 20px;
+        height: auto;
+      }
+      .feedback {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: lightblue;
+        width: 300px;
+        height: 200px;
+        gap: 50px;
+      }
+    </style> -->
+  </head>
+
+  <body>
+    <!--nav bar-->
+    <nav>
+      <a href="vendor-Home.html">Home</a>
+      <a href="vendor-Menu.html">Menu</a>
+      <a href="vendor-Orders.html">Orders</a>
+      <a href="vendor-Promotions.html">Promotions</a>
+      <a href="vendor-Feedback.html">Feedback</a>
+      <a href="#">Profile</a>
+    </nav>
+
+    <!-- feedback filter -->
+    <header class="dropdown">
+      <select id="feedback-filter" name="feedback-filter">
+        <option value="all active">All</option>
+        <option value="latest">Latest</option>
+        <option value="mostPopular">Most Popular</option>
+      </select>
+    </header>
+
+    <!-- formal complaints -->
+    <section id="formalComplaints-container">
+      <h1>Formal Complaint(s)</h1>
+
+      <header class="dropdown">
+        <h3><label for="complaintCategory">Category:</label></h3>
+        <select id="complaintCategory" name="category">
+          <option value="all active">All</option>
+          <option value="service">Service</option>
+          <option value="hygiene">Hygiene</option>
+          <option value="Quality">Quality</option>
+        </select>
+      </header>
+
+      <div id="formalComplaintList">
+        <div class="complaint">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">1.0/5</div>
+          <div data-type="title">poor service</div>
+          <div data-type="content">people were rude</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+
+        <div class="complaint">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">1.0/5</div>
+          <div data-type="title">poor service</div>
+          <div data-type="content">people were rude</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+
+        <div class="complaint">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">1.0/5</div>
+          <div data-type="title">poor service</div>
+          <div data-type="content">people were rude</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- feedback -->
+    <section id="feedback-container">
+      <h1>Feedback(s)</h1>
+
+      <div id="feedbackList">
+        <div class="feedback">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">4.0/5</div>
+          <div data-type="content">Nice food</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+
+        <div class="feedback">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">4.0/5</div>
+          <div data-type="content">Nice food</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+
+        <div class="feedback">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">4.0/5</div>
+          <div data-type="content">Nice food</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

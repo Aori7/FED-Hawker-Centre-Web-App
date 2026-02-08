@@ -1,131 +1,131 @@
+<!-- nea-feedback.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEA Feedback & Complaints</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEA Officer - Feedback</title>
 
-  <!-- google icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
-
-  <!-- nea styles only (no style.css to avoid confusion) -->
-  <link rel="stylesheet" href="css/nea-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+    <link rel="stylesheet" href="css/nea-style.css">
 </head>
 
 <body>
 
-<!-- navigation bar -->
 <nav id="navigationbar">
-  <div class="logo">
-    <a href="index.html">
-      <span class="material-symbols-rounded">restaurant_menu</span>
-      <h1 id="logotitle">Hawker<em>SG</em></h1>
-    </a>
-  </div>
+    <div class="logo">
+        <a href="index.html">
+            <span class="material-symbols-rounded">restaurant_menu</span>
+            <h1 id="logotitle">Hawker<em>SG</em></h1>
+        </a>
+    </div>
 
-  <ul class="navitems">
-    <li><a href="nea-main.html">Main</a></li>
-    <li><a href="nea-dashboard.html">Dashboard</a></li>
-    <li><a href="nea-inspection.html">Inspections</a></li>
-    <li><a href="nea-feedback.html" class="active">Feedback</a></li>
-  </ul>
+    <ul class="navitems">
+        <li><a href="nea-main.html">Main</a></li>
+        <li><a href="nea-dashboard.html">Dashboard</a></li>
+        <li><a href="nea-inspection.html">Inspections</a></li>
+        <li><a href="nea-feedback.html" class="active">Feedback</a></li>
+    </ul>
 
-  <button class="logout-btn">Logout</button>
+    <button class="logout-btn">Logout</button>
 </nav>
 
-<!-- page content -->
 <main class="nea-page">
 
-  <div class="page-header">
-    <h1>Public Feedback & Complaints</h1>
-    <p>View and manage feedback submitted by the public</p>
-  </div>
+    <h1 class="page-title">Public Feedback & Complaints</h1>
 
-  <!-- summary cards -->
-  <div class="summary-cards">
-    <div class="summary-card">
-      <h2>Total Feedback</h2>
-      <p class="summary-number">128</p>
-    </div>
-    <div class="summary-card">
-      <h2>Open Cases</h2>
-      <p class="summary-number">42</p>
-    </div>
-    <div class="summary-card">
-      <h2>Resolved</h2>
-      <p class="summary-number">86</p>
-    </div>
-  </div>
+    <!-- SUMMARY -->
+    <section class="dashboard-grid feedback-summary-grid">
 
-  <!-- feedback table -->
-  <div class="table-container">
-    <table class="nea-table">
-      <thead>
-        <tr>
-          <th>Feedback ID</th>
-          <th>Hawker Centre</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>Date</th>
-          <th>Status</th>
-        </tr>
-      </thead>
+      <div class="stat-card">
+          <p>Total Feedback</p>
+          <h2>128</h2>
+      </div>
 
-      <!-- JS hooks into THIS tbody -->
-      <tbody id="feedbackTableBody">
-        <tr>
-          <td>FBK001</td>
-          <td>Maxwell Food Centre</td>
-          <td>Cleanliness</td>
-          <td>Dirty tables and overflowing bins</td>
-          <td>12 Jan 2026</td>
-          <td>
-            <select class="status-select">
-              <option selected>Open</option>
-              <option>In Progress</option>
-              <option>Resolved</option>
+      <div class="stat-card">
+          <p>Open Cases</p>
+          <h2>42</h2>
+      </div>
+
+      <div class="stat-card">
+          <p>Resolved</p>
+          <h2>86</h2>
+      </div>
+    </section>
+
+
+    <!-- FORMAL COMPLAINTS -->
+    <section class="feedback-section">
+        <div class="feedback-header">
+            <h3>Formal Complaints</h3>
+            <select class="feedback-filter">
+                <option value="all">All</option>
+                <option value="service">Service</option>
+                <option value="hygiene">Hygiene</option>
             </select>
-          </td>
-        </tr>
+        </div>
 
-        <tr>
-          <td>FBK002</td>
-          <td>Chinatown Complex</td>
-          <td>Food Safety</td>
-          <td>Undercooked food reported</td>
-          <td>18 Jan 2026</td>
-          <td>
-            <select class="status-select">
-              <option>Open</option>
-              <option selected>In Progress</option>
-              <option>Resolved</option>
-            </select>
-          </td>
-        </tr>
+        <div class="feedback-grid">
+            <div class="feedback-card">
+                <div class="feedback-top">
+                    <strong>Anonymous</strong>
+                    <span class="feedback-date">12/01/26</span>
+                </div>
+                <p class="feedback-title">Poor hygiene (NEW)</p>
+                <p class="feedback-desc">Dirty tables and overflowing bins</p>
+                <button class="reply-btn">Reply</button>
+            </div>
 
-        <tr>
-          <td>FBK003</td>
-          <td>Old Airport Road</td>
-          <td>Service</td>
-          <td>Rude stall owner behaviour</td>
-          <td>25 Jan 2026</td>
-          <td>
-            <select class="status-select">
-              <option>Open</option>
-              <option>In Progress</option>
-              <option selected>Resolved</option>
+            <div class="feedback-card">
+                <div class="feedback-top">
+                    <strong>Anonymous</strong>
+                    <span class="feedback-date">18/01/26</span>
+                </div>
+                <p class="feedback-title">Unsatisfactory service</p>
+                <p class="feedback-desc">Staff was rude and dismissive</p>
+                <button class="reply-btn">Reply</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEEDBACK -->
+    <section class="feedback-section">
+        <div class="feedback-header">
+            <h3>Feedback</h3>
+            <select class="feedback-filter">
+                <option value="all">All</option>
+                <option value="latest">Latest</option>
+                <option value="popular">Most Popular</option>
             </select>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        </div>
+
+        <div class="feedback-grid">
+            <div class="feedback-card">
+                <div class="feedback-top">
+                    <strong>Anonymous</strong>
+                    <span class="feedback-date">25/01/26</span>
+                </div>
+                <p class="feedback-desc">Food quality was excellent</p>
+                <button class="reply-btn">Reply</button>
+            </div>
+
+            <div class="feedback-card">
+                <div class="feedback-top">
+                    <strong>Anonymous</strong>
+                    <span class="feedback-date">20/01/26</span>
+                </div>
+                <p class="feedback-desc">Queue management could improve</p>
+                <button class="reply-btn">Reply</button>
+            </div>
+        </div>
+    </section>
 
 </main>
 
-<!-- scripts -->
 <script src="js/nea-common.js"></script>
 <script src="js/nea-feedback.js"></script>
 
 </body>
 </html>
+<!-- nea-feedback.html -->

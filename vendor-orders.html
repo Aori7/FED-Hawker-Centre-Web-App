@@ -1,0 +1,138 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vendor Order History</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/vendor-style.css" />
+    <!-- <style>
+      nav {
+        height: 50px;
+        width: auto;
+        background-color: lightblue;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        height: 80px;
+        background-color: grey;
+      }
+      select {
+        font-size: 50px;
+      }
+      option {
+        font-size: 20px;
+      }
+      /*  */
+      .filter-btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 50px;
+        background-color: #eee;
+      }
+
+      .filter-btn:hover {
+        background-color: #ddd;
+      }
+
+      .filter-btn.active {
+        background-color: #4287f5;
+        color: white;
+      }
+      /*  */
+      #orderHist-filter-container {
+        display: flex;
+        justify-content: center;
+        gap: 200px;
+      }
+      /*  */
+      #orderHist-table-container {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      #orderHist-table-container th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      #orderHist-table-container tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      #orderHist-table-container th {
+        background-color: #333;
+        color: white;
+      }
+    </style> -->
+  </head>
+  <body>
+    <!--nav bar-->
+    <nav>
+      <a href="vendor-Home.html">Home</a>
+      <a href="vendor-Menu.html">Menu</a>
+      <a href="vendor-Orders.html">Orders</a>
+      <a href="vendor-Promotions.html">Promotions</a>
+      <a href="vendor-Feedback.html">Feedback</a>
+      <a href="#">Profile</a>
+    </nav>
+
+    <!-- select stall -->
+    <header class="dropdown">
+      <select id="selectStall" name="stall">
+        <!-- use js to add -->>
+      </select>
+    </header>
+
+    <!-- filters -->
+    <section id="orderHist-filter-container">
+      <div id="ordType">
+        <h2>Order Type</h2>
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="pickup">Pick Up</button>
+        <button class="filter-btn" data-type="pickup">Dine In</button>
+        <button class="filter-btn" data-type="delivery">Delivery</button>
+      </div>
+
+      <div id="ordStatus">
+        <h2>Order Status</h2>
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="complete">Complete</button>
+        <button class="filter-btn" data-type="incomplete">Incomplete</button>
+      </div>
+
+      <div id="ordTime">
+        <h2>Order Time</h2>
+        <button class="filter-btn active" data-type="newest">Newest</button>
+        <button class="filter-btn" data-type="oldest">Oldest</button>
+      </div>
+    </section>
+
+    <!-- table -->
+    <table id="orderHist-table-container">
+      <tr>
+        <th>OrderID</th>
+        <th>Date</th>
+        <th>Customer</th>
+        <th>Order Type</th>
+        <th>Total</th>
+        <th>Payement Method</th>
+        <th>Status</th>
+        <th>Details</th>
+      </tr>
+      <!-- <tr>
+        <td class="ordID"></td>        static row, not needed
+        <td class="date"></td>
+        <td class="custName"></td>
+        <td class="totalItems"></td>
+        <td class="totalPrice"></td>
+        <td class="payMethod"></td>
+        <td class="details"></td> 
+      </tr>-->
+    </table>
+    <script type="module" src="js/vendor-orders-script.js"></script>
+  </body>
+</html>
