@@ -172,10 +172,10 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
-/* base card */
+/* shared card */
 .chart-card{
     background: white;
     border-radius: 20px;
@@ -183,31 +183,35 @@ body{
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 
     width: calc(50% - 15px);
+    display: flex;
+    flex-direction: column;
 }
 
-/* headings */
+/* titles */
 .chart-card h3{
     margin: 0 0 16px 0;
 }
 
-/* canvas behaves */
-.chart-card canvas{
-    width: 100% !important;
-    display: block;
-}
-
-/* individual sizing (NO CONFLICTS) */
+/* hygiene bar */
 .chart-card.hygiene{
-    height: 320px;
+    height: 360px;
 }
 
+/* pie chart card */
 .chart-card.pie{
-    height: 300px;
+    height: 360px;
 }
 
+/* monthly chart */
 .chart-card.monthly{
     width: 100%;
     height: 420px;
+}
+
+/* canvas fills card properly */
+.chart-card canvas{
+    flex: 1;
+    width: 100% !important;
 }
 
 

@@ -85,7 +85,12 @@ new Chart(document.getElementById("monthlyChart"), {
     },
     options: {
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+        plugins: {
+        legend: {
+            position: 'top'
+        }
+    }
 }
 
 });
