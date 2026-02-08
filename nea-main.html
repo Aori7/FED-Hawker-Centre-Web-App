@@ -1,7 +1,6 @@
 <!-- nea-main.html -->
-
+ 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +10,7 @@
 </head>
 <body>
 
-<!-- logo -->
+<!-- navbar -->
 <nav id="navigationbar">
   <div class="logo">
     <a href="index.html">
@@ -19,23 +18,19 @@
     </a>
   </div>
 
-  <!-- navigation bar -->
-<ul class="navitems">
-  <li><a href="nea-main.html" class="active">Main</a></li>
-  <li><a href="nea-dashboard.html">Dashboard</a></li>
-  <li><a href="nea-inspection.html">Inspections</a></li>
-  <li><a href="nea-feedback.html">Feedback</a></li>
-</ul>
+  <ul class="navitems">
+    <li><a href="nea-main.html" class="active">Main</a></li>
+    <li><a href="nea-dashboard.html">Dashboard</a></li>
+    <li><a href="nea-inspection.html">Inspections</a></li>
+    <li><a href="nea-feedback.html">Feedback</a></li>
+  </ul>
 
-
-  <!-- logout -->
   <button class="logout-btn">Logout</button>
 </nav>
 
-
-
 <!-- main content -->
 <main class="nea-page">
+
     <h1 class="welcome">Welcome Back, NEA Officer</h1>
 
     <!-- stats cards -->
@@ -50,7 +45,7 @@
                 <div class="card-title">Inspections this month</div>
                 <div class="stat-value">15</div>
             </div>
-        
+
             <div class="card">
                 <div class="card-title">Average Hygiene Grade</div>
                 <div class="stat-value">B</div>
@@ -60,20 +55,21 @@
 
     <!-- charts -->
     <section class="charts-row">
+
         <!-- hygiene grade breakdown -->
-        <div class="chart-card">
+        <div class="chart-card hygiene">
             <h3>Hygiene Grade Breakdown</h3>
             <canvas id="hygieneChart"></canvas>
         </div>
 
         <!-- compliance rate -->
-        <div class="chart-card">
+        <div class="chart-card pie">
             <h3>Compliance Rate</h3>
             <canvas id="complianceChart"></canvas>
         </div>
 
         <!-- monthly inspections -->
-        <div class="chart-card full-width">
+        <div class="chart-card monthly">
             <h3>Monthly Inspections</h3>
             <canvas id="monthlyChart"></canvas>
         </div>
@@ -82,11 +78,10 @@
 
 </main>
 
-</body>
-
 <!-- scripts -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js/nea-common.js"></script>
 <script src="js/nea-main.js"></script>
 
+</body>
 </html>
