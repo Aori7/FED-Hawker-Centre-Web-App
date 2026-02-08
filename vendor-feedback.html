@@ -2,7 +2,9 @@
   <head>
     <meta charset="UTF-8" />
     <title>Vendor Feedback on stalls</title>
-    <style>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="vendor-style.css" />
+    <!-- <style>
       nav {
         height: 50px;
         width: auto;
@@ -37,7 +39,7 @@
         padding: 50px 20px;
         height: auto;
       }
-            .feedback {
+      .feedback {
         display: flex;
         flex-wrap: wrap;
         background-color: lightblue;
@@ -45,19 +47,18 @@
         height: 200px;
         gap: 50px;
       }
-    </style>
+    </style> -->
   </head>
 
   <body>
     <!--nav bar-->
     <nav>
-      <a href="vendor-home.html">Home</a>
-      <a href="vendor-menu.html">Menu</a>
-      <a href="vendor-orders.html">Orders</a>
-      <a href="vendor-promotion.html">Promotions</a>
-      <a href="vendor-feedback.html">Feedback</a>
-      <a href="vendor-notices.html">Notices</a>
-      <a href="vendor-profile.html">Profile</a>
+      <a href="vendor-Home.html">Home</a>
+      <a href="vendor-Menu.html">Menu</a>
+      <a href="vendor-Orders.html">Orders</a>
+      <a href="vendor-Promotions.html">Promotions</a>
+      <a href="vendor-Feedback.html">Feedback</a>
+      <a href="#">Profile</a>
     </nav>
 
     <!-- feedback filter -->
@@ -83,14 +84,36 @@
         </select>
       </header>
 
-      <div class="complaint">
-        <img src="#" class="profile-img" />
-        <div data-type="name">name</div>
-        <div data-type="date">DD/MM/YY</div>
-        <div data-type="rating">4.0/5</div>
-        <div data-type="title">service</div>
-        <div data-type="content">ew</div>
-        <button id="reply-btn">Reply</button>
+      <div id="formalComplaintList">
+        <div class="complaint">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">1.0/5</div>
+          <div data-type="title">poor service</div>
+          <div data-type="content">people were rude</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+
+        <div class="complaint">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">1.0/5</div>
+          <div data-type="title">poor service</div>
+          <div data-type="content">people were rude</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+
+        <div class="complaint">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">1.0/5</div>
+          <div data-type="title">poor service</div>
+          <div data-type="content">people were rude</div>
+          <button id="reply-btn">Reply</button>
+        </div>
       </div>
     </section>
 
@@ -98,13 +121,33 @@
     <section id="feedback-container">
       <h1>Feedback(s)</h1>
 
-      <div class="feedback">
-        <img src="#" class="profile-img" />
-        <div data-type="name">name</div>
-        <div data-type="date">DD/MM/YY</div>
-        <div data-type="rating">4.0/5</div>
-        <div data-type="content">ew</div>
-        <button id="reply-btn">Reply</button>
+      <div id="feedbackList">
+        <div class="feedback">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">4.0/5</div>
+          <div data-type="content">Nice food</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+
+        <div class="feedback">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">4.0/5</div>
+          <div data-type="content">Nice food</div>
+          <button id="reply-btn">Reply</button>
+        </div>
+
+        <div class="feedback">
+          <img src="../images/man.png" class="profile-img" />
+          <div data-type="name">name</div>
+          <div data-type="date">DD/MM/YY</div>
+          <div data-type="rating">4.0/5</div>
+          <div data-type="content">Nice food</div>
+          <button id="reply-btn">Reply</button>
+        </div>
       </div>
     </section>
   </body>
