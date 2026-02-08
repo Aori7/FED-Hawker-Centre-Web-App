@@ -184,8 +184,30 @@ body{
 .table-card{
     background: white;
     border-radius: 20px;
-    padding: 20px;
+    padding: 24px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.table-card.full-width{
+    margin-top: 30px;
+}
+
+.nea-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+.nea-table th{
+    text-align: left;
+    padding: 12px;
+    background: #f0f0f0;
+    font-weight: 700;
+}
+
+.nea-table td{
+    padding: 12px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 /* scrollable list */
@@ -193,6 +215,17 @@ body{
     max-height: 220px;
     overflow-y: auto;
 }
+
+.view-btn{
+    background: var(--orange-color);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 
 /* =========================
    CHART LAYOUT 
@@ -274,5 +307,13 @@ body{
 
     .chart-full{
         grid-column: auto;
+    }
+
+    .dashboard-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card{
+        text-align: center;
     }
 }
