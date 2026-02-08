@@ -201,28 +201,36 @@ body{
 /* bar charts */
 
 /* allow cards to grow naturally */
+/* =========================
+   STABLE CHART SIZING
+   ========================= */
+
 .chart-card{
-    min-height: 320px;
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
+/* hygiene bar chart */
+.chart-card.hygiene{
+    height: 340px;
+}
+
+/* pie chart */
 .chart-card.pie{
-    min-height: 420px;
+    height: 360px;
 }
 
+/* monthly inspections (taller) */
 .chart-card.full-width{
-    min-height: 460px;
+    height: 420px;
 }
 
-/* let canvas fill available height */
+/* canvas follows card, not infinite */
 .chart-card canvas{
     width: 100% !important;
-    height: 100% !important;
-}
-
-/* center pie chart nicely */
-.chart-card.pie canvas{
-    max-width: 420px;
-    margin: 0 auto;
+    max-height: 100%;
 }
 
 
