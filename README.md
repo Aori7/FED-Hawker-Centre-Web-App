@@ -41,13 +41,40 @@ Operator-side features:
 - **Pending / TBC** (features not submitted yet)
 
 ### Rui Min (Vendor)
-- **Pending / TBC** (features not submitted yet)
+Vendor-side interface and operational features for stall owners:
+
+- **Vendor Home / Dashboard**
+  - Stall selection dropdown (supports multiple stalls per vendor)
+  - Stall information display (address, operating hours, cuisine type, rating)
+  - Hygiene grade display (UI placeholder)
+  - Order overview visualisation using **Chart.js**
+    - Pie chart for order types (Dine-in / Pickup / Delivery)
+    - Time-based filters (Today / This Week)
+  - Updates & notices panel (e.g. announcements)
+
+- **Vendor Orders Management**
+  - Orders table layout displaying:
+    - Order ID, date, customer, order type, total amount, payment method, order status
+  - Interactive filtering:
+    - Order type (Dine-in / Pickup / Delivery)
+    - Order status (Complete / Incomplete)
+    - Time sorting (Newest / Oldest)
+  - JavaScript structure prepared for dynamic order rendering
+
+- **Vendor Promotions Management**
+  - Promotions page with:
+    - Active and inactive promotions sections
+    - Promotion cards displaying promo code, validity period, and description
+    - Dropdown menu for promotion actions (Edit / Remove)
+  - Expandable “Affected Items” lists for each promotion
+  - Sticky “Add Promotion” button (UI prepared for future logic)
+
 
 ---
 
 ## Key Features
 
-### Patron (Registered User)
+### Patron (Registered User) `Ada`
 - Browse hawker centres, stalls, and menus
 - Cart management (add/remove/update)
 - Checkout flow + payment method selection
@@ -56,7 +83,7 @@ Operator-side features:
 - Favourite hawker centres *(implemented / extendable)*
 - Submit feedback/complaints/suggestions via Contact Us form
 
-### Patron (Guest User)
+### Patron (Guest User) `Ada`
 - Browse hawker centres, stalls, and menus
 - Cart management + checkout supported
 - Orders stored in Firestore with:
@@ -64,8 +91,59 @@ Operator-side features:
   - `guestId: "guest-<timestamp>"`
 - Guest users **cannot view order history** 
 
-### Operator
-- Hawker centre management + map + dashboard + scheduling + profile persistence
+### Operator `Calista`
+- Operator dashboard for hawker centre operators
+- Select and manage hawker centres via dropdown
+- View hawker centre details in structured cards
+- Interactive map using Leaflet
+- Performance metrics dashboard with chart visualisations:
+  - Profit & Loss
+  - Reviews
+  - Hygiene Grade
+- Schedule planning system:
+  - Cleaning and maintenance calendars
+  - Month navigation
+  - Click-to-add events
+- Operator profile management:
+  - Editable profile information
+  - Data persistence using localStorage 
+
+
+### Vendor `Rui Min`
+- Vendor dashboard for stall owners
+- Stall selection dropdown 
+- View stall details and basic stall information
+- Order management table populated from Firebase Realtime Database
+- Filter orders by:
+  - Stall
+  - Order type (Dine-in / Pickup / Delivery)
+  - Order status (Complete / Incomplete)
+  - Time (Newest / Oldest)
+- Order data displayed in tabular format for monitoring purposes
+- Promotions management:
+  - View active and inactive promotions
+  - Expandable affected items list
+  - Promotion action menu (Edit / Remove)
+- Customer feedback & complaints 
+
+### NEA-Officer `Dayana`
+- Main dashboard with KPI cards (non-compliance cases, inspections this month, average hygiene grade)
+- Hygiene & compliance analytics using Chart.js:
+  - Hygiene grade breakdown
+  - Compliance rate distribution
+  - Monthly inspections trend
+- Hawker centre monitoring overview (total centres + last updated info)
+- Hawker centre listing table (name, address, number of stalls, action buttons)
+- Recent inspection summary table (establishment, date, action taken)
+- Inspection records management page:
+  - Validity details (effective start + expiry date)
+  - Inspection log (inspector ID, officer name, date, outcome)
+  - Editable outcome dropdown (Pass / Fail)
+- Feedback & complaints overview:
+  - Summary cards (total/open/resolved)
+  - Feedback table with editable status (Open / In Progress / Resolved)
+- Consistent navigation and shared UI components across NEA pages
+- Responsive layout for desktop and mobile
 
 ---
 
@@ -91,12 +169,22 @@ This preserves real dataset usage while ensuring the web app works in-browser.
 ## Firebase Usage
 
 ### Firebase Realtime Database
+`Used by Ada`
 - Stores Hawker Centres GeoJSON dataset 
 
+`Used by Rui Min`
+- Firebase Realtime Database is used for vendor-side data retrieval
+- Vendor pages retrieve:
+  - Stall information (for stall selection dropdown)
+  - Order records (for order table and filtering)
+- Firebase is currently used in a **read-only** manner
+
 ### Firebase Authentication
+`Used by Ada`
 - Customer login + registration (email/password)
 
 ### Firestore Database
+`Used by Ada`
 - Orders (`orders` collection)
   - stored for registered users by `userId`
   - stored for guests by `guestId`
@@ -117,16 +205,16 @@ This preserves real dataset usage while ensuring the web app works in-browser.
 ---
 
 ## Libraries & Tools
-- Leaflet.js (interactive maps)
+- Leaflet.js (interactive maps) (Ada)
   - https://leafletjs.com/examples/quick-start/
-- Swiper.js (carousel)
+- Swiper.js (carousel) (Ada)
   - https://swiperjs.com/get-started
-- Google Material Symbols (icons)
+- Google Material Symbols (icons) (Ada)
   - https://fonts.google.com/icons
-
-Operator calendar inspiration:
-- https://fullcalendar.io/
-
+- Operator calendar inspiration (Calista)
+  - https://fullcalendar.io/
+- Chart.js (Rui Min,Dayana)
+  - https://www.chartjs.org/
 ---
 
 ## Testing
@@ -169,10 +257,27 @@ Validation + QA checks used:
 - `js/operator-schedule.js`
 
 ### Dayana (NEA Officer)
-- 
+- `nea-dashboard.html`
+- `nea-feedback.html`
+- `nea-inspection.html`
+- `nea-main.html`
+- `js/nea-common.js`
+- `js/nea-dashboard.js`
+- `js/nea-feedback.js`
+- `js/nea-inspection.js`
+- `js/nea.js`
 
 ### Rui Min (Vendor)
-- 
+- `vendor-feedback.html`
+- `vendor-home.html`
+- `vendor-menu.html`
+- `vendor-notices.html`
+- `vendor-orders.html`
+- `vendor-profile.html`
+- `vendor-promotion.html`
+- `vendor-style.css`
+- `js/vendor-order-script.js`
+- `js/vendor-promotions-script.js`
 
 ---
 
