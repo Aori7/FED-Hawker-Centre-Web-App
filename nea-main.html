@@ -1,46 +1,45 @@
 <!-- nea-main.html -->
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEA Officer - Main</title>
+    <!-- google icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
     <link rel="stylesheet" href="css/nea-style.css">
 </head>
 <body>
 
-<!-- logo -->
+<!-- navbar -->
 <nav id="navigationbar">
-  <div class="logo">
-    <a href="index.html">
-      <h1 id="logotitle">Hawker<em>SG</em></h1>
-    </a>
-  </div>
+    <div class="logo">
+        <a href="index.html">
+            <span class="material-symbols-rounded">restaurant_menu</span>
+            <h1 id="logotitle">Hawker<em>SG</em></h1>
+        </a>
+    </div>
 
-  <!-- navigation bar -->
-<ul class="navitems">
-  <li><a href="nea-main.html" class="active">Main</a></li>
-  <li><a href="nea-dashboard.html">Dashboard</a></li>
-  <li><a href="nea-inspection.html">Inspections</a></li>
-  <li><a href="nea-feedback.html">Feedback</a></li>
-</ul>
+    <ul class="navitems">
+        <li><a href="nea-main.html" class="active">Main</a></li>
+        <li><a href="nea-dashboard.html">Dashboard</a></li>
+        <li><a href="nea-inspection.html">Inspections</a></li>
+        <li><a href="nea-feedback.html">Feedback</a></li>
+    </ul>
 
-
-  <!-- logout -->
-  <button class="logout-btn">Logout</button>
+    <button class="logout-btn">Logout</button>
 </nav>
-
-
 
 <!-- main content -->
 <main class="nea-page">
+
     <h1 class="welcome">Welcome Back, NEA Officer</h1>
 
-    <!-- stats cards -->
+    <!-- stat cards -->
     <section class="stats-row">
         <div class="card-grid">
+
             <div class="card">
                 <div class="card-title">Non-Compliant Cases</div>
                 <div class="stat-value">12</div>
@@ -50,55 +49,44 @@
                 <div class="card-title">Inspections this month</div>
                 <div class="stat-value">15</div>
             </div>
-        
+
             <div class="card">
                 <div class="card-title">Average Hygiene Grade</div>
                 <div class="stat-value">B</div>
             </div>
+
         </div>
     </section>
 
     <!-- charts -->
     <section class="charts-row">
-        <!-- hygiene grade breakdown -->
-        <div class="chart-card">
+
+        <!-- Hygiene Grade Breakdown -->
+        <div class="chart-card hygiene">
             <h3>Hygiene Grade Breakdown</h3>
-            <div class="bar-chart">
-                <div class="bar" style="--value: 80%"><span>A</span></div>
-                <div class="bar" style="--value: 45%"><span>B</span></div>
-                <div class="bar" style="--value: 55%"><span>C</span></div>
-                <div class="bar" style="--value: 30%"><span>D</span></div>
-            </div>
+            <canvas id="hygieneChart"></canvas>
         </div>
 
-        <!-- compliance rate -->
-        <div class="chart-card">
+        <!-- Compliance Rate -->
+        <div class="chart-card pie">
             <h3>Compliance Rate</h3>
-            <div class="pie-chart">
-                <span>75%</span>
-            </div>
-            <div class="legend">
-                <p><span class="dot compliant"></span> Compliant</p>
-                <p><span class="dot non-compliant"></span> Non-Compliant</p>
-            </div>
+            <canvas id="complianceChart"></canvas>
         </div>
+
+        <!-- Monthly Inspections -->
+        <div class="chart-card monthly">
+            <h3>Monthly Inspections</h3>
+            <canvas id="monthlyChart"></canvas>
+        </div>
+
     </section>
 
-    <!-- monthly inspections -->
-    <section class="chart-card full-width">
-        <h3>Monthly Inspections</h3>
-        <div class="bar-chart monthly">
-            <div class="bar" style="--value: 40%"><span>Week 1</span></div>
-            <div class="bar" style="--value: 55%"><span>Week 2</span></div>
-            <div class="bar" style="--value: 70%"><span>Week 3</span></div>
-            <div class="bar" style="--value: 85%"><span>Week 4</span></div>
-        </div>
-    </section>
 </main>
 
-<script src="js/nea.js"></script>
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/nea-common.js"></script>
+<script src="js/nea-main.js"></script>
 
 </body>
-<!-- scripts -->
-<script src="js/nea-common.js"></script>
 </html>

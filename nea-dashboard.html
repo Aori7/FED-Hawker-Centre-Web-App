@@ -1,92 +1,99 @@
 <!-- nea-dashboard.html -->
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEA Officer - Dashboard</title>
+    <!-- google icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
     <link rel="stylesheet" href="css/nea-style.css">
 </head>
 <body>
 
-<!-- logo -->
+<!-- navbar -->
 <nav id="navigationbar">
-  <div class="logo">
-    <a href="index.html">
-      <h1 id="logotitle">Hawker<em>SG</em></h1>
-    </a>
-  </div>
+    <div class="logo">
+        <a href="index.html">
+            <span class="material-symbols-rounded">restaurant_menu</span>
+            <h1 id="logotitle">Hawker<em>SG</em></h1>
+        </a>
+    </div>
 
-  <!-- navigation bar -->
-<ul class="navitems">
-  <li><a href="nea-main.html">Main</a></li>
-  <li><a href="nea-dashboard.html" class="active">Dashboard</a></li>
-  <li><a href="nea-inspection.html">Inspections</a></li>
-  <li><a href="nea-feedback.html">Feedback</a></li>
-</ul>
+    <ul class="navitems">
+        <li><a href="nea-main.html">Main</a></li>
+        <li><a href="nea-dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="nea-inspection.html">Inspections</a></li>
+        <li><a href="nea-feedback.html">Feedback</a></li>
+    </ul>
 
-  <!-- logout -->
-  <button class="logout-btn">Logout</button>
+    <button class="logout-btn">Logout</button>
 </nav>
 
-<!-- main content -->
+<!-- page content -->
 <main class="nea-page">
+
     <h1 class="page-title">Food Safety Monitoring</h1>
 
-    <section class="dashboard-top">
-        <!-- total hawker centres -->
-        <div class="stat-card large">
-            <p>Total Hawker Centres</p>
-            <h2>124</h2>
-            <small>As of 2026 Jan 17</small>
-        </div>
+    <!-- stats -->
+<section class="dashboard-grid">
 
-        <!-- list of hawker centres -->
-        <div class="table-card">
-            <h3>List of Hawker Centres</h3>
-            <table class="nea-table">
-                <thead>
-                    <tr>
-                        <th>Hawker Centre Name</th>
-                        <th>Address</th>
-                        <th>No. of Stalls</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hawker Centre Name</td>
-                        <td>Address</td>
-                        <td>No. of Stalls</td>
-                        <td><button class="view-btn">View Info</button></td>
-                    </tr>
-                    <tr>
-                        <td>Hawker Centre Name</td>
-                        <td>Address</td>
-                        <td>No. of Stalls</td>
-                        <td><button class="view-btn">View Info</button></td>
-                    </tr>
-                    <tr>
-                        <td>Hawker Centre Name</td>
-                        <td>Address</td>
-                        <td>No. of Stalls</td>
-                        <td><button class="view-btn">View Info</button></td>
-                    </tr>
-                    <tr>
-                        <td>Hawker Centre Name</td>
-                        <td>Address</td>
-                        <td>No. of Stalls</td>
-                        <td><button class="view-btn">View Info</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+    <!-- LEFT: total hawker centres -->
+    <div class="stat-card large">
+        <p>Total Hawker Centres</p>
+        <h2>124</h2>
+        <small>As of 2026 Jan 17</small>
+    </div>
 
-    <!-- inspection summary table -->
-    <section class="table-card full-width">
+    <!-- RIGHT: list of hawker centres -->
+    <div class="table-card">
+        <h3>List of Hawker Centres</h3>
+
+        <table class="nea-table">
+            <thead>
+                <tr>
+                    <th>Hawker Centre Name</th>
+                    <th>Address</th>
+                    <th>No. of Stalls</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maxwell Food Centre</td>
+                    <td>1 Kadayanallur St, Singapore 069184</td>
+                    <td>120</td>
+                    <td><button class="view-btn">View Info</button></td>
+                </tr>
+                <tr>
+                    <td>Chinatown Complex</td>
+                    <td>335 Smith St, Singapore 050335</td>
+                    <td>260</td>
+                    <td><button class="view-btn">View Info</button></td>
+                </tr>
+                <tr>
+                    <td>Old Airport Road Food Centre</td>
+                    <td>51 Old Airport Rd, Singapore 390051</td>
+                    <td>150</td>
+                    <td><button class="view-btn">View Info</button></td>
+                </tr>
+                <tr>
+                    <td>Tiong Bahru Market</td>
+                    <td>30 Seng Poh Rd, Singapore 168898</td>
+                    <td>82</td>
+                    <td><button class="view-btn">View Info</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+    <!-- inspection summary -->
+    <div class="table-card full-width">
+        <h3>Recent Inspections</h3>
+
         <table class="nea-table">
             <thead>
                 <tr>
@@ -97,34 +104,33 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>—</td>
-                    <td>DD/MM/YY</td>
-                    <td>—</td>
+                    <td>Maxwell Food Centre</td>
+                    <td>17/01/26</td>
+                    <td>Routine inspection – No issues</td>
                 </tr>
                 <tr>
-                    <td>—</td>
-                    <td>DD/MM/YY</td>
-                    <td>—</td>
+                    <td>Chinatown Complex</td>
+                    <td>16/01/26</td>
+                    <td>Warning issued for poor cleanliness</td>
                 </tr>
                 <tr>
-                    <td>—</td>
-                    <td>DD/MM/YY</td>
-                    <td>—</td>
+                    <td>Old Airport Road Food Centre</td>
+                    <td>15/01/26</td>
+                    <td>Follow-up inspection scheduled</td>
                 </tr>
                 <tr>
-                    <td>—</td>
-                    <td>DD/MM/YY</td>
-                    <td>—</td>
+                    <td>Tiong Bahru Market</td>
+                    <td>14/01/26</td>
+                    <td>Passed – Hygiene grade B</td>
                 </tr>
             </tbody>
         </table>
-    </section>
+    </div>
 </main>
 
-<script src="js/nea.js"></script>
-
-</body>
 <!-- scripts -->
 <script src="js/nea-common.js"></script>
 <script src="js/nea-dashboard.js"></script>
+
+</body>
 </html>
