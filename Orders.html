@@ -16,13 +16,13 @@
         height: 80px;
         background-color: grey;
       }
-/*  */      
       select {
         font-size: 50px;
       }
       option {
         font-size: 20px;
       }
+      /*  */
       .filter-btn {
         padding: 8px 16px;
         border: none;
@@ -38,13 +38,13 @@
         background-color: #4287f5;
         color: white;
       }
-/*  */
-      #orderHist-filter-container{
+      /*  */
+      #orderHist-filter-container {
         display: flex;
         justify-content: center;
-        gap: 200px
+        gap: 200px;
       }
-/*  */
+      /*  */
       #orderHist-table-container {
         width: 100%;
         border-collapse: collapse;
@@ -78,12 +78,15 @@
       <a href="#">Notices</a>
       <a href="#">Profile</a>
     </nav>
-    <header id="selectStall" class="dropdown">
+
+    <!-- select stall -->
+    <header class="dropdown">
       <select id="selectStall" name="stall">
-        <option value="stall-1">Chicken Rice Stall @hawker centre</option>
-        <option value="stall-2">Noodle Stall @hawker centre</option>
+        <!-- use js to add -->>
       </select>
     </header>
+
+    <!-- filters -->
     <section id="orderHist-filter-container">
       <div id="ordType">
         <h2>Order Type</h2>
@@ -107,14 +110,16 @@
       </div>
     </section>
 
+    <!-- table -->
     <table id="orderHist-table-container">
       <tr>
         <th>OrderID</th>
         <th>Date</th>
         <th>Customer</th>
-        <th>No. of Item(s)</th>
+        <th>Order Type</th>
         <th>Total</th>
         <th>Payement Method</th>
+        <th>Status</th>
         <th>Details</th>
       </tr>
       <!-- <tr>
@@ -127,5 +132,6 @@
         <td class="details"></td> 
       </tr>-->
     </table>
+    <script type="module" src="js/vendor-orders-script.js"></script>
   </body>
 </html>
