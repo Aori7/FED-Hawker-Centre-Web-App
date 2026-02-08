@@ -178,18 +178,20 @@ body{
 .chart-card{
     background: white;
     border-radius: 20px;
-    padding: 20px;
+    padding: 24px 24px 30px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.chart-card.full-width{
-    grid-column: 1 / -1;
+/* force chart size */
+.chart-card canvas{
+    max-width: 100%;
+    height: 260px !important;
 }
 
-/* constrain chart size */
-.chart-card canvas{
-    width: 100% !important;
-    height: 260px !important;
+/* pie chart */
+#complianceChart{
+    max-width: 360px;
+    margin: 0 auto;
 }
 
 /* =========================
