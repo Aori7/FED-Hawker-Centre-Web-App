@@ -279,7 +279,7 @@ body{
 }
 
 /* =========================
-   INSPECTION PAGE (SAFE ADD-ON)
+   INSPECTION PAGE 
    ========================= */
 
 /* top layout: table + stat card */
@@ -323,6 +323,130 @@ body{
     font-size: 14px;
 }
 
+/* =========================
+   FEEDBACK PAGE 
+   ========================= */
+
+/* section wrapper */
+.feedback-section{
+    margin-bottom: 40px;
+}
+
+/* section header + filter */
+.feedback-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.feedback-filter{
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+/* grid for cards */
+.feedback-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+}
+
+/* card base */
+.feedback-card{
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* complaint emphasis */
+.feedback-card.complaint{
+    background: #f7f7f7;
+}
+
+/* top row */
+.feedback-top{
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+/* avatar */
+.avatar{
+    width: 40px;
+    height: 40px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* stars */
+.stars{
+    font-size: 14px;
+    color: #f4b400;
+    line-height: 1;
+}
+
+/* text bits */
+.feedback-title{
+    font-weight: 700;
+    margin: 4px 0 2px;
+}
+
+.feedback-sub{
+    font-size: 13px;
+    color: #666;
+}
+
+/* date */
+.feedback-date{
+    margin-left: auto;
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+}
+
+/* action row */
+.feedback-actions{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: #555;
+}
+
+/* reply button */
+.reply-btn{
+    margin-left: auto;
+    background: #e0e0e0;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* vendor reply */
+.vendor-reply{
+    background: #f1f1f1;
+    border-radius: 14px;
+    padding: 10px 14px;
+    font-size: 13px;
+}
+
+.vendor-reply strong{
+    display: block;
+    margin-bottom: 4px;
+}
+
 
 /* =========================
    MOBILE
@@ -356,6 +480,16 @@ body{
     }
 
     .inspection-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-header{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .feedback-grid{
         grid-template-columns: 1fr;
     }
 }
