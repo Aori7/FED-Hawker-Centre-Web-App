@@ -1,122 +1,131 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEA Feedback & Complaints</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
-    <link rel="stylesheet" href="css/nea-style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEA Feedback & Complaints</title>
+
+  <!-- google icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+
+  <!-- nea styles only (no style.css to avoid confusion) -->
+  <link rel="stylesheet" href="css/nea-style.css">
 </head>
+
 <body>
 
-<!-- logo -->
+<!-- navigation bar -->
 <nav id="navigationbar">
   <div class="logo">
     <a href="index.html">
+      <span class="material-symbols-rounded">restaurant_menu</span>
       <h1 id="logotitle">Hawker<em>SG</em></h1>
     </a>
   </div>
 
-  <!-- navigation bar -->
-<ul class="navitems">
-  <li><a href="nea-main.html">Main</a></li>
-  <li><a href="nea-dashboard.html">Dashboard</a></li>
-  <li><a href="nea-inspection.html">Inspections</a></li>
-  <li><a href="nea-feedback.html" class="active">Feedback</a></li>
-</ul>
+  <ul class="navitems">
+    <li><a href="nea-main.html">Main</a></li>
+    <li><a href="nea-dashboard.html">Dashboard</a></li>
+    <li><a href="nea-inspection.html">Inspections</a></li>
+    <li><a href="nea-feedback.html" class="active">Feedback</a></li>
+  </ul>
 
-  <!-- logout -->
   <button class="logout-btn">Logout</button>
 </nav>
 
 <!-- page content -->
 <section class="nea-page">
-    <div class="page-header">
-        <h1>Public Feedback & Complaints</h1>
-        <p>View and manage feedback submitted by the public</p>
-    </div>
 
-    <!-- feedback summary -->
-    <div class="summary-cards">
-        <div class="summary-card">
-            <h2>Total Feedback</h2>
-            <p class="summary-number">128</p>
-        </div>
-        <div class="summary-card">
-            <h2>Open Cases</h2>
-            <p class="summary-number">42</p>
-        </div>
-        <div class="summary-card">
-            <h2>Resolved</h2>
-            <p class="summary-number">86</p>
-        </div>
-    </div>
+  <div class="page-header">
+    <h1>Public Feedback & Complaints</h1>
+    <p>View and manage feedback submitted by the public</p>
+  </div>
 
-    <!-- feedback table -->
-    <div class="table-container">
-        <table class="nea-table">
-            <thead>
-                <tr>
-                    <th>Feedback ID</th>
-                    <th>Hawker Centre</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>FBK001</td>
-                    <td>Maxwell Food Centre</td>
-                    <td>Cleanliness</td>
-                    <td>Dirty tables and overflowing bins</td>
-                    <td>12 Jan 2026</td>
-                    <td>
-                        <select class="status-select">
-                            <option selected>Open</option>
-                            <option>In Progress</option>
-                            <option>Resolved</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>FBK002</td>
-                    <td>Chinatown Complex</td>
-                    <td>Food Safety</td>
-                    <td>Undercooked food reported</td>
-                    <td>18 Jan 2026</td>
-                    <td>
-                        <select class="status-select">
-                            <option>Open</option>
-                            <option selected>In Progress</option>
-                            <option>Resolved</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>FBK003</td>
-                    <td>Old Airport Road</td>
-                    <td>Service</td>
-                    <td>Rude stall owner behaviour</td>
-                    <td>25 Jan 2026</td>
-                    <td>
-                        <select class="status-select">
-                            <option>Open</option>
-                            <option>In Progress</option>
-                            <option selected>Resolved</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+  <!-- summary cards -->
+  <div class="summary-cards">
+    <div class="summary-card">
+      <h2>Total Feedback</h2>
+      <p class="summary-number">128</p>
     </div>
+    <div class="summary-card">
+      <h2>Open Cases</h2>
+      <p class="summary-number">42</p>
+    </div>
+    <div class="summary-card">
+      <h2>Resolved</h2>
+      <p class="summary-number">86</p>
+    </div>
+  </div>
+
+  <!-- feedback table -->
+  <div class="table-container">
+    <table class="nea-table">
+      <thead>
+        <tr>
+          <th>Feedback ID</th>
+          <th>Hawker Centre</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <!-- JS hooks into THIS tbody -->
+      <tbody id="feedbackTableBody">
+        <tr>
+          <td>FBK001</td>
+          <td>Maxwell Food Centre</td>
+          <td>Cleanliness</td>
+          <td>Dirty tables and overflowing bins</td>
+          <td>12 Jan 2026</td>
+          <td>
+            <select class="status-select">
+              <option selected>Open</option>
+              <option>In Progress</option>
+              <option>Resolved</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>FBK002</td>
+          <td>Chinatown Complex</td>
+          <td>Food Safety</td>
+          <td>Undercooked food reported</td>
+          <td>18 Jan 2026</td>
+          <td>
+            <select class="status-select">
+              <option>Open</option>
+              <option selected>In Progress</option>
+              <option>Resolved</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>FBK003</td>
+          <td>Old Airport Road</td>
+          <td>Service</td>
+          <td>Rude stall owner behaviour</td>
+          <td>25 Jan 2026</td>
+          <td>
+            <select class="status-select">
+              <option>Open</option>
+              <option>In Progress</option>
+              <option selected>Resolved</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </section>
 
-<script src="js/nea.js"></script>
-
-</body>
+<!-- scripts -->
 <script src="js/nea-common.js"></script>
 <script src="js/nea-feedback.js"></script>
+
+</body>
 </html>
