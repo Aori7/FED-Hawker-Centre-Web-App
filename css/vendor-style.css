@@ -1,0 +1,192 @@
+/* common ui elemets*/
+
+/* 
+buttons
+dropdown - select - options
+selectstallheaders
+filters
+*/
+
+/* home page */
+/* menu page */
+/* orders page */
+/* promotions page */
+/* feedback page */
+
+/* =====================================
+   Vendor Promotions – Keep Original Layout
+   ===================================== */
+
+/* NAV (keeps your simple nav layout) */
+nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 30px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--orange-color);
+}
+
+nav a:hover {
+  color: var(--dark-orange-color);
+}
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: var(--orange-color);
+}
+
+select {
+  font-size: 40px;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--orange-color);
+  color: white;
+}
+
+option{
+    font-size: 20px;
+}
+
+#activePromos-container,
+#inactivePromos-container {
+  padding: 60px 40px;
+}
+
+#activePromos-container {
+  background: var(--lighter-beige);
+}
+
+#inactivePromos-container {
+  background: var(--beige-color);
+}
+
+#activePromos-container h1,
+#inactivePromos-container h1 {
+  margin-bottom: 32px;
+}
+
+.promoCodesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.promoCode {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  position: relative;
+}
+
+.promo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.promo-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.promo-header h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.more-btn {
+  background: transparent;
+  color: var(--black-text-color);
+  font-size: 24px;
+  padding: 0;
+  box-shadow: none;
+}
+
+.more-dropdown {
+  display: none;
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: var(--lighter-beige);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.more-dropdown button {
+  background: none;
+  color: var(--black-text-color);
+  padding: 10px 16px;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+}
+
+.more-dropdown button:hover {
+  background: var(--orange-color);
+  color: white;
+}
+
+.affected-btn {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.affectedItemsList {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+.affectedItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.affectedItem img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.affectedItem p {
+  margin: 0;
+  font-size: 14px;
+}
+#addPromo-btn-sticky {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background-color: black;
+}
