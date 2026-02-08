@@ -111,7 +111,7 @@ Vendor-side interface and operational features for stall owners:
 
 ### Vendor `Rui Min`
 - Vendor dashboard for stall owners
-- Stall selection dropdown populated from Firebase Realtime Database
+- Stall selection dropdown 
 - View stall details and basic stall information
 - Order management table populated from Firebase Realtime Database
 - Filter orders by:
@@ -120,15 +120,30 @@ Vendor-side interface and operational features for stall owners:
   - Order status (Complete / Incomplete)
   - Time (Newest / Oldest)
 - Order data displayed in tabular format for monitoring purposes
-- Promotions management interface (UI):
+- Promotions management:
   - View active and inactive promotions
   - Expandable affected items list
-  - Promotion action menu (Edit / Remove – UI only)
-- Customer feedback & complaints interface (UI)
-- Vendor-side data currently uses **read-only Firebase retrieval**
+  - Promotion action menu (Edit / Remove)
+- Customer feedback & complaints 
 
 ### NEA-Officer `Dayana`
--
+- Main dashboard with KPI cards (non-compliance cases, inspections this month, average hygiene grade)
+- Hygiene & compliance analytics using Chart.js:
+  - Hygiene grade breakdown
+  - Compliance rate distribution
+  - Monthly inspections trend
+- Hawker centre monitoring overview (total centres + last updated info)
+- Hawker centre listing table (name, address, number of stalls, action buttons)
+- Recent inspection summary table (establishment, date, action taken)
+- Inspection records management page:
+  - Validity details (effective start + expiry date)
+  - Inspection log (inspector ID, officer name, date, outcome)
+  - Editable outcome dropdown (Pass / Fail)
+- Feedback & complaints overview:
+  - Summary cards (total/open/resolved)
+  - Feedback table with editable status (Open / In Progress / Resolved)
+- Consistent navigation and shared UI components across NEA pages
+- Responsive layout for desktop and mobile
 
 ---
 
@@ -198,7 +213,7 @@ This preserves real dataset usage while ensuring the web app works in-browser.
   - https://fonts.google.com/icons
 - Operator calendar inspiration (Calista)
   - https://fullcalendar.io/
-- Chart.js (Rui Min)
+- Chart.js (Rui Min,Dayana)
   - https://www.chartjs.org/
 ---
 
