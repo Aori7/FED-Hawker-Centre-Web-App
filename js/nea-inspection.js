@@ -1,15 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("data/nea-inspections.json")
-    .then(res => res.json())
-    .then(data => renderInspectionTable(data))
-    .catch(err => console.error("Failed to load inspection data", err));
+  const inspectionData = [
+    {
+      inspectorId: "0022987382",
+      officer: "Officer Tan",
+      establishment: "Maxwell Food Centre",
+      date: "17/01/2026",
+      result: "Pass"
+    },
+    {
+      inspectorId: "0182938592",
+      officer: "Officer Lim",
+      establishment: "Chinatown Complex",
+      date: "16/01/2026",
+      result: "Fail"
+    },
+    {
+      inspectorId: "0287268398",
+      officer: "Officer Ong",
+      establishment: "Tiong Bahru Market",
+      date: "15/01/2026",
+      result: "Pass"
+    }
+  ];
+
+  renderInspectionTable(inspectionData);
 });
 
-function renderInspectionTable(records) {
+function renderInspectionTable(data) {
   const tbody = document.getElementById("inspectionTableBody");
   tbody.innerHTML = "";
 
-  records.forEach(record => {
+  data.forEach(record => {
     const row = document.createElement("tr");
 
     row.innerHTML = `
@@ -26,7 +47,7 @@ function renderInspectionTable(records) {
     `;
 
     row.querySelector(".status-select").addEventListener("change", () => {
-      alert("Inspection outcome updated (UI demo only)");
+      alert("Inspection outcome updated (UI demo only).");
     });
 
     tbody.appendChild(row);
