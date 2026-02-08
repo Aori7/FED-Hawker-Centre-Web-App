@@ -37,94 +37,133 @@
 
     <h1 class="page-title">Public Feedback & Complaints</h1>
 
-    <!-- SUMMARY ROW -->
-    <section class="dashboard-grid">
+    <!-- =========================
+         FORMAL COMPLAINTS
+         ========================= -->
+    <section class="feedback-section">
 
-        <div class="stat-card">
-            <p>Total Feedback</p>
-            <h2>128</h2>
-            <small>All submissions</small>
+        <div class="feedback-header">
+            <h3>Formal Complaints</h3>
+
+            <select class="feedback-filter">
+                <option selected>All</option>
+                <option>Service</option>
+                <option>Hygiene</option>
+            </select>
         </div>
 
-        <div class="stat-card">
-            <p>Open Cases</p>
-            <h2>42</h2>
-            <small>Pending action</small>
-        </div>
+        <div class="feedback-grid">
 
-        <div class="stat-card">
-            <p>Resolved</p>
-            <h2>86</h2>
-            <small>Completed</small>
-        </div>
+            <!-- complaint card -->
+            <div class="feedback-card complaint">
+                <div class="feedback-top">
+                    <span class="avatar"></span>
+                    <div>
+                        <strong>Anonymous</strong>
+                        <div class="stars">★★★★☆</div>
+                        <p class="feedback-title">Poor hygiene (NEW)</p>
+                        <p class="feedback-sub">Negative review</p>
+                    </div>
+                    <span class="feedback-date">DD/MM/YY</span>
+                </div>
 
+                <div class="feedback-actions">
+                    <span>👍 200</span>
+                    <span>💬 5</span>
+                    <button class="reply-btn">Reply</button>
+                </div>
+
+                <div class="vendor-reply">
+                    <strong>Vendor</strong>
+                    <p>Apology</p>
+                </div>
+            </div>
+
+            <!-- complaint card -->
+            <div class="feedback-card complaint">
+                <div class="feedback-top">
+                    <span class="avatar"></span>
+                    <div>
+                        <strong>Anonymous</strong>
+                        <div class="stars">★★★☆☆</div>
+                        <p class="feedback-title">Unsatisfactory service</p>
+                        <p class="feedback-sub">Negative review</p>
+                    </div>
+                    <span class="feedback-date">DD/MM/YY</span>
+                </div>
+
+                <div class="feedback-actions">
+                    <span>👍 200</span>
+                    <span>💬 5</span>
+                    <button class="reply-btn">Reply</button>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <!-- FEEDBACK TABLE -->
-    <div class="table-card full-width">
-        <h3>Feedback Records</h3>
+    <!-- =========================
+         GENERAL FEEDBACK
+         ========================= -->
+    <section class="feedback-section">
 
-        <table class="nea-table">
-            <thead>
-                <tr>
-                    <th>Feedback ID</th>
-                    <th>Hawker Centre</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+        <div class="feedback-header">
+            <h3>Feedback</h3>
 
-            <!-- JS hooks here -->
-            <tbody id="feedbackTableBody">
-                <tr>
-                    <td>FBK001</td>
-                    <td>Maxwell Food Centre</td>
-                    <td>Cleanliness</td>
-                    <td>Dirty tables and overflowing bins</td>
-                    <td>12 Jan 2026</td>
-                    <td>
-                        <select>
-                            <option selected>Open</option>
-                            <option>In Progress</option>
-                            <option>Resolved</option>
-                        </select>
-                    </td>
-                </tr>
+            <select class="feedback-filter">
+                <option selected>All</option>
+                <option>Latest</option>
+                <option>Most popular</option>
+            </select>
+        </div>
 
-                <tr>
-                    <td>FBK002</td>
-                    <td>Chinatown Complex</td>
-                    <td>Food Safety</td>
-                    <td>Undercooked food reported</td>
-                    <td>18 Jan 2026</td>
-                    <td>
-                        <select>
-                            <option>Open</option>
-                            <option selected>In Progress</option>
-                            <option>Resolved</option>
-                        </select>
-                    </td>
-                </tr>
+        <div class="feedback-grid">
 
-                <tr>
-                    <td>FBK003</td>
-                    <td>Old Airport Road Food Centre</td>
-                    <td>Service</td>
-                    <td>Rude stall owner behaviour</td>
-                    <td>25 Jan 2026</td>
-                    <td>
-                        <select>
-                            <option>Open</option>
-                            <option>In Progress</option>
-                            <option selected>Resolved</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+            <!-- feedback card -->
+            <div class="feedback-card">
+                <div class="feedback-top">
+                    <span class="avatar"></span>
+                    <div>
+                        <strong>Anonymous</strong>
+                        <div class="stars">★★★★★</div>
+                        <p class="feedback-sub">Positive review</p>
+                    </div>
+                    <span class="feedback-date">DD/MM/YY</span>
+                </div>
+
+                <div class="feedback-actions">
+                    <span>👍 200</span>
+                    <span>💬 5</span>
+                    <button class="reply-btn">Reply</button>
+                </div>
+
+                <div class="vendor-reply">
+                    <strong>Vendor</strong>
+                    <p>Thank you for your feedback!</p>
+                </div>
+            </div>
+
+            <!-- feedback card -->
+            <div class="feedback-card">
+                <div class="feedback-top">
+                    <span class="avatar"></span>
+                    <div>
+                        <strong>Anonymous</strong>
+                        <div class="stars">★★★☆☆</div>
+                        <p class="feedback-sub">Review</p>
+                    </div>
+                    <span class="feedback-date">DD/MM/YY</span>
+                </div>
+
+                <div class="feedback-actions">
+                    <span>👍 200</span>
+                    <span>💬 5</span>
+                    <button class="reply-btn">Reply</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 </main>
 
