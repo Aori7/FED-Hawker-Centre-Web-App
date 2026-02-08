@@ -149,6 +149,47 @@ body{
 }
 
 /* =========================
+   DASHBOARD GRID 
+   ========================= */
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+/* big stat card */
+.stat-card.large{
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.stat-card.large h2{
+    font-size: 48px;
+    margin: 10px 0;
+    color: var(--orange-color);
+}
+
+/* hawker list container */
+.table-card{
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* scrollable list */
+.table-scroll{
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+/* =========================
    CHART LAYOUT 
    ========================= */
 
