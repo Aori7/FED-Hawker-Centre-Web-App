@@ -44,6 +44,11 @@ body{
 
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(6px);
+    flex-wrap: nowrap;
+}
+
+#navigationbar button{
+    margin-left: 20px;
 }
 
 .logo a{
