@@ -199,17 +199,32 @@ body{
 }
 
 /* bar charts */
-#hygieneChart,
-#monthlyChart{
-    height: 260px !important;
+
+/* allow cards to grow naturally */
+.chart-card{
+    min-height: 320px;
 }
 
-/* pie chart */
-#complianceChart{
-    height: 180px !important;
-    max-width: 320px;
+.chart-card.pie{
+    min-height: 420px;
+}
+
+.chart-card.full-width{
+    min-height: 460px;
+}
+
+/* let canvas fill available height */
+.chart-card canvas{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* center pie chart nicely */
+.chart-card.pie canvas{
+    max-width: 420px;
     margin: 0 auto;
 }
+
 
 /* =========================
    TABLES
