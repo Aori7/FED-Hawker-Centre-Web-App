@@ -323,15 +323,6 @@ body{
     font-size: 14px;
 }
 
-/* =========================
-   MOBILE SAFETY
-   ========================= */
-@media (max-width: 768px){
-    .inspection-grid{
-        grid-template-columns: 1fr;
-    }
-}
-
 
 /* =========================
    MOBILE
@@ -362,6 +353,10 @@ body{
     .page-title,
     .welcome{
         text-align: center;
+    }
+
+    .inspection-grid{
+        grid-template-columns: 1fr;
     }
 }
 /* =========================
