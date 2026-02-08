@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEA Officer - Inspection</title>
+    <title>NEA Officer - Inspections</title>
+
     <!-- google icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
     <link rel="stylesheet" href="css/nea-style.css">
@@ -15,122 +16,128 @@
 
 <!-- navigation bar -->
 <nav id="navigationbar">
-  <div class="logo">
-    <a href="index.html">
-        <h1 id="logotitle">Hawker<em>SG</em></h1>
-    </a>
-  </div>
+    <div class="logo">
+        <a href="index.html">
+            <h1 id="logotitle">Hawker<em>SG</em></h1>
+        </a>
+    </div>
 
-  <ul class="navitems">
-    <li><a href="nea-main.html">Main</a></li>
-    <li><a href="nea-dashboard.html">Dashboard</a></li>
-    <li><a href="nea-inspection.html" class="active">Inspections</a></li>
-    <li><a href="nea-feedback.html">Feedback</a></li>
-  </ul>
+    <ul class="navitems">
+        <li><a href="nea-main.html">Main</a></li>
+        <li><a href="nea-dashboard.html">Dashboard</a></li>
+        <li><a href="nea-inspection.html" class="active">Inspections</a></li>
+        <li><a href="nea-feedback.html">Feedback</a></li>
+    </ul>
 
-  <button class="logout-btn">Logout</button>
+    <button class="logout-btn">Logout</button>
 </nav>
 
 <!-- page content -->
 <main class="nea-page">
 
-  <h1 class="page-title">Inspection Records</h1>
+    <h1 class="page-title">Inspection Records</h1>
 
-  <!-- summary section -->
-  <section class="inspection-summary">
+    <!-- SUMMARY ROW -->
+    <section class="dashboard-grid">
 
-    <table class="summary-table">
-      <thead>
-        <tr>
-          <th>Establishment</th>
-          <th>Effective Start Date</th>
-          <th>Expiry Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Maxwell Food Centre</td>
-          <td>01/01/26</td>
-          <td>31/12/26</td>
-        </tr>
-        <tr>
-          <td>Chinatown Complex</td>
-          <td>15/02/26</td>
-          <td>14/02/27</td>
-        </tr>
-        <tr>
-          <td>Old Airport Road</td>
-          <td>01/03/26</td>
-          <td>28/02/27</td>
-        </tr>
-      </tbody>
-    </table>
+        <!-- stats card -->
+        <div class="stat-card">
+            <p>Total Inspections</p>
+            <h2>67</h2>
+            <small>As of 17 Jan 2026</small>
+        </div>
 
-    <div class="inspection-stat-card">
-      <p>Total Inspections<br><strong>67</strong></p>
-      <span>As of 17 Jan 2026</span>
+        <!-- licence / validity table -->
+        <div class="table-card">
+            <h3>Licence Validity</h3>
+
+            <table class="nea-table">
+                <thead>
+                    <tr>
+                        <th>Establishment</th>
+                        <th>Effective Start Date</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maxwell Food Centre</td>
+                        <td>01/01/26</td>
+                        <td>31/12/26</td>
+                    </tr>
+                    <tr>
+                        <td>Chinatown Complex</td>
+                        <td>15/02/26</td>
+                        <td>14/02/27</td>
+                    </tr>
+                    <tr>
+                        <td>Old Airport Road Food Centre</td>
+                        <td>01/03/26</td>
+                        <td>28/02/27</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- DETAILED INSPECTION TABLE -->
+    <div class="table-card full-width">
+        <h3>Inspection Details</h3>
+
+        <table class="nea-table">
+            <thead>
+                <tr>
+                    <th>Inspector ID</th>
+                    <th>NEA Officer</th>
+                    <th>Establishment</th>
+                    <th>Inspection Date</th>
+                    <th>Outcome</th>
+                </tr>
+            </thead>
+
+            <tbody id="inspectionTableBody">
+                <tr>
+                    <td>0022987382</td>
+                    <td>Officer Tan</td>
+                    <td>Maxwell Food Centre</td>
+                    <td>17/01/26</td>
+                    <td>
+                        <select>
+                            <option selected>Pass</option>
+                            <option>Fail</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>0027826398</td>
+                    <td>Officer Lim</td>
+                    <td>Chinatown Complex</td>
+                    <td>16/01/26</td>
+                    <td>
+                        <select>
+                            <option>Pass</option>
+                            <option selected>Fail</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>0182938592</td>
+                    <td>Officer Ong</td>
+                    <td>Old Airport Road Food Centre</td>
+                    <td>15/01/26</td>
+                    <td>
+                        <select>
+                            <option selected>Pass</option>
+                            <option>Fail</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-  </section>
-
-  <!-- detailed inspection table -->
-  <section class="inspection-details">
-
-    <table class="inspection-table">
-      <thead>
-        <tr>
-          <th>Inspector ID</th>
-          <th>NEA Officer</th>
-          <th>Establishment</th>
-          <th>Inspection Date</th>
-          <th>Outcome</th>
-        </tr>
-      </thead>
-
-      <!-- JS in this tbody -->
-      <tbody id="inspectionTableBody">
-        <tr>
-          <td>0022987382</td>
-          <td>Officer Tan</td>
-          <td>Maxwell Food Centre</td>
-          <td>17/01/26</td>
-          <td>
-            <select class="status-select">
-              <option selected>Pass</option>
-              <option>Fail</option>
-            </select>
-          </td>
-        </tr>
-
-        <tr>
-          <td>0027826398</td>
-          <td>Officer Lim</td>
-          <td>Chinatown Complex</td>
-          <td>16/01/26</td>
-          <td>
-            <select class="status-select">
-              <option>Pass</option>
-              <option selected>Fail</option>
-            </select>
-          </td>
-        </tr>
-
-        <tr>
-          <td>0182938592</td>
-          <td>Officer Ong</td>
-          <td>Old Airport Road</td>
-          <td>15/01/26</td>
-          <td>
-            <select class="status-select">
-              <option selected>Pass</option>
-              <option>Fail</option>
-            </select>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-  </section>
 
 </main>
 
