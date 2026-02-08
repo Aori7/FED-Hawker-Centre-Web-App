@@ -279,6 +279,61 @@ body{
 }
 
 /* =========================
+   INSPECTION PAGE (SAFE ADD-ON)
+   ========================= */
+
+/* top layout: table + stat card */
+.inspection-grid{
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+/* reuse existing card styles safely */
+.inspection-grid .table-card{
+    height: fit-content;
+}
+
+.inspection-stat{
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.inspection-stat h2{
+    font-size: 48px;
+    color: var(--orange-color);
+    margin: 10px 0;
+}
+
+/* bottom table spacing */
+.inspection-details{
+    margin-top: 30px;
+}
+
+/* outcome dropdown safety */
+.status-select{
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* =========================
+   MOBILE SAFETY
+   ========================= */
+@media (max-width: 768px){
+    .inspection-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
    MOBILE
    ========================= */
 
