@@ -189,7 +189,7 @@ body{
 }
 
 .chart-card.pie canvas{
-    max-width: 350px;       
+    max-width: 380px;       
     margin: auto;          
 }
 
