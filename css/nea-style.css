@@ -324,15 +324,13 @@ body{
 }
 
 /* =========================
-   FEEDBACK PAGE 
+   FEEDBACK PAGE
    ========================= */
 
-/* section wrapper */
 .feedback-section{
-    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
-/* section header + filter */
 .feedback-header{
     display: flex;
     justify-content: space-between;
@@ -340,111 +338,63 @@ body{
     margin-bottom: 20px;
 }
 
-.feedback-filter{
+.feedback-header select{
     padding: 6px 14px;
-    border-radius: 20px;
+    border-radius: 16px;
     border: none;
-    background: white;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* grid for cards */
 .feedback-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 24px;
 }
 
-/* card base */
 .feedback-card{
     background: white;
     border-radius: 18px;
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    position: relative;
 }
 
-/* complaint emphasis */
-.feedback-card.complaint{
-    background: #f7f7f7;
-}
-
-/* top row */
 .feedback-top{
     display: flex;
-    gap: 12px;
-    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 8px;
 }
 
-/* avatar */
-.avatar{
-    width: 40px;
-    height: 40px;
-    background: #d9d9d9;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-/* stars */
-.stars{
-    font-size: 14px;
-    color: #f4b400;
-    line-height: 1;
-}
-
-/* text bits */
 .feedback-title{
     font-weight: 700;
-    margin: 4px 0 2px;
+    margin-bottom: 6px;
 }
 
-.feedback-sub{
-    font-size: 13px;
-    color: #666;
+.feedback-desc{
+    font-size: 15px;
+    margin-bottom: 14px;
 }
 
-/* date */
 .feedback-date{
-    margin-left: auto;
-    font-size: 12px;
-    color: #999;
-    white-space: nowrap;
-}
-
-/* action row */
-.feedback-actions{
-    display: flex;
-    align-items: center;
-    gap: 16px;
     font-size: 13px;
-    color: #555;
+    opacity: 0.6;
 }
 
-/* reply button */
 .reply-btn{
-    margin-left: auto;
     background: #e0e0e0;
     border: none;
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 6px 16px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14px;
 }
 
-/* vendor reply */
 .vendor-reply{
-    background: #f1f1f1;
-    border-radius: 14px;
-    padding: 10px 14px;
-    font-size: 13px;
-}
-
-.vendor-reply strong{
-    display: block;
-    margin-bottom: 4px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    opacity: 0.85;
 }
 
 
