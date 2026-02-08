@@ -10,7 +10,7 @@
 *{
     /* setting the font for the web */
     font-family: "Noto Sans", sans-serif;
-    font-optical-sizing: auto;
+    /* font-optical-sizing: auto; */
     font-weight: 600;
     font-style: normal;
     font-variation-settings:
@@ -324,9 +324,7 @@ body{
 /* if not toggled - not active = default button color */
 
 /* show only the active states of the login methods */
-/* .login-methods{
 
-} */
 .login-method.active{
     display:block;
     width: 100%;
@@ -401,16 +399,6 @@ body{
 }
 
 /* register section */
-/* #register-acc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-} */
-
-
-
 /* register button container */
 #register-acc .register {
     margin-top: 30px;

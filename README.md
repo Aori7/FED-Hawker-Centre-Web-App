@@ -6,7 +6,7 @@ The system is designed to support multiple roles (**Patron, Operator, Vendor, NE
 
 ---
 
-## Team Members & Responsibilities
+## Team Members Contribution & Responsibilities
 
 ### Ada (Patron + Core System)
 Implemented the main patron experience and core integrations:
@@ -169,10 +169,10 @@ Validation + QA checks used:
 - `js/operator-schedule.js`
 
 ### Dayana (NEA Officer)
-- Pending / TBC
+- 
 
 ### Rui Min (Vendor)
-- Pending / TBC
+- 
 
 ---
 
