@@ -38,7 +38,15 @@ Operator-side features:
   - localStorage persistence (demo leasing overview actions included)
 
 ### Dayana (NEA Officer)
-- **Pending / TBC** (features not submitted yet)
+NEA-side features focused on inspection monitoring and compliance management:
+- NEA Officer dashboard UI with KPI summary cards and charts
+- Hygiene and compliance analytics using Chart.js
+- Hawker centre monitoring overview and listing table
+- Inspection records and inspection history interface
+- Editable inspection outcome controls (Pass / Fail)
+- Feedback and complaints monitoring interface
+- Consistent NEA navigation and shared UI components
+- Responsive layout for NEA pages
 
 ### Rui Min (Vendor)
 Vendor-side interface and operational features for stall owners:
