@@ -165,24 +165,34 @@ body{
 }
 
 /* =========================
-   CHART LAYOUT (NEA MAIN)
+   CHART LAYOUT (MAIN PAGE)
    ========================= */
 
 .charts-row{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
-    margin-top: 40px;
+    align-items: flex-start;
 }
 
 .chart-card{
     background: white;
     border-radius: 20px;
-    padding: 24px 24px 30px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 24px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+
+    width: calc(50% - 15px);
 }
 
-/* default chart behaviour */
+.chart-card.full-width{
+    width: 100%;
+}
+
+.chart-card h3{
+    margin: 0 0 16px 0;
+}
+
+/* chart sizing */
 .chart-card canvas{
     max-width: 100%;
     display: block;
@@ -194,13 +204,12 @@ body{
     height: 260px !important;
 }
 
-/* pie chart (needs less space) */
+/* pie chart */
 #complianceChart{
-    height: 200px !important;
+    height: 180px !important;
     max-width: 320px;
     margin: 0 auto;
 }
-
 
 /* =========================
    TABLES
@@ -283,8 +292,8 @@ select{
         padding: 30px 16px;
     }
 
-    .charts-row{
-        grid-template-columns: 1fr;
+    .chart-card{
+        width: 100%;
     }
 
     .chart-card canvas{
