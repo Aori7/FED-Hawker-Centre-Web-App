@@ -1073,7 +1073,47 @@ html, body {
 .hawker-available-section .all-hawker .container .wrapper .card-list .card{
   width: 100%;
 }
+.filter-wrapper-stall {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 
+  padding: 24px 30px;
+  border-radius: 30px;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* filter buttons */
+.stall-filter {
+  padding: 10px 26px;
+  border-radius: 30px;
+  background: var(--beige-color);
+  color: var(--black-text-color);
+
+  font-size: 16px;
+  font-weight: 600;
+
+  border: none;
+  cursor: pointer;
+
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+}
+
+.stall-filter:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+/* active filter */
+.stall-filter.active {
+  background: var(--orange-color);
+  color: white;
+}
+
+/* responsive web */
 @media (max-width: 768px) {
     /* show hamburger */
     #hamburger-btn {
