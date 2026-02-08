@@ -156,8 +156,8 @@ body{
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 30px;
-    align-items: start;
     margin-bottom: 40px;
+    align-items: start;
 }
 
 /* big stat card */
