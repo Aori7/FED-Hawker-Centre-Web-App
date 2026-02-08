@@ -37,20 +37,13 @@
 
     <h1 class="page-title">Inspection Records</h1>
 
-    <!-- SUMMARY ROW -->
-    <section class="dashboard-grid">
+    <!-- =========================
+         TOP SECTION
+         ========================= -->
+    <section class="inspection-grid">
 
-        <!-- stats card -->
-        <div class="stat-card">
-            <p>Total Inspections</p>
-            <h2>67</h2>
-            <small>As of 17 Jan 2026</small>
-        </div>
-
-        <!-- licence / validity table -->
+        <!-- inspection validity table -->
         <div class="table-card">
-            <h3>Licence Validity</h3>
-
             <table class="nea-table">
                 <thead>
                     <tr>
@@ -75,69 +68,108 @@
                         <td>01/03/26</td>
                         <td>28/02/27</td>
                     </tr>
+                    <tr>
+                        <td>Tiong Bahru Market</td>
+                        <td>10/01/26</td>
+                        <td>09/01/27</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
 
+        <!-- total inspections stat -->
+        <div class="inspection-stat">
+            <p>Total Inspections<br><strong>in 2026</strong></p>
+            <h2>67</h2>
+            <small>As of 2026 Jan 17</small>
+        </div>
+
     </section>
 
-    <!-- DETAILED INSPECTION TABLE -->
-    <div class="table-card full-width">
-        <h3>Inspection Details</h3>
+    <!-- =========================
+         DETAILED INSPECTIONS
+         ========================= -->
+    <section class="inspection-details">
+        <div class="table-card full-width">
+            <table class="nea-table">
+                <thead>
+                    <tr>
+                        <th>Inspector ID</th>
+                        <th>NEA Officer</th>
+                        <th>Establishment</th>
+                        <th>Inspection Date</th>
+                        <th>Outcome</th>
+                    </tr>
+                </thead>
+                <tbody id="inspectionTableBody">
+                    <tr>
+                        <td>0022987382</td>
+                        <td>Officer Tan</td>
+                        <td>Maxwell Food Centre</td>
+                        <td>17/01/26</td>
+                        <td>
+                            <select class="status-select">
+                                <option selected>Pass</option>
+                                <option>Fail</option>
+                            </select>
+                        </td>
+                    </tr>
 
-        <table class="nea-table">
-            <thead>
-                <tr>
-                    <th>Inspector ID</th>
-                    <th>NEA Officer</th>
-                    <th>Establishment</th>
-                    <th>Inspection Date</th>
-                    <th>Outcome</th>
-                </tr>
-            </thead>
+                    <tr>
+                        <td>0027826398</td>
+                        <td>Officer Lim</td>
+                        <td>Chinatown Complex</td>
+                        <td>16/01/26</td>
+                        <td>
+                            <select class="status-select">
+                                <option>Pass</option>
+                                <option selected>Fail</option>
+                            </select>
+                        </td>
+                    </tr>
 
-            <tbody id="inspectionTableBody">
-                <tr>
-                    <td>0022987382</td>
-                    <td>Officer Tan</td>
-                    <td>Maxwell Food Centre</td>
-                    <td>17/01/26</td>
-                    <td>
-                        <select>
-                            <option selected>Pass</option>
-                            <option>Fail</option>
-                        </select>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>0182938592</td>
+                        <td>Officer Ong</td>
+                        <td>Old Airport Road Food Centre</td>
+                        <td>15/01/26</td>
+                        <td>
+                            <select class="status-select">
+                                <option selected>Pass</option>
+                                <option>Fail</option>
+                            </select>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>0027826398</td>
-                    <td>Officer Lim</td>
-                    <td>Chinatown Complex</td>
-                    <td>16/01/26</td>
-                    <td>
-                        <select>
-                            <option>Pass</option>
-                            <option selected>Fail</option>
-                        </select>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>0227364821</td>
+                        <td>Officer Goh</td>
+                        <td>Tiong Bahru Market</td>
+                        <td>14/01/26</td>
+                        <td>
+                            <select class="status-select">
+                                <option selected>Pass</option>
+                                <option>Fail</option>
+                            </select>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>0182938592</td>
-                    <td>Officer Ong</td>
-                    <td>Old Airport Road Food Centre</td>
-                    <td>15/01/26</td>
-                    <td>
-                        <select>
-                            <option selected>Pass</option>
-                            <option>Fail</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <tr>
+                        <td>0389472537</td>
+                        <td>Officer Lee</td>
+                        <td>Maxwell Food Centre</td>
+                        <td>13/01/26</td>
+                        <td>
+                            <select class="status-select">
+                                <option>Pass</option>
+                                <option selected>Fail</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
 </main>
 
