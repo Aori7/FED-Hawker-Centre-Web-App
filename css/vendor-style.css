@@ -1,0 +1,841 @@
+/* common ui elemets*/
+
+/* 
+buttons
+dropdown - select - options
+selectstallheaders
+filters
+*/
+
+/* home page */
+/* menu page */
+/* orders page */
+/* promotions page */
+/* feedback page */
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: var(--orange-color);
+}
+
+select {
+  font-size: 40px;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--orange-color);
+  color: white;
+}
+
+option {
+  font-size: 20px;
+}
+
+/* =============================== PROMOTIONS PAGE ================================= */
+
+#activePromos-container,
+#inactivePromos-container {
+  padding: 60px 40px;
+}
+
+#activePromos-container {
+  background: var(--lighter-beige);
+}
+
+#inactivePromos-container {
+  background: var(--beige-color);
+}
+
+#activePromos-container h1,
+#inactivePromos-container h1 {
+  margin-bottom: 32px;
+}
+
+.promoCodesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.promoCode {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 600px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.promo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.promo-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.promo-header h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.more-btn {
+  background: transparent;
+  color: var(--black-text-color);
+  font-size: 24px;
+  padding: 0;
+  box-shadow: none;
+}
+
+.more-dropdown {
+  display: none;
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: var(--lighter-beige);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.more-dropdown button {
+  background: none;
+  color: var(--black-text-color);
+  padding: 10px 16px;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+}
+
+.more-dropdown button:hover {
+  background: var(--orange-color);
+  color: white;
+}
+
+.affected-btn {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.affectedItemsList {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.affectedItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.affectedItem img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.affectedItem p {
+  margin: 0;
+  font-size: 14px;
+}
+#addPromo-btn-sticky {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background-color: black;
+}
+
+/* ======================================== HOME PAGE ========================================= */
+
+/* select stall and stall details */
+#selectStall-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  background-color: var(--beige-color);
+  border-radius: 20px;
+  margin: 210px;
+  margin-top: 120px;
+}
+
+#selectStall-container select {
+  font-size: 24px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 120px;
+}
+
+#selectStall-container .info h3 {
+  margin: 4px 0;
+}
+
+#selectStall-container img {
+  border-radius: 5px;
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+}
+
+/* orders and updates section */
+#totalOrders-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
+  background-color: var(--lighter-beige);
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.pieChart {
+  flex: 1;
+  width: 350px;
+}
+
+#updates-container {
+  width: 500px;
+  max-height: 300px;
+  background-color: var(--beige-color);
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.update-item {
+  display: block;
+  text-decoration: none;
+  color: var(--black-text-color);
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+/* top selling items */
+#topItems-container {
+  background-color: var(--orange-color);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+#menuItemList {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menuItem {
+  margin: 20px;
+  background-color: white;
+  height: 200px;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.menuItem:hover {
+  transform: translateY(-6px);
+}
+
+.menuItem img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.item-desc h3 {
+  margin: 4px 0;
+}
+
+/* active promotions */
+#activePromotion-container {
+  background-color: var(--beige-color);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.stallPromotions ol {
+  padding-left: 20px;
+}
+
+.stallPromotions li {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* ======================================== FEEDBACK PAGE =================================== */
+header{
+  background-color: var(--orange-color);
+  height: 150px;
+}
+
+header.dropdown select {
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  outline: none;
+  margin-top: 100px;
+}
+
+/* containers */
+#formalComplaints-container,
+#feedback-container {
+  margin: 30px;
+  padding: 40px 20px;
+  border-radius: 20px;
+  background-color: var(--beige-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#formalComplaintList,
+#feedbackList {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+#formalComplaints-container h1,
+#feedback-container h1 {
+  margin-bottom: 20px;
+  color: var(--orange-color);
+}
+
+/* feedback item */
+.complaint,
+.feedback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.complaint .profile-img,
+.feedback .profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.complaint > div[data-type],
+.feedback > div[data-type] {
+  margin: 5px 0;
+}
+
+/* make complaint and feedback cards flex column */
+.complaint,
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  max-width: 500px;
+}
+
+/* top row: profile + name/rating on left, date on right */
+.complaint,
+.feedback {
+  position: relative;
+}
+
+/* profile + name + rating as flex row */
+.complaint .profile-img,
+.feedback .profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+  margin-right: 12px;
+}
+
+.complaint [data-type="name"],
+.feedback [data-type="name"] {
+  font-weight: 600;
+  font-size: 18px;
+  display: block;
+}
+
+.complaint [data-type="rating"],
+.feedback [data-type="rating"] {
+  font-size: 14px;
+  color: #888;
+  display: block;
+}
+
+/* wrap profile + name + rating together using relative positioning */
+.complaint [data-type="name"],
+.complaint [data-type="rating"],
+.feedback [data-type="name"],
+.feedback [data-type="rating"] {
+  margin-left: 72px; /* width of image + gap */
+}
+
+/* date on the right */
+.complaint [data-type="date"],
+.feedback [data-type="date"] {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* title/content below */
+.complaint [data-type="title"],
+.complaint [data-type="content"],
+.feedback [data-type="title"],
+.feedback [data-type="content"] {
+  display: block;
+  margin-top: 40px; /* push below top row */
+}
+
+.complaint [data-type="title"] {
+  font-weight: 600;
+  color: var(--orange-color);
+}
+
+.complaint [data-type="content"],
+.feedback [data-type="content"] {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ================================================ MENU PAGE ================================================ */
+
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+#addMenuItem-btn-sticky {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background-color: black;
+}
+
+/* =================================== ORDERS PAGE ======================================== */
+
+
+
+/* Done by Rui Min */
+/* for home page */
+/* =======================
+   Variables / Theme Colors
+======================= */
+:root {
+  --black-text-color: rgb(34, 34, 34);
+  --orange-color: rgb(250, 129, 18);
+  --dark-orange-color: rgb(196, 12, 12);
+  --beige-color: rgb(245, 231, 198);
+  --lighter-beige: rgb(250, 243, 225);
+}
+
+/* =======================
+   Global Styles
+======================= */
+* {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--black-text-color);
+  background-color: var(--lighter-beige);
+}
+
+/* =======================
+   NAVIGATION
+======================= */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--orange-color);
+  padding: 6px 10px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--dark-orange-color);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--dark-orange-color);
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* orders.html css */
+.filter-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: #eee;
+  color: var(--black-text-color);
+}
+
+.filter-btn:hover {
+  background-color: #ddd;
+}
+
+.filter-btn.active {
+  background-color: #4287f5;
+  color: white;
+}
+/*  */
+#orderHist-filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  background-color: var(--orange-color);
+  height: 150px;
+}
+#orderHist-table-container {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#orderHist-table-container th,
+td {
+  border: 1px solid var(--black-text-color);
+  padding: 8px;
+  text-align: left;
+}
+
+#orderHist-table-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#orderHist-table-container th {
+  background-color: var(--black-text-color);
+  color: white;
+}
+
+
+/* =======================
+   STALL DETAILS
+======================= */
+#selectStall-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 100px 20px 40px; /* offset for fixed nav */
+  padding: 20px;
+  background-color: var(--beige-color);
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#selectStall-container .dropdown label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#selectStall {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  outline: none;
+}
+
+#selectStall:hover,
+#selectStall:focus {
+  border: 2px solid var(--orange-color);
+}
+
+#selectStall-container .info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 18px;
+}
+
+#selectStall-container .hygGrade {
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =======================
+   ORDERS & UPDATES
+======================= */
+#totalOrders-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  margin: 40px 20px;
+}
+
+.pieChart {
+  background-color: var(--beige-color);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  flex: 1;
+  min-width: 350px;
+}
+
+.pieChart h1 {
+  text-align: center;
+}
+
+.pieChart select {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+/* Updates */
+#updates-container {
+  background-color: var(--beige-color);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  flex: 1;
+  min-width: 350px;
+}
+
+.update-item {
+  margin-bottom: 20px;
+}
+
+.update-item h4 {
+  margin: 0;
+  color: var(--orange-color);
+}
+
+.update-item p {
+  margin: 5px 0;
+}
+
+.update-date {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* =======================
+   TOP SELLING ITEMS
+======================= */
+#topItems-container {
+  margin: 40px 20px;
+}
+
+#topItems-container select {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+#menuItemList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.menuItem {
+  background-color: var(--beige-color);
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.menuItem img {
+  border-radius: 12px;
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.item-desc h3 {
+  margin: 5px 0;
+  text-align: center;
+}
+
+/* =======================
+   ACTIVE PROMOTIONS
+======================= */
+#activePromotion-container {
+  margin: 40px 20px;
+  padding: 20px;
+  background-color: var(--beige-color);
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stallPromotions ol {
+  padding-left: 20px;
+}
+
+/* =======================
+   BUTTONS
+======================= */
+button,
+#submitbtn {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  background: var(--orange-color);
+  border: none;
+  padding: 10px 50px;
+  font-size: 20px;
+  font-weight: 600;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+button:hover,
+#submitbtn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.2);
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 1000px) {
+  #selectStall-container,
+  #totalOrders-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #menuItemList {
+    justify-content: center;
+  }
+}
+
+/* layout
+nav {
+        height: 50px;
+        width: auto;
+        background-color: lightblue;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #selectStall-container {
+        background-color: grey;
+      }
+      #totalOrders-container {
+        background-color: lightblue;
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+        gap: 20px;
+      }
+      .pieChart {
+        width: 500px;
+      }
+      #updates-container {
+        width: 500px;
+        height: 200px;
+        background-color: grey;
+        overflow-y: auto;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .update-item {
+        display: block;
+        text-decoration: none;
+        color: black;
+        padding: 12px;
+        margin-bottom: 10px;
+        background-color: white;
+      }
+      #topItems-container {
+        background-color: grey;
+        height: 600px;
+      }
+      #menuItemList {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .menuItem {
+        margin: 20px;
+        background-color: white;
+        height: 200px;
+        width: 300px;
+      }
+      #activePromotion-container{
+        background-color: lightblue;
+        height: 100px;
+      } */
