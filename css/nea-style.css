@@ -170,6 +170,41 @@ body{
 }
 
 /* =========================
+   MAIN PAGE STATS
+   ========================= */
+
+.stats-row{
+    margin-bottom: 40px;
+}
+
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card{
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.card-title{
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.stat-value{
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--orange-color);
+}
+
+
+/* =========================
    TABLE CARDS
    ========================= */
 
@@ -449,6 +484,10 @@ body{
     }
 
     .feedback-summary-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid{
         grid-template-columns: 1fr;
     }
 }
