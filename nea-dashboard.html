@@ -1,4 +1,4 @@
-<!-- nea officer - dashboard page -->
+<!-- nea-dashboard.html -->
 
 <!DOCTYPE html>
 
@@ -11,23 +11,28 @@
 </head>
 <body>
 
-```
-<!-- navigation bar -->
-<nav class="nea-nav">
-    <div class="nav-left">
-        <div class="logo">Logo</div>
-        <ul class="nav-links">
-            <li>Home</li>
-            <li class="active">Dashboard</li>
-            <li>Inspections</li>
-            <li>Hawker Centre</li>
-        </ul>
-    </div>
-    <button class="logout-btn">Log Out</button>
+<!-- logo -->
+<nav id="navigationbar">
+  <div class="logo">
+    <a href="index.html">
+      <h1 id="logotitle">Hawker<em>SG</em></h1>
+    </a>
+  </div>
+
+  <!-- navigation bar -->
+<ul class="navitems">
+  <li><a href="nea-main.html">Main</a></li>
+  <li><a href="nea-dashboard.html" class="active">Dashboard</a></li>
+  <li><a href="nea-inspection.html">Inspections</a></li>
+  <li><a href="nea-feedback.html">Feedback</a></li>
+</ul>
+
+  <!-- logout -->
+  <button class="logout-btn">Logout</button>
 </nav>
 
 <!-- main content -->
-<main class="nea-main">
+<main class="nea-page">
     <h1 class="page-title">Food Safety Monitoring</h1>
 
     <section class="dashboard-top">
@@ -117,7 +122,9 @@
 </main>
 
 <script src="js/nea.js"></script>
-```
 
 </body>
+<!-- scripts -->
+<script src="js/nea-common.js"></script>
+<script src="js/nea-dashboard.js"></script>
 </html>
