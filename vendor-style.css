@@ -1,3 +1,4 @@
+/* Done by Rui Min */
 /* for home page */
 /* =======================
    Variables / Theme Colors
@@ -73,6 +74,54 @@ nav a:hover::after,
 nav a.active::after {
   width: 100%;
 }
+
+/* orders.html css */
+.filter-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: #eee;
+}
+
+.filter-btn:hover {
+  background-color: #ddd;
+}
+
+.filter-btn.active {
+  background-color: #4287f5;
+  color: white;
+}
+/*  */
+#orderHist-filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  background-color: var(--orange-color);
+  height: 150px;
+}
+/*  */
+#orderHist-table-container {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#orderHist-table-container th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#orderHist-table-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#orderHist-table-container th {
+  background-color: #333;
+  color: white;
+}
+
 
 /* =======================
    STALL DETAILS
