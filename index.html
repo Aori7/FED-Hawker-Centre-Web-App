@@ -341,12 +341,13 @@
             />
 
             <label for="subject">Subject:</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Subject.."
-            />
+            <select id="subject" name="subject">
+              <option value="">Select a subject</option>
+              <option value="Complaint">Complaint</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Suggestion">Suggestion</option>
+              <option value="Others">Others</option>
+            </select>
 
             <label for="message">Message:</label>
             <textarea
@@ -436,6 +437,8 @@
       <!-- footer contents here -->
       <!-- content 1: link to lead to credit.html? -->
       <a href="credit.html">View Credit.html</a>
+      <p>© 2026 HawkerSG. All rights reserved.</p>
+
     </footer>
 
     <!-- importing leaflet js library using cdn link -->
