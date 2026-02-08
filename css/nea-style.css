@@ -351,6 +351,11 @@ body{
     gap: 24px;
 }
 
+.feedback-summary-grid{
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+}
+
 .feedback-card{
     background: white;
     border-radius: 18px;
@@ -440,6 +445,10 @@ body{
     }
 
     .feedback-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-summary-grid{
         grid-template-columns: 1fr;
     }
 }
