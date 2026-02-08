@@ -81,6 +81,7 @@ nav a.active::after {
   border: none;
   border-radius: 50px;
   background-color: #eee;
+  color: var(--black-text-color);
 }
 
 .filter-btn:hover {
@@ -100,7 +101,6 @@ nav a.active::after {
   background-color: var(--orange-color);
   height: 150px;
 }
-/*  */
 #orderHist-table-container {
   width: 100%;
   border-collapse: collapse;
@@ -108,7 +108,7 @@ nav a.active::after {
 
 #orderHist-table-container th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--black-text-color);
   padding: 8px;
   text-align: left;
 }
@@ -118,7 +118,7 @@ td {
 }
 
 #orderHist-table-container th {
-  background-color: #333;
+  background-color: var(--black-text-color);
   color: white;
 }
 
