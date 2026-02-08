@@ -175,15 +175,15 @@ body{
 
 /* individual sizes */
 .chart-card.hygiene{
-    height: 320px;
+    height: 380px;
 }
 
 .chart-card.pie{
-    height: 300px;
+    height: 390px;
 }
 
 .chart-card.full-width{
-    height: 380px;
+    height: 400px;
 }
 
 /* canvas follows card */
