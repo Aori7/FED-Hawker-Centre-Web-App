@@ -66,7 +66,7 @@ document.querySelectorAll(".login-btn").forEach(btn => {
 
     // redirect by role to specific page - aka redirecting to calista's,dayana's and ruimin's pages.
     if (role === "vendor") {
-      window.location.href = "vendor-main.html";
+      window.location.href = "vendor-home.html";
     } else if (role === "nea-officer") {
       window.location.href = "nea-main.html";
     } else if (role === "operator") {
