@@ -84,22 +84,9 @@ new Chart(document.getElementById("monthlyChart"), {
         ]
     },
     options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                position: "top"
-            }
-        },
-        scales: {
-            y: {
-                beginAtZero: true,
-                grid: { color: "#eee" }
-            },
-            x: {
-                grid: { display: false }
-            }
-        }
-    }
+    responsive: true,
+    maintainAspectRatio: false
+}
+
 });
 // end of nea-main.js
