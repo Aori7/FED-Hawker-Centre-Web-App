@@ -160,13 +160,18 @@ body{
     align-items: start;
 }
 
-/* big stat card */
-.stat-card.large{
+.stat-card{
     background: white;
     border-radius: 20px;
-    padding: 30px;
+    padding: 28px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
     text-align: center;
+}
+
+.stat-card.large h2{
+    font-size: 48px;
+    color: var(--orange-color);
+    margin: 10px 0;
 }
 
 .stat-card.large h2{
