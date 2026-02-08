@@ -10,18 +10,26 @@
 </head>
 <body>
 
-<!-- navigation bar -->
+<!-- logo -->
+<nav id="navigationbar">
+  <div class="logo">
+    <a href="index.html">
+      <span class="material-symbols-rounded">restaurant_menu</span>
+      <h1 id="logotitle">Hawker<em>SG</em></h1>
+    </a>
+  </div>
 
-<header id="navigationbar">
-    <div class="logo">Logo</div>
-    <ul class="navitems">
-        <li><a href="nea-main.html">Home</a></li>
-        <li><a href="nea-dashboard.html">Dashboard</a></li>
-        <li><a href="nea-inspection.html" class="active">Inspections</a></li>
-        <li><a href="#">Hawker Centre</a></li>
-    </ul>
-    <button class="logout-btn">Log Out</button>
-</header>
+  <!-- navigation bar -->
+  <ul class="navitems nea-nav">
+    <li data-page="home">Home</li>
+    <li data-page="dashboard">Dashboard</li>
+    <li data-page="inspections">Inspections</li>
+    <li data-page="feedback">Feedback</li>
+  </ul>
+
+  <!-- logout -->
+  <button class="logout-btn">Logout</button>
+</nav>
 
 <main class="nea-container">
 
