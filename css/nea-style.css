@@ -163,6 +163,7 @@ body{
     border-radius: 20px;
     padding: 24px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        overflow: hidden; /* 🔒 stops canvas escape */
 
     display: flex;
     flex-direction: column;
@@ -172,18 +173,21 @@ body{
     margin-bottom: 16px;
 }
 
-/* FIXED HEIGHTS */
-.chart-hygiene{ height: 320px; }
-.chart-pie{ height: 300px; }
-
-.chart-full{
-    grid-column: 1 / -1;
-    height: 360px;
+/* individual sizes */
+.chart-card.hygiene{
+    height: 320px;
 }
 
-/* CANVAS NEVER GROWS */
+.chart-card.pie{
+    height: 300px;
+}
+
+.chart-card.full-width{
+    height: 380px;
+}
+
+/* canvas follows card */
 .chart-card canvas{
-    flex: 1;
     width: 100% !important;
     height: 100% !important;
 }
