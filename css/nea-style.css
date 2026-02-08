@@ -183,7 +183,7 @@ body{
 
 /* pie chart */
 .chart-card.pie{
-    height: 420px;          
+    height: 400px;          
     display: flex;
     flex-direction: column;
 }
