@@ -181,16 +181,18 @@ body{
     height: 260px !important;
 }
 
-/* pie chart (smaller, compact) */
+/* pie chart */
 .chart-card.pie{
-    justify-content: flex-start;
+    height: 420px;          
+    display: flex;
+    flex-direction: column;
 }
 
 .chart-card.pie canvas{
-    height: 220px !important;
-    max-width: 260px;
-    margin: 0 auto;
+    max-width: 360px;       
+    margin: auto;          
 }
+
 
 /* monthly inspections */
 .chart-card.monthly{
