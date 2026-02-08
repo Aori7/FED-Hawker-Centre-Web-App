@@ -1,95 +1,97 @@
 <!-- nea-dashboard.html -->
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEA Officer - Main</title>
+    <title>NEA Officer - Dashboard</title>
+
     <!-- google icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
     <link rel="stylesheet" href="css/nea-style.css">
 </head>
 <body>
 
-<!-- logo -->
+<!-- navbar -->
 <nav id="navigationbar">
-  <div class="logo">
-    <a href="index.html">
-        <h1 id="logotitle">Hawker<em>SG</em></h1>
-    </a>
-  </div>
+    <div class="logo">
+        <a href="index.html">
+            <h1 id="logotitle">Hawker<em>SG</em></h1>
+        </a>
+    </div>
 
-  <!-- navigation bar -->
-<ul class="navitems">
-  <li><a href="nea-main.html">Main</a></li>
-  <li><a href="nea-dashboard.html" class="active">Dashboard</a></li>
-  <li><a href="nea-inspection.html">Inspections</a></li>
-  <li><a href="nea-feedback.html">Feedback</a></li>
-</ul>
+    <ul class="navitems">
+        <li><a href="nea-main.html">Main</a></li>
+        <li><a href="nea-dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="nea-inspection.html">Inspections</a></li>
+        <li><a href="nea-feedback.html">Feedback</a></li>
+    </ul>
 
-  <!-- logout -->
-  <button class="logout-btn">Logout</button>
+    <button class="logout-btn">Logout</button>
 </nav>
 
-<!-- main content -->
+<!-- page content -->
 <main class="nea-page">
+
     <h1 class="page-title">Food Safety Monitoring</h1>
 
-    <section class="dashboard-top">
-        <!-- total hawker centres -->
-        <div class="stat-card large">
-            <p>Total Hawker Centres</p>
-            <h2>124</h2>
+    <!-- stats -->
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title">Total Hawker Centres</div>
+            <div class="stat-value">124</div>
             <small>As of 2026 Jan 17</small>
         </div>
+    </div>
 
-        <!-- list of hawker centres -->
-        <div class="table-card">
-            <h3>List of Hawker Centres</h3>
-            <table class="nea-table">
-                <thead>
-                    <tr>
-                        <th>Hawker Centre Name</th>
-                        <th>Address</th>
-                        <th>No. of Stalls</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hawker Centre Name</td>
-                        <td>Address</td>
-                        <td>No. of Stalls</td>
-                        <td><button class="view-btn">View Info</button></td>
-                    </tr>
-                    <tr>
-                        <td>Hawker Centre Name</td>
-                        <td>Address</td>
-                        <td>No. of Stalls</td>
-                        <td><button class="view-btn">View Info</button></td>
-                    </tr>
-                    <tr>
-                        <td>Hawker Centre Name</td>
-                        <td>Address</td>
-                        <td>No. of Stalls</td>
-                        <td><button class="view-btn">View Info</button></td>
-                    </tr>
-                    <tr>
-                        <td>Hawker Centre Name</td>
-                        <td>Address</td>
-                        <td>No. of Stalls</td>
-                        <td><button class="view-btn">View Info</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+    <!-- list of hawker centres -->
+    <div class="card">
+        <h3>List of Hawker Centres</h3>
 
-    <!-- inspection summary table -->
-    <section class="table-card full-width">
-        <table class="nea-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Hawker Centre Name</th>
+                    <th>Address</th>
+                    <th>No. of Stalls</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hawker Centre Name</td>
+                    <td>Address</td>
+                    <td>No. of Stalls</td>
+                    <td><button>View Info</button></td>
+                </tr>
+                <tr>
+                    <td>Hawker Centre Name</td>
+                    <td>Address</td>
+                    <td>No. of Stalls</td>
+                    <td><button>View Info</button></td>
+                </tr>
+                <tr>
+                    <td>Hawker Centre Name</td>
+                    <td>Address</td>
+                    <td>No. of Stalls</td>
+                    <td><button>View Info</button></td>
+                </tr>
+                <tr>
+                    <td>Hawker Centre Name</td>
+                    <td>Address</td>
+                    <td>No. of Stalls</td>
+                    <td><button>View Info</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- inspection summary -->
+    <div class="card">
+        <h3>Recent Inspections</h3>
+
+        <table>
             <thead>
                 <tr>
                     <th>Establishment</th>
@@ -120,13 +122,13 @@
                 </tr>
             </tbody>
         </table>
-    </section>
+    </div>
+
 </main>
 
-<script src="js/nea.js"></script>
-
-</body>
 <!-- scripts -->
 <script src="js/nea-common.js"></script>
 <script src="js/nea-dashboard.js"></script>
+
+</body>
 </html>
