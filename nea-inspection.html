@@ -1,116 +1,142 @@
 <!-- nea-inspection.html -->
-
+ 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>NEA Officer - Inspections</title>
-    <link rel="stylesheet" href="css/nea-style.css">
+  <meta charset="UTF-8">
+  <title>NEA Officer - Inspections</title>
+
+  <!-- nea styles only -->
+  <link rel="stylesheet" href="css/nea-style.css">
 </head>
+
 <body>
 
-<!-- logo -->
+<!-- navigation bar -->
 <nav id="navigationbar">
   <div class="logo">
     <a href="index.html">
+      <span class="material-symbols-rounded">restaurant_menu</span>
       <h1 id="logotitle">Hawker<em>SG</em></h1>
     </a>
   </div>
 
-  <!-- navigation bar -->
-<ul class="navitems">
-  <li><a href="nea-main.html">Main</a></li>
-  <li><a href="nea-dashboard.html">Dashboard</a></li>
-  <li><a href="nea-inspection.html" class="active">Inspections</a></li>
-  <li><a href="nea-feedback.html">Feedback</a></li>
-</ul>
+  <ul class="navitems">
+    <li><a href="nea-main.html">Main</a></li>
+    <li><a href="nea-dashboard.html">Dashboard</a></li>
+    <li><a href="nea-inspection.html" class="active">Inspections</a></li>
+    <li><a href="nea-feedback.html">Feedback</a></li>
+  </ul>
 
-  <!-- logout -->
   <button class="logout-btn">Logout</button>
 </nav>
 
-<main class="nea-container">
+<!-- page content -->
+<section class="nea-page">
 
-<h1 class="page-title">Inspection Records</h1>
+  <h1 class="page-title">Inspection Records</h1>
 
-<!-- summary section -->
-<section class="inspection-summary">
+  <!-- summary section -->
+  <section class="inspection-summary">
+
     <table class="summary-table">
-        <thead>
-            <tr>
-                <th>Establishment</th>
-                <th>Effective Start Date</th>
-                <th>Expiry Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Hawker Centre Name</td>
-                <td>DD/MM/YY</td>
-                <td>DD/MM/YY</td>
-            </tr>
-            <tr>
-                <td>Hawker Centre Name</td>
-                <td>DD/MM/YY</td>
-                <td>DD/MM/YY</td>
-            </tr>
-            <tr>
-                <td>Hawker Centre Name</td>
-                <td>DD/MM/YY</td>
-                <td>DD/MM/YY</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Establishment</th>
+          <th>Effective Start Date</th>
+          <th>Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Maxwell Food Centre</td>
+          <td>01/01/26</td>
+          <td>31/12/26</td>
+        </tr>
+        <tr>
+          <td>Chinatown Complex</td>
+          <td>15/02/26</td>
+          <td>14/02/27</td>
+        </tr>
+        <tr>
+          <td>Old Airport Road</td>
+          <td>01/03/26</td>
+          <td>28/02/27</td>
+        </tr>
+      </tbody>
     </table>
 
     <div class="inspection-stat-card">
-        <p>Total Inspections<br><strong>67</strong></p>
-        <span>As of 2026 Jan 17</span>
+      <p>Total Inspections<br><strong>67</strong></p>
+      <span>As of 17 Jan 2026</span>
     </div>
-</section>
 
-<!-- detailed inspection table -->
-<section class="inspection-details">
+  </section>
+
+  <!-- detailed inspection table -->
+  <section class="inspection-details">
+
     <table class="inspection-table">
-        <thead>
-            <tr>
-                <th>Inspector ID</th>
-                <th>NEA Officer</th>
-                <th>Establishment</th>
-                <th>Inspection Date</th>
-                <th>Outcome</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>0022987382</td>
-                <td>Officer Name</td>
-                <td>Establishment</td>
-                <td>DD/MM/YY</td>
-                <td><select><option>Pass</option><option>Failed</option></select></td>
-            </tr>
-            <tr>
-                <td>0027826398</td>
-                <td>Officer Name</td>
-                <td>Establishment</td>
-                <td>DD/MM/YY</td>
-                <td><select><option>Pass</option><option>Failed</option></select></td>
-            </tr>
-            <tr>
-                <td>0182938592</td>
-                <td>Officer Name</td>
-                <td>Establishment</td>
-                <td>DD/MM/YY</td>
-                <td><select><option>Pass</option><option>Failed</option></select></td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Inspector ID</th>
+          <th>NEA Officer</th>
+          <th>Establishment</th>
+          <th>Inspection Date</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+
+      <!-- JS hooks into THIS tbody -->
+      <tbody id="inspectionTableBody">
+        <tr>
+          <td>0022987382</td>
+          <td>Officer Tan</td>
+          <td>Maxwell Food Centre</td>
+          <td>17/01/26</td>
+          <td>
+            <select class="status-select">
+              <option selected>Pass</option>
+              <option>Fail</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>0027826398</td>
+          <td>Officer Lim</td>
+          <td>Chinatown Complex</td>
+          <td>16/01/26</td>
+          <td>
+            <select class="status-select">
+              <option>Pass</option>
+              <option selected>Fail</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>0182938592</td>
+          <td>Officer Ong</td>
+          <td>Old Airport Road</td>
+          <td>15/01/26</td>
+          <td>
+            <select class="status-select">
+              <option selected>Pass</option>
+              <option>Fail</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
     </table>
+
+  </section>
+
 </section>
 
-</main>
-
-</body>
 <!-- scripts -->
 <script src="js/nea-common.js"></script>
 <script src="js/nea-inspection.js"></script>
+
+</body>
 </html>
