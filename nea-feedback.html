@@ -11,20 +11,25 @@
 <body>
 
 ```
-<!-- navigation bar -->
+<!-- logo -->
 <nav id="navigationbar">
-    <div class="logo">
-        <a href="nea-main.html">
-            <span class="material-symbols-rounded">restaurant_menu</span>
-            <h1 id="logotitle">Hawker<em>SG</em></h1>
-        </a>
-    </div>
-    <ul class="navitems">
-        <li><a href="nea-main.html">Dashboard</a></li>
-        <li><a href="nea-inspection.html">Inspections</a></li>
-        <li><a href="nea-feedback.html" class="active">Feedback</a></li>
-        <li><a href="index.html">Logout</a></li>
-    </ul>
+  <div class="logo">
+    <a href="index.html">
+      <span class="material-symbols-rounded">restaurant_menu</span>
+      <h1 id="logotitle">Hawker<em>SG</em></h1>
+    </a>
+  </div>
+
+  <!-- navigation bar -->
+  <ul class="navitems nea-nav">
+    <li data-page="home">Home</li>
+    <li data-page="dashboard">Dashboard</li>
+    <li data-page="inspections">Inspections</li>
+    <li data-page="feedback">Feedback</li>
+  </ul>
+
+  <!-- logout -->
+  <button class="logout-btn">Logout</button>
 </nav>
 
 <!-- page content -->
