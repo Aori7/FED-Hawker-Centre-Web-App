@@ -1,4 +1,4 @@
-<!-- nea officer - main page -->
+<!-- nea-main.html -->
 
 <!DOCTYPE html>
 
@@ -11,38 +11,50 @@
 </head>
 <body>
 
-```
-<!-- navigation bar -->
-<nav class="nea-nav">
-    <div class="nav-left">
-        <div class="logo">Logo</div>
-        <ul class="nav-links">
-            <li class="active">Home</li>
-            <li>Dashboard</li>
-            <li>Inspections</li>
-            <li>Hawker Centre</li>
-        </ul>
-    </div>
-    <button class="logout-btn">Log Out</button>
+<!-- logo -->
+<nav id="navigationbar">
+  <div class="logo">
+    <a href="index.html">
+      <h1 id="logotitle">Hawker<em>SG</em></h1>
+    </a>
+  </div>
+
+  <!-- navigation bar -->
+<ul class="navitems">
+  <li><a href="nea-main.html" class="active">Main</a></li>
+  <li><a href="nea-dashboard.html">Dashboard</a></li>
+  <li><a href="nea-inspection.html">Inspections</a></li>
+  <li><a href="nea-feedback.html">Feedback</a></li>
+</ul>
+
+
+  <!-- logout -->
+  <button class="logout-btn">Logout</button>
 </nav>
 
+
+
 <!-- main content -->
-<main class="nea-main">
-    <h1 class="welcome">Welcome Back, ________</h1>
+<main class="nea-page">
+    <h1 class="welcome">Welcome Back, NEA Officer</h1>
 
     <!-- stats cards -->
     <section class="stats-row">
-        <div class="stat-card">
-            <p>Non-Compliant Cases</p>
-            <h2>12</h2>
-        </div>
-        <div class="stat-card">
-            <p>Inspections this month</p>
-            <h2>15</h2>
-        </div>
-        <div class="stat-card">
-            <p>Average Hygiene Grade</p>
-            <h2>B</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-title">Non-Compliant Cases</div>
+                <div class="stat-value">12</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Inspections this month</div>
+                <div class="stat-value">15</div>
+            </div>
+        
+            <div class="card">
+                <div class="card-title">Average Hygiene Grade</div>
+                <div class="stat-value">B</div>
+            </div>
         </div>
     </section>
 
@@ -85,7 +97,8 @@
 </main>
 
 <script src="js/nea.js"></script>
-```
 
 </body>
+<!-- scripts -->
+<script src="js/nea-common.js"></script>
 </html>

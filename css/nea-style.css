@@ -1,6 +1,7 @@
 /* =========================
    NEA SHARED STYLESHEET
-   consistent with index + login theme
+   matches index.html navbar + layout
+   responsive (desktop + mobile)
    ========================= */
 
 :root{
@@ -26,19 +27,21 @@ body{
 }
 
 /* =========================
-   NAVBAR
+   NAVBAR (MATCH INDEX)
    ========================= */
 
 #navigationbar{
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 60px;
     z-index: 1000;
 
+    width: 100%;
+    height: 60px;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
     padding: 0 30px;
 
     background: rgba(255,255,255,0.85);
@@ -48,53 +51,87 @@ body{
 .logo a{
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     text-decoration: none;
 }
 
 .logo span{
-    font-size: 28px;
-    color: white;
+    font-size: 32px;
+    color: #ffffff;
     background: var(--orange-color);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 4px;
 }
 
 #logotitle{
-    font-size: 22px;
+    font-size: 24px;
+    font-weight: 550;
     color: var(--orange-color);
 }
 
 #logotitle em{
     font-style: italic;
     color: var(--black-text-color);
+    font-weight: 750;
 }
 
+/* nav links */
 .navitems{
-    list-style: none;
     display: flex;
-    gap: 30px;
-    padding: 0;
+    gap: 32px;
+    list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 .navitems a{
     text-decoration: none;
-    font-size: 18px;
+    font-size: 23px;
+    font-weight: bold;
     color: var(--orange-color);
+    padding: 6px 10px;
     position: relative;
 }
 
-.navitems a.active,
-.navitems a:hover{
+/* hover + active underline */
+.navitems a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--dark-orange-color);
+    transition: width 0.25s ease;
+}
+
+.navitems a:hover,
+.navitems a.active{
     color: var(--dark-orange-color);
 }
 
+.navitems a:hover::after,
+.navitems a.active::after{
+    width: 100%;
+}
+
+/* logout button */
+.logout-btn{
+    background: var(--orange-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 24px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
 /* =========================
-   PAGE CONTAINER
+   PAGE CONTAINER (CENTERED)
    ========================= */
 
 .nea-page{
+    width: 100%;
     padding: 40px 60px;
 }
 
@@ -104,7 +141,7 @@ body{
 }
 
 /* =========================
-   CARDS
+   CARDS & STATS
    ========================= */
 
 .card{
@@ -114,21 +151,16 @@ body{
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.card-title{
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.stat-value{
-    font-size: 36px;
-    color: var(--orange-color);
-}
-
 .card-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     margin-bottom: 40px;
+}
+
+.stat-value{
+    font-size: 36px;
+    color: var(--orange-color);
 }
 
 /* =========================
@@ -163,30 +195,8 @@ tbody tr:hover{
    STATUS TAGS
    ========================= */
 
-.status{
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-    display: inline-block;
-}
-
-.status.pass{
-    background: #d4f5dd;
-    color: #1e7d35;
-}
-
-.status.fail{
-    background: #ffd6d6;
-    color: #b40000;
-}
-
-.status.open{
-    background: #ffe6c7;
-}
-
-.status.resolved{
-    background: #d4f5dd;
-}
+.status.pass{ background:#d4f5dd; color:#1e7d35; }
+.status.fail{ background:#ffd6d6; color:#b40000; }
 
 /* =========================
    FORM ELEMENTS
@@ -198,35 +208,36 @@ select{
     border: none;
     background: white;
     box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-    cursor: pointer;
-}
-
-button{
-    background: var(--orange-color);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 30px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-button:hover{
-    filter: brightness(1.1);
 }
 
 /* =========================
-   UTILITIES
+   MOBILE RESPONSIVE
    ========================= */
 
-.flex{
-    display: flex;
-    gap: 20px;
-}
+@media (max-width: 768px){
 
-.flex-between{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .navitems{
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(255,255,255,0.95);
+        padding: 24px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .navitems.show{
+        display: flex;
+    }
+
+    .nea-page,
+    .nea-container{
+        padding: 30px 16px;
+    }
+
+    .page-title{
+        text-align: center;
+    }
 }
